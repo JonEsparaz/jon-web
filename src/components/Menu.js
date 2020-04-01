@@ -20,8 +20,8 @@ export default class Menu extends React.Component {
   render() {
     return (
       <div className="MenuContainer">
-        <Navbar color="white" light expand="md">
-          <NavbarBrand href="/"><img src="/mylogo.png" style={{height: "100px", marginRight: "50px"}}></img></NavbarBrand>
+        <Navbar light expand="md">
+        <NavbarBrand href="/"><img src="/mylogo.png" style={{height: "80px", marginRight: "0.5vw", marginLeft: "3vw", marginTop: "2.5vw", marginBottom: "2.5vw"}}></img></NavbarBrand>
           <NavbarToggler onClick={this.toggle}>
             <HamburgerMenu isOpen={this.state.isOpen} menuClicked={this.toggle.bind(this)} width={24} height={16} strokeWidth={2} borderRadius={45} color="black"/>
           </NavbarToggler>

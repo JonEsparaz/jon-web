@@ -1,4 +1,7 @@
 @media (min-width: 768px) {
+    .navbar {
+        height: 120px
+    }
 }
 
 @media (max-width: 767px) {
