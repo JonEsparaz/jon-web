@@ -11,7 +11,6 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="AppContainer">
-    <Menu/>
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/speedcubing" component={Speedcubing}/>
