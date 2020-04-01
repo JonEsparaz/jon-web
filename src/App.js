@@ -15,8 +15,8 @@ function App() {
     <main>
       <Switch>
         <Route path="/" component={Home} exact />
-        <Route path="/speedcubing" component={Speedcubing} />
-        <Route path="/contact" component={Contact} />
+        <Route path="/speedcubing" component={Speedcubing} exact/>
+        <Route path="/contact" component={Contact} exact/>
         <Route component={Error} />
       </Switch>
     </main> 
