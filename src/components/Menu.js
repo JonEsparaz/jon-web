@@ -1,18 +1,7 @@
 import React from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import HamburgerMenu from 'react-hamburger-menu';
 import './Menu.css';
-
-const links = [
-  { href: '/speedcubing', text: 'Speedcubing' },
-  { href: '/contact', text: 'Contact' },
-
-];
-
-const createNavItem = ({ href, text, className }) => (
-  <NavItem>
-    <NavLink href={href} className={className}>{text}</NavLink>
-  </NavItem>
-);
 
 export default class Menu extends React.Component {
 
@@ -31,12 +20,22 @@ export default class Menu extends React.Component {
   render() {
     return (
       <div className="MenuContainer">
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/"><img src="/mylogo.png" style={{height: "100px"}}></img></NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              {links.map(createNavItem)}
+        <Navbar color="white" light expand="md">
+          <NavbarBrand href="/"><img src="/mylogo.png" style={{height: "100px", marginRight: "50px"}}></img></NavbarBrand>
+          <NavbarToggler onClick={this.toggle}>
+            <HamburgerMenu isOpen={this.state.isOpen} menuClicked={this.toggle.bind(this)} width={24} height={16} strokeWidth={2} borderRadius={45} color="black"/>
+          </NavbarToggler>
+          <Collapse isOpen={this.state.isOpen} navbar>  
+            <Nav navbar>
+            <NavItem>
+              <NavLink href="/speedcubing">Speedcubing</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/projects">Projects</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/contact">Contact</NavLink>
+            </NavItem>            
             </Nav>
           </Collapse>
         </Navbar>

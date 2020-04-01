@@ -3,7 +3,7 @@ import React from 'react';
 function Speedcubing() {
   return (
     <div>
-      I solve Rubik's Cubes... like very fast.
+      <a href="https://www.worldcubeassociation.org/persons/2013ESPA01">WCA records</a>
     </div>
   );
 }

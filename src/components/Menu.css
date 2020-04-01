@@ -1,7 +1,14 @@
-.MenuContainer {
-    color: green;
+@media (min-width: 768px) {
 }
 
-.ml-atuo {
-    font-size: 100px;
+@media (max-width: 767px) {
+
+    .navbar-toggler {
+        outline-color: #ffffff00 !important;
+        border-color: #ffffff00 !important;
+        background-color: #ffffff00 !important;
+        left:86.5vw;
+        top:5.35vw;
+        height:8vw;
+    }
 }
