@@ -8,7 +8,6 @@ import Error from './components/Error';
 import Menu from './components/Menu';
 import Footer from './components/Footer';
 
-
 function App() {
   return (
     <div className="AppContainer">
