@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
 ReactDOM.render(
-  <HashRouter basename="/build">
+  <HashRouter>
     <App />
   </HashRouter>,
   document.getElementById('root')
