@@ -5,6 +5,8 @@ import Home from './components/Home';
 import Speedcubing from './components/Speedcubing';
 import Contact from './components/Contact';
 import Error from './components/Error';
+import Footer from './components/Footer';
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         <Route component={Error} />
       </Switch>
     </main> 
+    <Footer/>
     </div>
   );
 }
