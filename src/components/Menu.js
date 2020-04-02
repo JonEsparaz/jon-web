@@ -31,13 +31,13 @@ export default class Menu extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav navbar>
             <NavItem>
-              <NavLink href="/speedcubing"><AppsIcon style={{marginRight: "5px"}}/>Speedcubing</NavLink>
+              <NavLink href="/speedcubing"><AppsIcon style={{marginRight: "5px", marginBottom: "2px"}}/>Speedcubing</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/projects"><CodeIcon style={{marginRight: "5px"}}/>Projects</NavLink>
+              <NavLink href="/projects"><CodeIcon style={{marginRight: "5px", marginBottom: "2px"}}/>Projects</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/contact"><EmailIcon style={{marginRight: "5px"}}/>Contact</NavLink>
+              <NavLink href="/contact"><EmailIcon style={{marginRight: "5px", marginBottom: "2px"}}/>Contact</NavLink>
             </NavItem>            
             </Nav>
           </Collapse>
