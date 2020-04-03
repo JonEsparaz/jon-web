@@ -12,7 +12,7 @@ function Footer() {
       <span><a href="https://github.com/JonEsparaz" rel="noopener noreferrer" target="_blank"><GitHubIcon fontSize="large" style={{ marginRight: "1.5vw", marginLeft: "1.5vw", color: "#212529"}}/></a></span>
       <span><a href="https://www.youtube.com/c/JonEsparaz" rel="noopener noreferrer" target="_blank"><YouTubeIcon fontSize="large" style={{ marginRight: "1.5vw", marginLeft: "1.5vw", color: "#212529"}}/></a></span>
       <span><a href="https://www.linkedin.com/in/jonathanesparaz/" rel="noopener noreferrer" target="_blank"><LinkedInIcon fontSize="large" style={{ marginRight: "1.5vw", marginLeft: "1.5vw", color: "#212529"}}/></a></span>
-      <p> &copy; {new Date().getFullYear()} Jonathan Esparaz</p>
+      <p style={{marginTop:"20px"}}> &copy; {new Date().getFullYear()} Jonathan Esparaz</p>
     </div>
   );
 }

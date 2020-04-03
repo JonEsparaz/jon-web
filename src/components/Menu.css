@@ -1,7 +1,14 @@
 @media (min-width: 768px) {
+    
+    .MenuContainer {
+        display: inline-block;
+        width: 80%
+    }
+    
     .navbar {
         height: 120px
     }
+
 }
 
 @media (max-width: 767px) {

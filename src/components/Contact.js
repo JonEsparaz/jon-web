@@ -1,10 +1,11 @@
 import React from 'react';
+import './Contact.css';
 
 function Contact() {
   return (
-    <a className="Email" href = "mailto:jon.esparaz@gmail.com">
-      Email
-    </a>
+    <div className="ContactContainer">
+    <a href = "mailto:jon.esparaz@gmail.com">Email</a>
+    </div>
   );
 }
 
