@@ -4,7 +4,7 @@ import HamburgerMenu from 'react-hamburger-menu';
 import AppsIcon from '@material-ui/icons/Apps';
 import CodeIcon from '@material-ui/icons/Code';
 import EmailIcon from '@material-ui/icons/Email';
-import './Menu.css';
+import './Menu.scss';
 
 export default class Menu extends React.Component {
 
