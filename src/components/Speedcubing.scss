@@ -1,0 +1,121 @@
+@media (min-width: 768px) {
+    .CubingContainer {
+        width: 80vw;
+        margin-left: 10vw;
+        text-align: left;
+        position: relative;
+    }
+    .YTimage {
+        width: 26vw;
+        cursor: pointer;
+    }
+
+    .YTtitle {
+        font-weight: bold;
+        width: 24vw;
+    }
+
+    .YTimage:hover {
+        opacity: 0.5;
+    }
+
+    .YTgrid {
+        display: grid;
+        grid-template-columns: repeat(3,26vw);
+        grid-template-rows: auto;
+        column-gap: 1vw
+    }
+
+    .custom-modal {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .videoPlayer {
+        width: 50vw;
+        height: calc(50vw * 9/16);
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .CubingContainer {
+        width: 80vw;
+        margin-left: 10vw;
+        text-align: left;
+        position: relative;
+    }
+    .YTimage {
+        width: 26vw;
+        cursor: pointer;
+    }
+
+    .YTtitle {
+        font-weight: bold;
+        width: 24vw;
+    }
+
+    .YTimage:hover {
+        opacity: 0.5;
+    }
+
+    .YTgrid {
+        display: grid;
+        grid-template-columns: repeat(3,26vw);
+        grid-template-rows: auto;
+        column-gap: 1vw
+    }
+
+    .custom-modal {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .videoPlayer {
+        width: 50vw;
+        height: calc(50vw * 9/16);
+    }
+}
+
+@media (max-width: 767px) {
+    .CubingContainer {
+        width: 90vw;
+        margin-left: 5vw;
+        text-align: left;
+        position: relative;
+    }
+
+    .YTimage {
+        width: 90vw;
+        cursor: pointer;
+    }
+
+    .YTtitle {
+        font-weight: bold;
+        width: 85vw;
+    }
+
+    .YTimage:hover {
+        opacity: 0.5;
+    }
+
+    .YTgrid {
+        display: grid;
+        grid-template-columns: repeat(1,90vw);
+        grid-template-rows: auto;
+        row-gap: 5vw;
+    }
+    
+    .custom-modal {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .videoPlayer {
+        width: 50vw;
+        height: calc(50vw * 9/16);
+    }
+}
