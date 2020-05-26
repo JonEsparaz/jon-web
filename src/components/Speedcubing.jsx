@@ -56,13 +56,13 @@ class Speedcubing extends React.Component {
     return (
       <div className="CubingContainer">
         {this.videoModal()}
-        <h1>Speedcubing</h1>
-        <p>Over the past {new Date().getFullYear()-2013} years, I have competed over 50 
+        <h1 className="SpeedcubingH1">Speedcubing</h1>
+        <div className="SpeedcubingText">Over the past {new Date().getFullYear()-2013} years, I have competed over 50 
         World Cube Association competitions. In 2018, I broke the North American Record for solving the Rubik's Cube one-handed with a time of 7.57 seconds. 
         Today, I am a Junior Delegate for the World Cube Association and help to organize and officiate competitions. 
-        Check out my WCA profile <a href="https://www.worldcubeassociation.org/persons/2013ESPA01"> here</a>.</p>
+        Check out my WCA profile <a href="https://www.worldcubeassociation.org/persons/2013ESPA01"> here</a>.</div>
         
-        <h4>Check out some of my top solves</h4>
+        <div className="SpeedcubingH2">Check out some of my top solves</div>
         <div className="YTgrid">
           {this.videoData.map(item => {
               return (

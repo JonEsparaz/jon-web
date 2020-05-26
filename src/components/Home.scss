@@ -1,5 +1,264 @@
-    .HomePage {
-        text-align: center;
-        position: relative;
-        min-height: 50vh;
+@keyframes tagFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30vw);
     }
+    25% {
+        opacity: 0;
+        transform: translateY(25vw);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes mobileTagFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30vw);
+    }
+    25% {
+        opacity: 0;
+        transform: translateY(-25vw);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 768px) {
+    .Rectangle {
+        float: left;
+        width: 5vw;
+        height: 25vw;
+        border: 0.5vw solid white;
+        margin-right: 2vw;
+    }
+
+    .SplashImage {
+        width: 100vw;
+        opacity: 0.85;
+    }
+
+    .ContentContainer {
+        position: absolute;
+        vertical-align: middle;
+        top: 15vw;
+        left: 22vw;
+    }
+
+    .TextContainer {
+        padding-top: 2vw;
+        height: 25vw;
+        width: 40vw;
+    }
+
+    .HomePage {
+        position: relative;
+        font-family: Heebo;
+        overflow: hidden;
+    }
+
+    .HomePageH1 {
+        font-weight: bold;
+        font-size: 3vw;
+        color: white
+    }
+
+    .HomePageTag {
+        font-size: 1.2vw;
+        color: white;
+        animation: tagFadeIn 2s ease-in-out;
+    }
+
+    .CardsArea {
+        width: 100vw;
+        min-height: 50vh;
+        background-color: #1a1a1a;    
+    }
+
+    .HomePageH1.mobile {
+        display: none;
+    }
+
+    .TextContainer.mobile {
+        display: none;
+    }
+
+    .HomePageTag.mobile {
+        display: none;
+    }
+
+    .MobileContentContainer {
+        display: none;
+    }
+
+    .MobileRectangle {
+        display: none;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .Rectangle {
+        float: left;
+        width: 5vw;
+        height: 25vw;
+        border: 0.5vw solid white;
+        margin-right: 2vw;
+    }
+
+    .SplashImage {
+        width: 100vw;
+        opacity: 0.85;
+    }
+
+    .ContentContainer {
+        position: absolute;
+        vertical-align: middle;
+        top: 15vw;
+        left: 20vw;
+        width: 100%;
+    }
+
+    .TextContainer {
+        padding-top: 2vw;
+        height: 25vw;
+    }
+
+    .HomePage {
+        position: relative;
+        font-family: Heebo;
+    }
+
+    .HomePageH1 {
+        font-weight: bold;
+        font-size: 3vw;
+        color: white
+    }
+
+    .HomePageTag {
+        font-size: 1.2vw;
+        color: white;
+        animation: tagFadeIn 2s ease-in-out;
+    }
+
+    .CardsArea {
+        width: 100vw;
+        min-height: 50vh;
+        background-color: #1a1a1a;    
+    }
+
+    .HomePageH1.mobile {
+        display: none;
+    }
+
+    .TextContainer.mobile {
+        display: none;
+    }
+
+    .HomePageTag.mobile {
+        display: none;
+    }
+
+    .MobileContentContainer {
+        display: none;
+    }
+
+    .MobileRectangle {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .Rectangle {
+        width: 10vw;
+        height: 60vw;
+        border: 1.5vw solid white;
+        border-top: 0;
+        margin-right: 2vw;
+        float: left;
+    }
+
+    .SplashImage {
+        height: 90vw;
+        opacity: 0.85;
+    }
+
+    .ContentContainer {
+        position: absolute;
+        top: 90vw;
+        left: 7.5vw;
+        width: 100%;
+    }
+
+    .MobileContentContainer {
+        position: absolute;
+        top: 30vw;
+        right: 7.5vw;
+        width: 80vw;
+    }
+
+    .MobileRectangle {
+        width: 10vw;
+        height: 60vw;
+        border: 1.5vw solid white;
+        border-bottom: 0;
+        margin-left: 2vw;
+        float: right;
+    }
+
+    .TextContainer {
+        padding-top: 10vw;
+        width: 80vw;
+    }
+
+    .HomePage {
+        position: relative;
+        font-family: Heebo;
+        overflow-x: hidden;
+    }
+
+    .HomePageH1 {
+        font-weight: bold;
+        font-size: 7.5vw;
+        color: white
+    }
+
+    .HomePageTag {
+        font-size: 5vw;
+        color: white;
+        animation: tagFadeIn 2s ease-in-out;
+    }
+
+    .HomePageH1.mobile {
+        text-align: right;
+    }
+
+    .TextContainer.mobile {
+        padding-top: 25vw;
+        width: 80vw;
+    }
+
+    .HomePageTag.mobile {
+        text-align: right;
+        animation: mobileTagFadeIn 2s ease-in-out;
+    }
+
+    .HomePageTag.desktop {
+        display: none;
+    }
+
+    .HomePageH1.desktop {
+        display: none;
+    }
+
+    .CardsArea {
+        width: 100vw;
+        min-height: 50vh;
+        background-color: #1a1a1a;
+    }
+}
+

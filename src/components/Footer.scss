@@ -2,10 +2,15 @@
     .FooterContainer {
         width: 100%;
         text-align: center;    
-        margin-top: 5vw;
-        background: #f0f0f0;
+        background: #1a1a1a;
         padding: 5vw;
         bottom: 0;
+        font-family: Heebo;
+    }
+
+    .footer-link:hover {
+        transition: 0.5s;
+        color: #bababa !important;
     }
 }
 
@@ -13,10 +18,10 @@
     .FooterContainer {
         width: 100%;
         text-align: center;    
-        margin-top: 5vw;
-        background: #f0f0f0;
+        background: #1a1a1a;
         padding: 5vw;
         bottom: 0;
+        font-family: Heebo;
     }
 }
 
@@ -24,9 +29,9 @@
     .FooterContainer {
         width: 100%;
         text-align: center;    
-        margin-top: 5vw;
-        background: #f0f0f0;
+        background: #1a1a1a;
         padding: 5vw;
         bottom: 0;
+        font-family: Heebo;
     }
 }

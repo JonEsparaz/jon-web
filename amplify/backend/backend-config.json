@@ -4,28 +4,6 @@
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": []
-		},
-		"userPoolGroups": {
-			"service": "Cognito-UserPool-Groups",
-			"providerPlugin": "awscloudformation",
-			"dependsOn": [
-				{
-					"category": "auth",
-					"resourceName": "jonweb9c99935a",
-					"attributes": [
-						"UserPoolId",
-						"AppClientIDWeb",
-						"AppClientID",
-						"IdentityPoolId"
-					]
-				}
-			]
-		},
-		"jonwebdd4e5ad4": {
-			"service": "Cognito",
-			"providerPlugin": "awscloudformation",
-			"dependsOn": [],
-			"customAuth": false
 		}
 	},
 	"api": {
@@ -46,7 +24,7 @@
 		}
 	},
 	"storage": {
-		"s3jon": {
+		"s31d3c7bf5": {
 			"service": "S3",
 			"providerPlugin": "awscloudformation"
 		}
