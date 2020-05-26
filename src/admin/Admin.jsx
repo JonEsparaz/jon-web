@@ -1,9 +1,9 @@
 import React from 'react';
 import Amplify from 'aws-amplify';
-import awsconfig from '../aws-exports';
+import awsmobile from '../aws-exports';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import './Admin.scss';
-Amplify.configure(awsconfig);
+Amplify.configure(awsmobile);
 
 class Admin extends React.Component {
 
