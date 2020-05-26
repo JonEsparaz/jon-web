@@ -1,9 +1,9 @@
 import React from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-import HamburgerMenu from 'react-hamburger-menu';
 import AppsIcon from '@material-ui/icons/Apps';
 import CodeIcon from '@material-ui/icons/Code';
 import EmailIcon from '@material-ui/icons/Email';
+import { Collapse, NavbarToggler, Nav, NavLink, Navbar, NavbarBrand } from 'reactstrap';
+import HamburgerMenu from 'react-hamburger-menu';
 import './Menu.scss';
 
 export default class Menu extends React.Component {
@@ -23,22 +23,16 @@ export default class Menu extends React.Component {
   render() {
     return (
       <div className="MenuContainer">
-        <Navbar light expand="md">
-        <NavbarBrand href="/"><img src="/mylogo.png" style={{height: "80px", marginRight: "0.5vw"}}></img></NavbarBrand>
+        <Navbar expand="md">
+          <NavbarBrand href="/"><img alt="logo" src="/white-mylogo.png" style={{height: "80px", marginRight: "0.5vw"}}></img></NavbarBrand>
           <NavbarToggler onClick={this.toggle}>
-            <HamburgerMenu isOpen={this.state.isOpen} menuClicked={this.toggle.bind(this)} width={24} height={16} strokeWidth={2} borderRadius={45} color="black"/>
+            <HamburgerMenu isOpen={this.state.isOpen} menuClicked={this.toggle} width={24} height={16} strokeWidth={2} borderRadius={45} color="white" />
           </NavbarToggler>
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink href="/speedcubing"><AppsIcon className="cubing" style={{marginRight: "5px", marginBottom: "2px"}}/>Speedcubing</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/projects"><CodeIcon style={{marginRight: "5px", marginBottom: "2px"}}/>Projects</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/contact"><EmailIcon style={{marginRight: "5px", marginBottom: "2px"}}/>Contact</NavLink>
-            </NavItem>            
+            <Nav navbar className="mr-auto" >
+              <NavLink className="navlink-custom" href="/speedcubing"><AppsIcon style={{marginRight: "5px", marginBottom: "2px"}} />Speedcubing</NavLink>
+              <NavLink className="navlink-custom" href="/projects"><CodeIcon style={{marginRight: "5px", marginBottom: "2px"}}/>Projects</NavLink>
+              <NavLink className="navlink-custom" href="/contact"><EmailIcon style={{marginRight: "5px", marginBottom: "2px"}}/>Contact</NavLink>
             </Nav>
           </Collapse>
         </Navbar>

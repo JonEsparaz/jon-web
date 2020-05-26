@@ -4,7 +4,7 @@ import './Project.scss';
 function Projects() {
   return (
     <div className="ProjectsContainer">
-      <h1>Coming soon</h1>
+      <h1 className="ProjectsH1">Coming soon</h1>
     </div>
   );
 }

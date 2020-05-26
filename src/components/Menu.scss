@@ -1,25 +1,55 @@
 @media (min-width: 768px) {
     
     .MenuContainer {
-        display: inline-block;
+        position: absolute;
         margin-left: 10vw;
         width: 80vw;
+        z-index: 999;
     }
-    
-    .navbar {
-        height: 120px
+
+    .navlink-custom {
+        color: white;
+    }
+
+    .navlink-custom:hover {
+        color: #2784e4;
     }
 
 }
 
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .MenuContainer {
+        position: absolute;
+        margin-left: 10vw;
+        width: 80vw;
+        z-index: 999;
+    }
+
+    .navlink-custom {
+        color: white;
+    }
+    
+}
+
 @media (max-width: 767px) {
 
+    .MenuContainer {
+        width: 100vw;
+        z-index: 999;
+        background: #1a1a1a;
+    }
+
     .navbar-toggler {
-        outline-color: #ffffff00 !important;
+        outline: none !important;
         border-color: #ffffff00 !important;
         background-color: #ffffff00 !important;
         left:86.5vw;
         top:5.35vw;
         height:8vw;
     }
+
+    .navlink-custom {
+        color: white;
+    }
+
 }

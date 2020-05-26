@@ -24,7 +24,7 @@
 		}
 	},
 	"storage": {
-		"s3jon": {
+		"s31d3c7bf5": {
 			"service": "S3",
 			"providerPlugin": "awscloudformation"
 		}

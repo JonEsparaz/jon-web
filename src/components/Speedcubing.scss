@@ -1,90 +1,191 @@
 @media (min-width: 768px) {
     .CubingContainer {
-        width: 80vw;
-        margin-left: 10vw;
+        padding-top: 10vw;
+        min-height: 100vh;
         text-align: left;
         position: relative;
+        font-family: Heebo;
+        background: #1a1a1a;
     }
     .YTimage {
         width: 26vw;
         cursor: pointer;
+        opacity: 1;
+        transition: opacity 0.3s ease;
     }
 
     .YTtitle {
         font-weight: bold;
         width: 24vw;
+        font-size: 1vw;
+        color: white;
     }
 
-    .YTimage:hover {
-        opacity: 0.5;
+    .imageContainer {
+        position: relative;
+        text-align: center;
+        display: block;
+    }
+
+    .imageContainer:hover {
+        cursor: pointer;
+        .YTimage {
+            opacity: 0.5;
+        }
+        .playArrow {
+            opacity: 1;
+        }
     }
 
     .YTgrid {
         display: grid;
         grid-template-columns: repeat(3,26vw);
         grid-template-rows: auto;
-        column-gap: 1vw
+        column-gap: 1vw;
+        margin-left: 10vw;
+    }
+
+    .playArrow {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     .custom-modal {
         display: flex;
         text-align: center;
         justify-content: center;
+        top: 10vw !important;
     }
 
     .videoPlayer {
         width: 50vw;
         height: calc(50vw * 9/16);
+    }
+
+    .SpeedcubingH1 {
+        font-size: 3vw;
+        font-weight: bold;
+        margin-left: 10vw;
+        color: white;
+    }
+
+    .SpeedcubingH2 {
+        font-weight: bold;
+        font-size: 1.5vw;
+        margin-left: 10vw;
+        color: white;
+    }
+
+    .SpeedcubingText {
+        font-size: 1vw;
+        margin-left: 10vw;
+        color: white;
+        width: 80vw;
     }
 
 }
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     .CubingContainer {
-        width: 80vw;
-        margin-left: 10vw;
+        padding-top: 10vw;
+        min-height: 100vh;
         text-align: left;
         position: relative;
+        font-family: Heebo;
+        background: #1a1a1a;
     }
     .YTimage {
         width: 26vw;
         cursor: pointer;
+        opacity: 1;
+        transition: opacity 0.3s ease;
     }
 
     .YTtitle {
         font-weight: bold;
         width: 24vw;
+        font-size: 1vw;
+        color: white;
     }
 
-    .YTimage:hover {
-        opacity: 0.5;
+    .imageContainer {
+        position: relative;
+        text-align: center;
+        display: block;
+    }
+
+    .imageContainer:hover {
+        cursor: pointer;
+        .YTimage {
+            opacity: 0.5;
+        }
+        .playArrow {
+            opacity: 1;
+        }
     }
 
     .YTgrid {
         display: grid;
         grid-template-columns: repeat(3,26vw);
         grid-template-rows: auto;
-        column-gap: 1vw
+        column-gap: 1vw;
+        margin-left: 10vw;
+    }
+
+    .playArrow {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     .custom-modal {
         display: flex;
         text-align: center;
         justify-content: center;
+        top: 10vw !important;
     }
 
     .videoPlayer {
         width: 50vw;
         height: calc(50vw * 9/16);
     }
+
+    .SpeedcubingH1 {
+        font-size: 3vw;
+        font-weight: bold;
+        margin-left: 10vw;
+        color: white;
+    }
+
+    .SpeedcubingH2 {
+        font-weight: bold;
+        font-size: 1.5vw;
+        margin-left: 10vw;
+        color: white;
+    }
+
+    .SpeedcubingText {
+        font-size: 1vw;
+        margin-left: 10vw;
+        color: white;
+        width: 80vw;
+    }
+
 }
 
 @media (max-width: 767px) {
     .CubingContainer {
-        width: 90vw;
-        margin-left: 5vw;
         text-align: left;
         position: relative;
+        font-family: Heebo;
+        background: #1a1a1a;
     }
 
     .YTimage {
@@ -95,10 +196,8 @@
     .YTtitle {
         font-weight: bold;
         width: 85vw;
-    }
-
-    .YTimage:hover {
-        opacity: 0.5;
+        color: white;
+        font-size: 4vw;
     }
 
     .YTgrid {
@@ -106,6 +205,7 @@
         grid-template-columns: repeat(1,90vw);
         grid-template-rows: auto;
         row-gap: 5vw;
+        margin-left: 5vw;
     }
     
     .custom-modal {
@@ -114,8 +214,34 @@
         justify-content: center;
     }
 
+    .playArrow {
+        display: none;
+    }
+
     .videoPlayer {
         width: 50vw;
         height: calc(50vw * 9/16);
+    }
+
+    .SpeedcubingH1 {
+        font-size: 10vw;
+        font-weight: bold;
+        margin-left: 5vw;
+        color: white;
+    }
+
+    .SpeedcubingH2 {
+        font-weight: bold;
+        font-size: 5vw;
+        margin-left: 5vw;
+        color: white;
+    }
+
+    .SpeedcubingText {
+        font-size: 3vw;
+        margin-left: 5vw;
+        color: white;
+        width: 80vw;
+        margin-bottom: 5vw;
     }
 }
