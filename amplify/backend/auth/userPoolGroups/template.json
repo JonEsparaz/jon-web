@@ -1,23 +1,23 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
     "Parameters": {
-        "authjonwebdd4e5ad4UserPoolId": {
+        "authjonweb9c99935aUserPoolId": {
             "Type": "String",
-            "Default": "authjonwebdd4e5ad4UserPoolId"
+            "Default": "authjonweb9c99935aUserPoolId"
         },
         
-        "authjonwebdd4e5ad4IdentityPoolId": {
+        "authjonweb9c99935aIdentityPoolId": {
             "Type": "String",
-            "Default": "authjonwebdd4e5ad4IdentityPoolId"
+            "Default": "authjonweb9c99935aIdentityPoolId"
         },
         
-        "authjonwebdd4e5ad4AppClientID": {
+        "authjonweb9c99935aAppClientID": {
             "Type": "String",
-            "Default": "authjonwebdd4e5ad4AppClientID"
+            "Default": "authjonweb9c99935aAppClientID"
         },
-        "authjonwebdd4e5ad4AppClientIDWeb": {
+        "authjonweb9c99935aAppClientIDWeb": {
             "Type": "String",
-            "Default": "authjonwebdd4e5ad4AppClientIDWeb"
+            "Default": "authjonweb9c99935aAppClientIDWeb"
         },
         "AuthRoleArn": {
             "Type": "String"
@@ -55,7 +55,7 @@
               },
               
               "UserPoolId" : {
-                "Ref": "authjonwebdd4e5ad4UserPoolId"
+                "Ref": "authjonweb9c99935aUserPoolId"
               } 
             }
         },
@@ -68,7 +68,7 @@
                         "",
                         [
                           {
-                            "Ref": "authjonwebdd4e5ad4UserPoolId"
+                            "Ref": "authjonweb9c99935aUserPoolId"
                           },
                           "-jwebadminGroupRole"
                         ]
@@ -85,7 +85,7 @@
                             },
                             "Action": "sts:AssumeRoleWithWebIdentity",
                             "Condition": {
-                              "StringEquals": {"cognito-identity.amazonaws.com:aud": {"Ref":"authjonwebdd4e5ad4IdentityPoolId"}},
+                              "StringEquals": {"cognito-identity.amazonaws.com:aud": {"Ref":"authjonweb9c99935aIdentityPoolId"}},
                               "ForAnyValue:StringLike": {"cognito-identity.amazonaws.com:amr": "authenticated"}
                             }
                         }
@@ -111,7 +111,7 @@
                                 "",
                                 [
                                   
-                                  "jonwebdd4e5ad4",
+                                  "jonweb9c99935a",
                                   "-ExecutionRole-",
                                   {
                                     "Ref": "env"
@@ -270,16 +270,16 @@
                     "Ref": "UnauthRoleArn"
                 },
                 "identityPoolId": {
-                    "Ref": "authjonwebdd4e5ad4IdentityPoolId"
+                    "Ref": "authjonweb9c99935aIdentityPoolId"
                 },
                 "userPoolId": {
-                    "Ref": "authjonwebdd4e5ad4UserPoolId"
+                    "Ref": "authjonweb9c99935aUserPoolId"
                 },
                 "appClientIDWeb": {
-                    "Ref": "authjonwebdd4e5ad4AppClientIDWeb"
+                    "Ref": "authjonweb9c99935aAppClientIDWeb"
                 },
                 "appClientID": {
-                    "Ref": "authjonwebdd4e5ad4AppClientID"
+                    "Ref": "authjonweb9c99935aAppClientID"
                 },
                 "region": {
                     "Ref": "AWS::Region"

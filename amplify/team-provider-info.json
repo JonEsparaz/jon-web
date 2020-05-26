@@ -1,4 +1,22 @@
 {
+    "jwebprod": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-jon-web-jwebprod-193657-authRole",
+            "UnauthRoleArn": "arn:aws:iam::848045425465:role/amplify-jon-web-jwebprod-193657-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::848045425465:role/amplify-jon-web-jwebprod-193657-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-jon-web-jwebprod-193657-deployment",
+            "UnauthRoleName": "amplify-jon-web-jwebprod-193657-unauthRole",
+            "StackName": "amplify-jon-web-jwebprod-193657",
+            "StackId": "arn:aws:cloudformation:us-east-2:848045425465:stack/amplify-jon-web-jwebprod-193657/a064b980-9ee0-11ea-a9cf-066dd16eed5a",
+            "AmplifyAppId": "d3nv8nqd9u7c3v"
+        },
+        "categories": {
+            "auth": {
+                "jonweb9c99935a": {}
+            }
+        }
+    },
     "jewebprod": {
         "awscloudformation": {
             "AuthRoleName": "amplify-jon-web-jewebprod-02431-authRole",
