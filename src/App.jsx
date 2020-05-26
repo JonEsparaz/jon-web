@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Error from './components/Error';
 import Menu from './components/Menu';
 import Footer from './components/Footer';
+import Admin from './admin/Admin';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/speedcubing" component={Speedcubing}/>
         <Route path="/contact" component={Contact}/>
         <Route path="/projects" component={Projects}/>
+        <Route path="/admin" component={Admin}/>
         <Route component={Error} />
       </Switch>
     <Footer/>

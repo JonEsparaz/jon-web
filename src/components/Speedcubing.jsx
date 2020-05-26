@@ -69,7 +69,7 @@ class Speedcubing extends React.Component {
                 <div classname="YTitem">
                   <div className="imageContainer" onClick={()=>{this.handleOpen(item.id)}}>
                   <img className="YTimage" src={`https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`} alt="youtube thumbnail" ></img>
-                  <img className="playArrow" src='/svg/play_arrow-white.svg'></img>
+                  <img className="playArrow" src='/svg/play_arrow-white.svg' alt=""></img>
                   </div>
                   <div className="YTtitle">{item.text}</div>
                 </div>
