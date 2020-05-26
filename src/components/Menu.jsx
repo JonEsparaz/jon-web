@@ -24,7 +24,7 @@ export default class Menu extends React.Component {
     return (
       <div className="MenuContainer">
         <Navbar expand="md">
-          <NavbarBrand href="/"><img src="/white-mylogo.png" style={{height: "80px", marginRight: "0.5vw"}}></img></NavbarBrand>
+          <NavbarBrand href="/"><img alt="logo" src="/white-mylogo.png" style={{height: "80px", marginRight: "0.5vw"}}></img></NavbarBrand>
           <NavbarToggler onClick={this.toggle}>
             <HamburgerMenu isOpen={this.state.isOpen} menuClicked={this.toggle} width={24} height={16} strokeWidth={2} borderRadius={45} color="white" />
           </NavbarToggler>

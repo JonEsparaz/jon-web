@@ -20,7 +20,7 @@ class Speedcubing extends React.Component {
 
   handleOpen(data) {
     if (isMobile) {
-      window.location.href = `https://www.youtube.com/watch?v=uAAuNjNXaIM${data}`;
+      window.location.href = `https://www.youtube.com/watch?v=${data}`;
     } else {
       this.setState({
         modal: true,

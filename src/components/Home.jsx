@@ -22,7 +22,6 @@ function Home() {
           <h1 className="HomePageH1 desktop">Jon Esparaz</h1>
           <div className="HomePageTag desktop">Engineering Science Student @ the Univerity of Toronto</div>
           <div className="HomePageTag">3rd Year Undergraduate Machine Intelligence Major</div>
-          <div className="HomePageTag">Software Developer</div>
         </div>
       </div>
     </div>
