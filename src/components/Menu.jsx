@@ -24,14 +24,14 @@ export default class Menu extends React.Component {
     return (
       <div className="MenuContainer">
         <Navbar light expand="md">
-        <NavbarBrand href="/"><img src="/mylogo.png" style={{height: "80px", marginRight: "0.5vw"}}></img></NavbarBrand>
+        <NavbarBrand href="/"><img alt="logo" src="/mylogo.png" style={{height: "80px", marginRight: "0.5vw"}}></img></NavbarBrand>
           <NavbarToggler onClick={this.toggle}>
             <HamburgerMenu isOpen={this.state.isOpen} menuClicked={this.toggle.bind(this)} width={24} height={16} strokeWidth={2} borderRadius={45} color="black"/>
           </NavbarToggler>
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink href="/speedcubing"><AppsIcon className="cubing" style={{marginRight: "5px", marginBottom: "2px"}}/>Speedcubing</NavLink>
+              <NavLink href="/speedcubing"><AppsIcon style={{marginRight: "5px", marginBottom: "2px"}}/>Speedcubing</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/projects"><CodeIcon style={{marginRight: "5px", marginBottom: "2px"}}/>Projects</NavLink>
