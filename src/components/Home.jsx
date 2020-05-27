@@ -8,7 +8,7 @@ function Home() {
       <div className="CardsArea">
         <div className="Card">
           <div className="CardTitle">Top Languages</div>
-          <ul>
+          <ul className="CardList">
             <li>Python</li>
             <li>JavaScript</li>
             <li>TypeScript</li>
@@ -17,20 +17,22 @@ function Home() {
             <li>GraphQL</li>
           </ul>
         </div>
-        <div className="Card TallCard ImageOnly" style={{backgroundImage: "url(https://source.unsplash.com/NsyU41QcsxM/640x960)"}}>
+        <div className="Card TallCard ImageOnly" style={{backgroundImage: "url(https://source.unsplash.com/NsyU41QcsxM/1920x2880)"}}>
         </div>
-        <div className="Card LongCard" style={{backgroundImage: "url(https://source.unsplash.com/G9i_plbfDgk/960x720)"}}>
+        <div className="Card LongCard" style={{backgroundImage: "url(https://source.unsplash.com/G9i_plbfDgk/1920x1440)"}}>
           <div className="CardTitle">Frameworks, Runtimes, Libraries</div>
-          <ul>
+          <ul className="CardList">
             <li>ReactJS</li>
             <li>React Native</li>
             <li>Bootstrap</li>
             <li>NodeJS</li>
+            <li>OpenCV</li>
+            <li>TensorFlow</li>
           </ul>
         </div>
-        <div className="Card" style={{backgroundImage: "url(https://source.unsplash.com/zMhwcAAzvTI/640x640)"}}>
+        <div className="Card" style={{backgroundImage: "url(https://source.unsplash.com/Nho-1hXd3d4/1920x2880)"}}>
           <div className="CardTitle">Learning</div>
-          <ul>
+          <ul className="CardList">
             <li>Web Assembly</li>
             <li>Deno</li>
             <li>Golang</li>
@@ -39,7 +41,7 @@ function Home() {
         </div>
         <div className="Card">
           <div className="CardTitle">AWS Experience</div>
-          <ul>
+          <ul className="CardList">
             <li>Amplify Framework</li>
             <li>S3 Storage</li>
             <li>Route 53 DNS</li>
@@ -48,23 +50,22 @@ function Home() {
             <li>DynamoDB</li>
           </ul>
         </div>
-        <div className="Card ImageOnly" style={{backgroundImage: "url(https://source.unsplash.com/nePxBIvqUlU/640x360)"}}>
+        <div className="Card ImageOnly" style={{backgroundImage: "url(https://source.unsplash.com/nePxBIvqUlU/1920x1080)"}}>
         </div>
         <div className="Card">
           <div className="CardTitle">Prototyping Skills</div>
-          <ul>
+          <ul className="CardList">
             <li>Ardunio</li>
             <li>Raspberry Pi</li>
             <li>3D Printing</li>
-            <li>OpenCV</li>
             <li>AutoDesk Fusion</li>
           </ul>
         </div>
-        <div className="Card LongCard ImageOnly" style={{backgroundImage: "url(https://source.unsplash.com/cwqG1N1AtI0/768x432)"}}>
+        <div className="Card LongCard ImageOnly" style={{backgroundImage: "url(https://source.unsplash.com/cwqG1N1AtI0/1920x1080)"}}>
         </div>
         <div className="Card">
           <div className="CardTitle">Tools & Services</div>
-          <ul>
+          <ul className="CardList">
             <li>GitHub</li>
             <li>Sentry</li>
             <li>Figma</li>

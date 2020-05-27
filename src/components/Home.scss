@@ -76,7 +76,7 @@
     .CardsArea {
         display: grid;
         gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(15vw, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(18vw, 1fr));
         background: #1a1a1a; 
         padding: 5vw 10vw;
     }
@@ -94,6 +94,7 @@
         box-shadow: 5px 5px black;
         padding: 2vw;
         font-family: Ubuntu;
+        background-size: cover;
     }
 
     .TallCard {
@@ -131,13 +132,17 @@
         display: none;
     }
 
+    .CardList {
+        font-size: 1.2vw;
+    }
+
 }
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     .CardsArea {
         display: grid;
         gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(18vw, 1fr));
         background: #1a1a1a; 
         padding: 5vw 2vw;
     }
@@ -191,7 +196,7 @@
     .CardsArea {
         display: grid;
         gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(15vw, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(18vw, 1fr));
         background: #1a1a1a; 
         padding: 5vw 10vw;
     }
@@ -209,6 +214,7 @@
         box-shadow: 5px 5px black;
         padding: 2vw;
         font-family: Ubuntu;
+        background-size: cover;
     }
 
     .TallCard {
@@ -244,6 +250,10 @@
 
     .MobileRectangle {
         display: none;
+    }
+
+    .CardList {
+        font-size: 1.2vw;
     }
 
 }
@@ -354,10 +364,15 @@
         padding: 5vw;
         font-family: Ubuntu;
         margin-top: 5vw;
+        background-size: cover;
     }
 
     .ImageOnly {
         min-height: 50vw;
+    }
+
+    .CardList {
+        font-size: 4vw;
     }
 }
 
