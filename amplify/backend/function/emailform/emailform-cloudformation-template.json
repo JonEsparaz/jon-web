@@ -67,7 +67,7 @@
 				"Runtime": "nodejs12.x",
 				"Timeout": "25",
 				"Code": {
-					"S3Bucket": "amplify-jon-web-jwebprod-193657-deployment",
+					"S3Bucket": "amplify-jon-web-production-150610-deployment",
 					"S3Key": "amplify-builds/emailform-38796849544c6432374a-build.zip"
 				}
 			}
