@@ -55,7 +55,6 @@ function Home() {
           <ul>
             <li>Ardunio</li>
             <li>Raspberry Pi</li>
-            <li>FPGA</li>
             <li>3D Printing</li>
             <li>OpenCV</li>
             <li>AutoDesk Fusion</li>
