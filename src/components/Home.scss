@@ -94,6 +94,7 @@
         box-shadow: 5px 5px black;
         padding: 2vw;
         font-family: Ubuntu;
+        background-size: cover;
     }
 
     .TallCard {
@@ -129,6 +130,10 @@
 
     .MobileRectangle {
         display: none;
+    }
+
+    .CardList {
+        font-size: 1.2vw;
     }
 
 }
@@ -209,6 +214,7 @@
         box-shadow: 5px 5px black;
         padding: 2vw;
         font-family: Ubuntu;
+        background-size: cover;
     }
 
     .TallCard {
@@ -244,6 +250,10 @@
 
     .MobileRectangle {
         display: none;
+    }
+
+    .CardList {
+        font-size: 1.2vw;
     }
 
 }
@@ -354,10 +364,15 @@
         padding: 5vw;
         font-family: Ubuntu;
         margin-top: 5vw;
+        background-size: cover;
     }
 
     .ImageOnly {
         min-height: 50vw;
+    }
+
+    .CardList {
+        font-size: 4vw;
     }
 }
 
