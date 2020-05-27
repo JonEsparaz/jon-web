@@ -28,5 +28,12 @@
 			"service": "S3",
 			"providerPlugin": "awscloudformation"
 		}
+	},
+	"function": {
+		"emailform": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda"
+		}
 	}
 }

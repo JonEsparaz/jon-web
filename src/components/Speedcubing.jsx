@@ -12,9 +12,10 @@ class Speedcubing extends React.Component {
       video: null
     }
     this.videoData = [
+      {id:"E5h2XIfgcow", text:"North American Record: 7.57 3x3 One-Handed Solve"},
       {id:"U5x6YN1k6T8", text:"First Place @ Newmarket Open 2019: 7.39 3x3 Rubik's Cube Average"}, 
-      {id:"E5h2XIfgcow", text:"North American Record: 7.57 3x3 One-Handed Single"},
-      {id:"aJKcaV2tP_o", text:"Second Place @ Canadian Championship 2019: 12.94 3x3 One-Handed Average"}
+      {id:"aJKcaV2tP_o", text:"Second Place @ Canadian Championship 2019: 12.94 3x3 One-Handed Average"},
+      {id:"ZBUJCEsVhmo", text:"Personal Record: 5.52 3x3 Rubik's Cube Solve"}
     ]
   }
 
@@ -56,21 +57,20 @@ class Speedcubing extends React.Component {
     return (
       <div className="CubingContainer">
         {this.videoModal()}
-        <h1 className="SpeedcubingH1">Speedcubing</h1>
-        <div className="SpeedcubingText">Over the past {new Date().getFullYear()-2013} years, I have competed over 50 
-        World Cube Association competitions. In 2018, I broke the North American Record for solving the Rubik's Cube one-handed with a time of 7.57 seconds. 
-        Today, I am a Junior Delegate for the World Cube Association and help to organize and officiate competitions. 
-        Check out my WCA profile <a href="https://www.worldcubeassociation.org/persons/2013ESPA01"> here</a>.</div>
-        
-        <div className="SpeedcubingH2">Check out some of my top solves</div>
         <div className="YTgrid">
+        <div className="SpeedcubingCard LongCard">
+          <div className="SpeedcubingH1">Speedcubing</div>
+          <div className="SpeedcubingText"> I have been competing in World Cube Association competitions for the past {new Date().getFullYear()-2013} years. Back in 2018, I broke the North American Record for solving the Rubik's Cube one-handed with a time of 7.57 seconds. At the time, this ranked me second in the world. 
+          Today, I organize and officiate competitions as a Junior Delegate for the World Cube Association. Check out some of my speedcubing career highlights.</div>
+        </div>
+
           {this.videoData.map(item => {
               return (
-                <div classname="YTitem">
-                  <div className="imageContainer" onClick={()=>{this.handleOpen(item.id)}}>
-                  <img className="YTimage" src={`https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`} alt="youtube thumbnail" ></img>
+                <div className="SpeedcubingCard Video" onClick={()=>{this.handleOpen(item.id)}}>
+                <div className="imageContainer">
+                  <img className="YTimage" alt="youtube thumbnail" src={`https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`}></img>
                   <img className="playArrow" src='/svg/play_arrow-white.svg' alt=""></img>
-                  </div>
+                </div>
                   <div className="YTtitle">{item.text}</div>
                 </div>
               )

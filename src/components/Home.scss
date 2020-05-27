@@ -57,7 +57,7 @@
 
     .HomePage {
         position: relative;
-        font-family: Heebo;
+        font-family: Ubuntu;
         overflow: hidden;
     }
 
@@ -74,9 +74,41 @@
     }
 
     .CardsArea {
-        width: 100vw;
-        min-height: 50vh;
-        background-color: #1a1a1a;    
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(15vw, 1fr));
+        background: #1a1a1a; 
+        padding: 5vw 10vw;
+    }
+
+    .CardTitle {
+        font-weight: bold;
+        font-size: 1.5vw;
+        font-family: Ubuntu;
+    }
+
+    .Card {
+        color: white;
+        background: #303030;
+        border-radius: 25px;
+        box-shadow: 5px 5px black;
+        padding: 2vw;
+        font-family: Ubuntu;
+    }
+
+    .TallCard {
+        grid-row: span 2 / auto;
+    }
+
+    .LongCard {
+        grid-column: span 2 / auto;
+    }
+
+    .ActionButton {
+        border-radius: 0 !important;
+        color: #1a1a1a !important;
+        background: white !important;
+        font-weight: bold !important;
     }
 
     .HomePageH1.mobile {
@@ -101,6 +133,16 @@
 
 }
 
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .CardsArea {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+        background: #1a1a1a; 
+        padding: 5vw 2vw;
+    }
+}
+
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     .Rectangle {
         float: left;
@@ -119,18 +161,19 @@
         position: absolute;
         vertical-align: middle;
         top: 15vw;
-        left: 20vw;
-        width: 100%;
+        left: 22vw;
     }
 
     .TextContainer {
         padding-top: 2vw;
         height: 25vw;
+        width: 40vw;
     }
 
     .HomePage {
         position: relative;
-        font-family: Heebo;
+        font-family: Ubuntu;
+        overflow: hidden;
     }
 
     .HomePageH1 {
@@ -146,9 +189,41 @@
     }
 
     .CardsArea {
-        width: 100vw;
-        min-height: 50vh;
-        background-color: #1a1a1a;    
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(15vw, 1fr));
+        background: #1a1a1a; 
+        padding: 5vw 10vw;
+    }
+
+    .CardTitle {
+        font-weight: bold;
+        font-size: 1.5vw;
+        font-family: Ubuntu;
+    }
+
+    .Card {
+        color: white;
+        background: #303030;
+        border-radius: 25px;
+        box-shadow: 5px 5px black;
+        padding: 2vw;
+        font-family: Ubuntu;
+    }
+
+    .TallCard {
+        grid-row: span 2 / auto;
+    }
+
+    .LongCard {
+        grid-column: span 2 / auto;
+    }
+
+    .ActionButton {
+        border-radius: 0 !important;
+        color: #1a1a1a !important;
+        background: white !important;
+        font-weight: bold !important;
     }
 
     .HomePageH1.mobile {
@@ -170,6 +245,7 @@
     .MobileRectangle {
         display: none;
     }
+
 }
 
 @media (max-width: 767px) {
@@ -217,7 +293,7 @@
 
     .HomePage {
         position: relative;
-        font-family: Heebo;
+        font-family: Ubuntu;
         overflow-x: hidden;
     }
 
@@ -256,9 +332,32 @@
     }
 
     .CardsArea {
-        width: 100vw;
-        min-height: 50vh;
-        background-color: #1a1a1a;
+        display: block;
+        background: #1a1a1a; 
+        padding-top: 70vw;
+        padding-bottom: 10vw;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    .CardTitle {
+        font-weight: bold;
+        font-size: 5vw;
+        font-family: Ubuntu;
+    }
+
+    .Card {
+        color: white;
+        background: #303030;
+        border-radius: 25px;
+        box-shadow: 5px 5px black;
+        padding: 5vw;
+        font-family: Ubuntu;
+        margin-top: 5vw;
+    }
+
+    .ImageOnly {
+        min-height: 50vw;
     }
 }
 
