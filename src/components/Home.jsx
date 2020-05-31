@@ -4,7 +4,7 @@ import './Home.scss';
 function Home() {
   return (
     <div className="HomePage">
-      <img className="SplashImage" src="/images/Keyboard.jpg" alt="background"></img>
+    <div className="HeroImageArea" style={{backgroundImage: "url(images/Keyboard.jpg)"}}></div>
       <div className="CardsArea">
         <div className="Card">
           <div className="CardTitle">Top Languages</div>
