@@ -28,6 +28,7 @@ function Home() {
             <li>NodeJS</li>
             <li>OpenCV</li>
             <li>TensorFlow</li>
+            <li>Expo</li>
           </ul>
         </div>
         <div className="Card" style={{backgroundImage: "url(https://source.unsplash.com/Nho-1hXd3d4/1920x2880)"}}>
@@ -64,11 +65,11 @@ function Home() {
         <div className="Card LongCard ImageOnly" style={{backgroundImage: "url(https://source.unsplash.com/cwqG1N1AtI0/1920x1080)"}}>
         </div>
         <div className="Card">
-          <div className="CardTitle">Tools & Services</div>
+          <div className="CardTitle">Services</div>
           <ul className="CardList">
             <li>GitHub</li>
-            <li>Sentry</li>
-            <li>Figma</li>
+            <li>Sentry Application Monitoring</li>
+            <li>Azure</li>
           </ul>
         </div>
       </div>
