@@ -9,6 +9,7 @@ const Projects = React.lazy(() => import('./components/Projects'));
 const Error = React.lazy(() => import('./components/Error'));
 const Menu = React.lazy(() => import('./components/Menu'));
 const Footer = React.lazy(() => import('./components/Footer'));
+const Admin = React.lazy(() => import('./admin/Admin'))
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/speedcubing" component={Speedcubing}/>
             <Route path="/contact" component={Contact}/>
             <Route path="/projects" component={Projects}/>
+            <Route path="/admin" component={Admin}/>
             <Route component={Error} />
           </Switch>
         <Footer/>
