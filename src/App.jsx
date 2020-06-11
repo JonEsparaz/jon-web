@@ -1,10 +1,6 @@
 import React from 'react';
 import { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { withAuthenticator } from '@aws-amplify/ui-react'
-import Amplify, { Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
-Amplify.configure(awsconfig);
 
 const Home = React.lazy(() => import('./components/Home'));
 const Speedcubing = React.lazy(() => import('./components/Speedcubing'));
@@ -32,4 +28,4 @@ function App() {
   );
 }
 
-export default withAuthenticator(App);
+export default App;
