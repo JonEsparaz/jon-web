@@ -1,21 +1,31 @@
+@import '../theme.scss';
+
+.black-text {
+    color: black !important;
+
+    &:hover {
+        color: #989898;
+    }
+}
+
+.navlink-custom {
+    color: white;
+    font-family: $font;
+    text-transform: uppercase;
+    font-size: 14px;
+
+    &:hover {
+        color: #989898;
+    }
+}
+
 @media (min-width: 768px) {
-    
     .MenuContainer {
         position: absolute;
         margin-left: 10vw;
         width: 80vw;
         z-index: 999;
     }
-
-    .navlink-custom {
-        color: white;
-        font-family: Ubuntu;
-    }
-
-    .navlink-custom:hover {
-        color: #989898;
-    }
-
 }
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
@@ -25,16 +35,9 @@
         width: 80vw;
         z-index: 999;
     }
-
-    .navlink-custom {
-        color: white;
-        font-family: Ubuntu;
-    }
-    
 }
 
 @media (max-width: 767px) {
-
     .MenuContainer {
         width: 100vw;
         z-index: 999;
@@ -49,10 +52,4 @@
         top:5.35vw;
         height:8vw;
     }
-
-    .navlink-custom {
-        color: white;
-        font-family: Ubuntu;
-    }
-
 }

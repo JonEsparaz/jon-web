@@ -1,12 +1,15 @@
-.error {
+@import '../theme.scss';
+
+.ContactContainer {
     padding-top: 10vw;
     text-align: center;
     position: relative;
     min-height: 100vh;
-    font-family: Ubuntu;
+    font-family: $font;
     background: #1a1a1a;
+    color: white;
 }
 
-.errortext {
+.ContactText {
     color: white;
 }

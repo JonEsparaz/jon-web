@@ -1,9 +1,11 @@
+@import '../theme.scss';
+
 .AdminContainer {
     padding-top: 5vw;
     padding-left: 5vw;
     padding-right: 5vw;
     min-height: 100vh;
-    font-family: Ubuntu;
+    font-family: $font;
     background: #1a1a1a;
 }
 

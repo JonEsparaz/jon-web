@@ -1,3 +1,5 @@
+@import '../theme.scss';
+
 @keyframes tagFadeIn {
     0% {
         opacity: 0;
@@ -58,7 +60,7 @@
 
     .HomePage {
         position: relative;
-        font-family: Ubuntu;
+        font-family: $font;
         overflow: hidden;
     }
 
@@ -85,7 +87,7 @@
     .CardTitle {
         font-weight: bold;
         font-size: 1.5vw;
-        font-family: Ubuntu;
+        font-family: $font;
     }
 
     .Card {
@@ -94,7 +96,7 @@
         border-radius: 25px;
         box-shadow: 5px 5px black;
         padding: 2vw;
-        font-family: Ubuntu;
+        font-family: $font;
         background-size: cover;
     }
 
@@ -179,7 +181,7 @@
 
     .HomePage {
         position: relative;
-        font-family: Ubuntu;
+        font-family: $font;
         overflow: hidden;
     }
 
@@ -206,7 +208,7 @@
     .CardTitle {
         font-weight: bold;
         font-size: 1.5vw;
-        font-family: Ubuntu;
+        font-family: $font;
     }
 
     .Card {
@@ -215,7 +217,7 @@
         border-radius: 25px;
         box-shadow: 5px 5px black;
         padding: 2vw;
-        font-family: Ubuntu;
+        font-family: $font;
         background-size: cover;
     }
 
@@ -306,7 +308,7 @@
 
     .HomePage {
         position: relative;
-        font-family: Ubuntu;
+        font-family: $font;
         overflow-x: hidden;
     }
 
@@ -356,7 +358,7 @@
     .CardTitle {
         font-weight: bold;
         font-size: 5vw;
-        font-family: Ubuntu;
+        font-family: $font;
     }
 
     .Card {
@@ -365,7 +367,7 @@
         border-radius: 25px;
         box-shadow: 5px 5px black;
         padding: 5vw;
-        font-family: Ubuntu;
+        font-family: $font;
         margin-top: 5vw;
         background-size: cover;
     }

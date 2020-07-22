@@ -1,3 +1,5 @@
+@import '../theme.scss';
+
 @media (min-width: 768px) {
     .FooterContainer {
         width: 100%;
@@ -5,7 +7,7 @@
         background: #1a1a1a;
         padding: 5vw;
         bottom: 0;
-        font-family: Ubuntu;
+        font-family: $font;
     }
 
     .footer-link:hover {
@@ -20,7 +22,7 @@
         background: #1a1a1a;
         padding: 5vw;
         bottom: 0;
-        font-family: Ubuntu;
+        font-family: $font;
     }
 }
 
@@ -31,6 +33,6 @@
         background: #1a1a1a;
         padding: 5vw;
         bottom: 0;
-        font-family: Ubuntu;
+        font-family: $font;
     }
 }
