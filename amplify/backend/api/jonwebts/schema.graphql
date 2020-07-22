@@ -1,9 +1,7 @@
-type Post 
-@model
-{
+type Post @model {
   id: ID!
   title: String!
   date: String!
   content: String!
-  previewImage: String
+  previewImage: String!
 }
