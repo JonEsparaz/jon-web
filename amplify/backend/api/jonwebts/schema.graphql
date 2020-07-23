@@ -1,3 +1,8 @@
+type Query {
+  contact(first: String, last: String, email: String, subject: String, message: String): String @function(name: "contact-form-${env}")
+}
+
+
 type Post @model 
  @auth(rules:[{allow: groups, operations:[read,update,delete,create], groups: ["Admin"], provider:userPools}
  ])

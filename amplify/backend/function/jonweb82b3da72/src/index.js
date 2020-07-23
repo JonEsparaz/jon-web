@@ -3,31 +3,12 @@
 	REGION
 Amplify Params - DO NOT EDIT */
 
-import { SES } from 'aws-sdk';
-const sesClient = new SES();
+const AWS = require('aws-sdk');
+const sesClient = new AWS.SES();
 const sesConfirmedAddress = "jon.esparaz@gmail.com";
 const sanitizeHtml = require('sanitize-html');
 
-export function handler(event, context, callback) {
-    const emailObj = JSON.parse(event.body);
-    const params = getEmailMessage(emailObj);
-    const sendEmailPromise = sesClient.sendEmail(params).promise();
-    
-    const response = {
-        statusCode: 200
-    };
-    
-    sendEmailPromise.then(function(result) {
-        console.log(result);
-        callback(null, response);
-    }).catch(function(err) {
-        console.log(err);
-        response.statusCode = 500;
-        callback(null, response);
-    });
-}
-
-function getEmailMessage (emailObj) {
+function getEmailMessage(emailObj) {
 
     const firstClean = sanitizeHtml(emailObj.first);
     const lastClean = sanitizeHtml(emailObj.last);
@@ -54,4 +35,23 @@ function getEmailMessage (emailObj) {
     };
     
     return emailRequestParams;
+}
+
+exports.handler = async (event) => {
+
+    const emailObj = { 
+        first: event.arguments.first, 
+        last: event.arguments.last, 
+        email: event.arguments.email, 
+        subject: event.arguments.subject,
+        message: event.arguments.message    
+    };
+    const params = getEmailMessage(emailObj);
+    const sendEmailPromise = await sesClient.sendEmail(params).promise();
+        
+    sendEmailPromise.then(function(result) {
+        console.log(result);
+    }).catch(function(err) {
+        console.log(err);
+    });
 }
