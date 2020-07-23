@@ -153,6 +153,18 @@ export type DeletePostMutation = {
   } | null,
 };
 
+export type ContactQueryVariables = {
+  first?: string | null,
+  last?: string | null,
+  email?: string | null,
+  subject?: string | null,
+  message?: string | null,
+};
+
+export type ContactQuery = {
+  contact: string | null,
+};
+
 export type GetPostQueryVariables = {
   id: string,
 };
