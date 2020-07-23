@@ -3,7 +3,7 @@ import { Editor } from 'react-draft-wysiwyg';
 import '../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import { EditorState } from 'draft-js';
 import { EmptyProps } from '../util';
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+import { AmplifyAuthenticator, AmplifySignIn, AmplifySignOut } from '@aws-amplify/ui-react';
 import './Admin.scss';
 
 interface State {
@@ -25,21 +25,26 @@ class Admin extends React.Component<EmptyProps, State> {
 
   render() {
     return (
-      <div className="AdminContainer">
-        <div style={{ color: 'white' }}>Title</div>
-        <input></input>
-        <div style={{ color: 'white' }}>Date</div>
-        <input></input>
-        <Editor
-          editorClassName="jon-editor"
-          editorState={this.state.editorState}
-          onEditorStateChange={this.onChange}
-        />
-        <AmplifySignOut />
-      </div>
+      <AmplifyAuthenticator>
+        <AmplifySignIn slot="sign-in">
+          <div slot="secondary-footer-content"></div>
+        </AmplifySignIn>
+        <div className="AdminContainer">
+          <AmplifySignOut />
+          <div style={{ color: 'white' }}>Title</div>
+          <input></input>
+          <div style={{ color: 'white' }}>Date</div>
+          <input></input>
+          <Editor
+            editorClassName="jon-editor"
+            editorState={this.state.editorState}
+            onEditorStateChange={this.onChange}
+          />
+        </div>
+      </AmplifyAuthenticator >
     )
   }
 
 }
 
-export default withAuthenticator(Admin);
+export default Admin;

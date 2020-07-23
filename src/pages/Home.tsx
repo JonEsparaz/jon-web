@@ -5,98 +5,46 @@ import Footer from '../components/Footer';
 
 function Home() {
   return (
-    <div>
-      <Menu mode='dark' />
+    <div className="Home">
+      <Menu />
       <div className="HomePage">
-        <div className="HeroImageArea" style={{ backgroundImage: "url(images/Keyboard.jpg)" }}></div>
-        <div className="CardsArea">
-          <div className="Card">
-            <div className="CardTitle">Top Languages</div>
-            <ul className="CardList">
-              <li>Python</li>
-              <li>JavaScript</li>
-              <li>TypeScript</li>
-              <li>HTML/CSS</li>
-              <li>C/C++</li>
-              <li>GraphQL</li>
-            </ul>
-          </div>
-          <div className="Card TallCard ImageOnly" style={{ backgroundImage: "url(https://source.unsplash.com/NsyU41QcsxM/1920x2880)" }}>
-          </div>
-          <div className="Card LongCard" style={{ backgroundImage: "url(https://source.unsplash.com/G9i_plbfDgk/1920x1440)" }}>
-            <div className="CardTitle">Frameworks, Runtimes, Libraries</div>
-            <ul className="CardList">
-              <li>ReactJS</li>
-              <li>React Native</li>
-              <li>Bootstrap</li>
-              <li>NodeJS</li>
-              <li>OpenCV</li>
-              <li>TensorFlow</li>
-              <li>Expo</li>
-            </ul>
-          </div>
-          <div className="Card" style={{ backgroundImage: "url(https://source.unsplash.com/Nho-1hXd3d4/1920x2880)" }}>
-            <div className="CardTitle">Learning</div>
-            <ul className="CardList">
-              <li>Web Assembly</li>
-              <li>Deno</li>
-              <li>Golang</li>
-              <li>Google Firebase</li>
-            </ul>
-          </div>
-          <div className="Card">
-            <div className="CardTitle">AWS Experience</div>
-            <ul className="CardList">
-              <li>Amplify Framework</li>
-              <li>S3 Storage</li>
-              <li>Route 53 DNS</li>
-              <li>Simple Email Service (SES)</li>
-              <li>Lambda Functions</li>
-              <li>DynamoDB</li>
-            </ul>
-          </div>
-          <div className="Card ImageOnly" style={{ backgroundImage: "url(https://source.unsplash.com/nePxBIvqUlU/1920x1080)" }}>
-          </div>
-          <div className="Card">
-            <div className="CardTitle">Prototyping Skills</div>
-            <ul className="CardList">
-              <li>Ardunio</li>
-              <li>Raspberry Pi</li>
-              <li>3D Printing</li>
-              <li>AutoDesk Fusion</li>
-            </ul>
-          </div>
-          <div className="Card LongCard ImageOnly" style={{ backgroundImage: "url(https://source.unsplash.com/cwqG1N1AtI0/1920x1080)" }}>
-          </div>
-          <div className="Card">
-            <div className="CardTitle">Services</div>
-            <ul className="CardList">
-              <li>GitHub</li>
-              <li>Sentry Application Monitoring</li>
-              <li>Azure</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="MobileContentContainer">
-          <div className="MobileRectangle"></div>
-          <div className="TextContainer mobile">
-            <h1 className="HomePageH1 mobile">Jon Esparaz</h1>
-            <div className="HomePageTag mobile">Engineering Science Student @ the Univerity of Toronto</div>
-          </div>
-        </div>
-
         <div className="ContentContainer">
-          <div className="Rectangle"></div>
-          <div className="TextContainer">
-            <h1 className="HomePageH1 desktop">Jon Esparaz</h1>
-            <div className="HomePageTag desktop">Engineering Science Student @ the Univerity of Toronto</div>
-            <div className="HomePageTag">3rd Year Undergraduate Machine Intelligence Major</div>
+          <h1 className="Header1 White">Jon Esparaz</h1>
+          <div className="Text1 White" style={{ textAlign: 'center' }}>Engineering Science Student @ the Univerity of Toronto</div>
+          <div className="Text1 White" style={{ textAlign: 'center' }}>3rd Year Undergraduate Machine Intelligence Major</div>
+          <button className="ActionButton"><span className="Underline">Learn More</span></button>
+        </div>
+        <img className="HeroImage" src="/images/Keyboard.jpg" alt="mechanical keyboard"></img>
+        <h2 className="Header2">check out my previous work</h2>
+        <div className="CardArea">
+          <a className="Card" href="/projects">
+            The Meeting House Website
+          </a>
+          <div className="Card">
+            alyssaesparaz.ca
           </div>
         </div>
+
+        <h2 className="Header2">about me</h2>
+        <div className="CardArea">
+          <div className="Card">
+            Frameworks
+          </div>
+          <div className="Card">
+            alyssaesparaz.ca
+          </div>
+          <div className="Card">
+            Cloud Experience
+          </div>
+          <div className="Card">
+            alyssaesparaz.ca
+          </div>
+        </div>
+        <h2 className="Header2">have an idea you want to discuss?</h2>
+        <button className="ActionButton2"><span className="Underline2">Contact Me</span></button>
       </div>
       <Footer />
-    </div>
+    </div >
   );
 }
 

@@ -2,46 +2,55 @@
 
 @media (min-width: 768px) {
     .CubingContainer {
-        padding-top: 12vw;
-        padding-left: 5vw;
-        padding-right: 5vw;
-        min-height: 100vh;
         font-family: $font;
-        background: #1a1a1a;
+        text-align: center;
+        width: 80vw;
+        margin-left: 10vw;
+        min-height: calc(100vh - 106px - 159px);
     }
+
+    .SpeedcubingText {
+        text-align: left;
+        margin-bottom: 4vw;
+    }
+
     .YTimage {
         width: 26vw;
-        border-radius: 15px;
         cursor: pointer;
         opacity: 1;
-        transition: opacity 0.3s ease;
+        transition: opacity 0.3s ease-in-out;
     }
-
     .YTtitle {
+        font-family: $font;
         font-weight: bold;
-        color: white;
+        font-size: 1vw;
+        color: black;
+        text-align: left;
     }
-
     .imageContainer {
         position: relative;
         text-align: center;
         display: block;
+        border: none;
+        outline: none;
+        background: transparent;
     }
 
     .imageContainer:hover {
         cursor: pointer;
         .YTimage {
-            opacity: 0.5;
+            opacity: 0.8;
         }
         .playArrow {
-            opacity: 1;
+            opacity: 0.9;
         }
     }
 
     .YTgrid {
         display: grid;
-        grid-template-columns: repeat(3,28vw);
-        gap: 1rem;
+        margin-bottom: 4vw;
+        grid-template-columns: repeat(3,26vw);
+        gap: 1vw;
     }
 
     .playArrow {
@@ -50,7 +59,7 @@
         width: 100%;
         height: 100%;
         opacity: 0;
-        transition: opacity 0.3s ease;
+        transition: opacity 0.3s ease-in-out;
     }
 
     .custom-modal {
@@ -63,37 +72,6 @@
     .videoPlayer {
         width: 50vw;
         height: calc(50vw * 9/16);
-    }
-
-    .SpeedcubingH1 {
-        font-size: 3vw;
-        font-weight: bold;
-        color: white;
-    }
-
-    .SpeedcubingText {
-        color: white;
-    }
-
-    .SpeedcubingCard {
-        color: white;
-        background: #303030;
-        border-radius: 25px;
-        box-shadow: 5px 5px black;
-        padding: 2vw;
-        font-family: $font;
-    }
-
-    .Video {
-        padding: 1vw;
-    }
-
-    .TallCard {
-        grid-row: span 2 / auto;
-    }
-
-    .LongCard {
-        grid-column: span 2 / auto;
     }
 
 }

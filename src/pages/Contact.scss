@@ -1,15 +1,51 @@
 @import '../theme.scss';
 
 .ContactContainer {
-    padding-top: 10vw;
     text-align: center;
     position: relative;
-    min-height: 100vh;
     font-family: $font;
-    background: #1a1a1a;
-    color: white;
+    margin-left: 27.5vw;
+    margin-top: 4vw;
+    min-height: calc(100vh - 106px - 159px - 4vw);
 }
 
-.ContactText {
-    color: white;
-}
+.ContactForm {
+    text-align: left;
+  }
+
+  .NameInputContainer {
+    display: flex;
+    width: 45vw;
+    flex-direction: row;
+  }
+
+  .NameInput {
+    flex: 1;
+    height: 2vw;
+    font-family: $font;
+    font-size: 1vw;
+    margin-bottom: 1vw;
+    border: 1px black solid;
+    background: #f5f5f5;
+  }
+
+  .FormInput {
+    width: 45vw;
+    height: 2vw;
+    font-family: $font;
+    font-size: 1vw;
+    margin-bottom: 1vw;
+    border: 1px black solid;
+    background: #f5f5f5;
+  }
+
+  .MessageInput {
+    width: 45vw;
+    height: 4vw;
+    font-family: $font;
+    font-size: 1vw;
+    border: 1px black solid;
+    resize: vertical;
+    margin-top: 1vw;
+    background: #f5f5f5;
+  }

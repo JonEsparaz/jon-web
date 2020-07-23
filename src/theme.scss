@@ -1,1 +1,137 @@
-$font: Lato;
+$font: Work Sans;
+$font2: Raleway;
+
+.White {
+    color: white !important;
+}
+
+@media (min-width: 768px) {
+    .ActionButton, .ActionButton2 {
+        padding: 1em 1.5em;
+        font-size: 1.2vw;
+        font-family: $font;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-width: 0;
+        margin-top: 2vw;
+        color: black;
+        background: white;
+        cursor: pointer;
+    }
+
+    .ActionButton2 {
+        background: black;
+        color: white;
+    }
+    
+    .ActionButton:hover, .ActionButton2:hover {
+        .Underline:before, .Underline2:before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+    }
+    
+    .Underline, .Underline2 {
+        position: relative;
+    }
+    
+    .Underline:before, .Underline2:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background: black;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .Underline2:before {
+        background: white;
+    }
+
+    .Header1 {
+        font-family: $font2;
+        text-transform: uppercase;
+        font-weight: 200;
+        font-size: 4vw;
+        color: black;
+        text-align: center;
+    }
+
+    .Header2 {
+        font-weight: bold;
+        font-size: 1.5vw;
+        font-family: $font;
+        text-transform: uppercase;
+    }
+
+    .Text1 {
+        font-family: $font;
+        font-size: 1.5vw;
+        color: black;
+    }
+
+    .Text2 {
+        font-family: $font;
+        font-size: 1vw;
+        color: black;
+    }
+
+    .CardArea {
+        margin-left: 6vw;
+        display: grid;
+        gap: 2vw;
+        grid-template-columns: repeat(2, 36vw);
+    }
+
+    .Card {
+        color: white;
+        background: black;
+        font-family: $font;
+        background-size: cover;
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .ActionButton {
+        transition: 0.5s;
+        padding: 1em 1.5em;
+        font-size: 3vw;
+        font-family: $font;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-width: 0;
+        margin-top: 4vw;
+        color: black;
+        background: white;
+        cursor: pointer;
+    }
+        
+    .Underline:before {
+        display: none;
+    }
+
+    .Header1 {
+        font-family: $font;
+        font-weight: 200;
+        font-size: 12vw;
+        color: black;
+    }
+
+    .Text1 {
+        font-family: $font;
+        font-size: 4vw;
+        color: black;
+        width: 90vw;
+    }
+
+    .Text2 {
+        font-family: $font;
+        font-size: 1vw;
+        color: black;
+    }
+}

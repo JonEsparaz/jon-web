@@ -5,20 +5,16 @@ import EmailIcon from '@material-ui/icons/Email';
 import { Collapse, NavbarToggler, Nav, NavLink, Navbar, NavbarBrand } from 'reactstrap';
 import HamburgerMenu from 'react-hamburger-menu';
 import './Menu.scss';
-
-interface Props {
-  mode: 'dark' | 'light'
-}
+import { EmptyProps } from '../util';
 
 interface State {
   isOpen: boolean;
 }
 
-export default class Menu extends React.Component<Props, State> {
+export default class Menu extends React.Component<EmptyProps, State> {
 
-  constructor(props: Props) {
+  constructor(props: EmptyProps) {
     super(props);
-    this.toggle = this.toggle.bind(this);
     this.state = { isOpen: false };
   }
 
@@ -29,19 +25,18 @@ export default class Menu extends React.Component<Props, State> {
   }
 
   render() {
-    const isDarkMode = this.props.mode === "dark"
     return (
       <div className="MenuContainer">
         <Navbar expand="md">
-          <NavbarBrand href="/"><img alt="logo" src={isDarkMode ? "/white-mylogo.png" : "/mylogo.png"} style={{ height: "80px", marginRight: "0.5vw" }}></img></NavbarBrand>
-          <NavbarToggler onClick={this.toggle}>
-            <HamburgerMenu isOpen={this.state.isOpen} menuClicked={this.toggle} width={24} height={16} strokeWidth={2} borderRadius={45} color={isDarkMode ? "white" : "black"} />
+          <NavbarBrand href="/"><img alt="logo" src="/logos/je-logo.png" style={{ height: "80px", marginRight: "0.5vw" }}></img></NavbarBrand>
+          <NavbarToggler onClick={() => this.toggle}>
+            <HamburgerMenu isOpen={this.state.isOpen} menuClicked={() => this.toggle} width={24} height={16} strokeWidth={2} borderRadius={45} color="black" />
           </NavbarToggler>
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav navbar className="mr-auto" >
-              <NavLink className={isDarkMode ? "navlink-custom" : "navlink-custom black-text"} href="/speedcubing"><AppsIcon style={{ marginRight: "5px", marginBottom: "2px" }} />Speedcubing</NavLink>
-              <NavLink className={isDarkMode ? "navlink-custom" : "navlink-custom black-text"} href="/projects"><CodeIcon style={{ marginRight: "5px", marginBottom: "2px" }} />Projects</NavLink>
-              <NavLink className={isDarkMode ? "navlink-custom" : "navlink-custom black-text"} href="/contact"><EmailIcon style={{ marginRight: "5px", marginBottom: "2px" }} />Contact</NavLink>
+              <NavLink className="navlink-custom" href="/projects"><CodeIcon style={{ marginRight: "5px", marginBottom: "2px" }} /><span className="Underline">Projects</span></NavLink>
+              <NavLink className="navlink-custom" href="/speedcubing"><AppsIcon style={{ marginRight: "5px", marginBottom: "2px" }} /><span className="Underline">Speedcubing</span></NavLink>
+              <NavLink className="navlink-custom" href="/contact"><EmailIcon style={{ marginRight: "5px", marginBottom: "2px" }} /><span className="Underline">Contact</span></NavLink>
             </Nav>
           </Collapse>
         </Navbar>

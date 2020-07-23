@@ -4,25 +4,19 @@
     .FooterContainer {
         width: 100%;
         text-align: center;    
-        background: #1a1a1a;
-        padding: 5vw;
+        padding: 40px;
         bottom: 0;
         font-family: $font;
     }
 
-    .footer-link:hover {
-        color: #989898 !important;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    .FooterContainer {
-        width: 100%;
-        text-align: center;    
-        background: #1a1a1a;
-        padding: 5vw;
-        bottom: 0;
-        font-family: $font;
+    .footer-link {
+        margin-left: 1vw;
+        margin-right: 1vw;
+        transition: opacity 0.3s ease-in-out;
+        opacity: 1;
+        &:hover {
+            opacity: 0.6;
+        }
     }
 }
 
@@ -30,9 +24,14 @@
     .FooterContainer {
         width: 100%;
         text-align: center;    
-        background: #1a1a1a;
-        padding: 5vw;
+        background: #E0E0E0;
+        padding: 40px;
         bottom: 0;
         font-family: $font;
+    }
+
+    .footer-link {
+        margin-left: 1vw;
+        margin-right: 1vw;
     }
 }

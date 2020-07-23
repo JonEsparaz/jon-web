@@ -1,383 +1,106 @@
 @import '../theme.scss';
 
-@keyframes tagFadeIn {
+@keyframes FadeIn {
     0% {
         opacity: 0;
-        transform: translateY(30vw);
-    }
-    25% {
-        opacity: 0;
-        transform: translateY(25vw);
     }
     100% {
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
-@keyframes mobileTagFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(-30vw);
-    }
-    25% {
-        opacity: 0;
-        transform: translateY(-25vw);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.Home {
+    animation: FadeIn 1.2s;
 }
 
 @media (min-width: 768px) {
-    .Rectangle {
-        float: left;
-        width: 5vw;
-        height: 25vw;
-        border: 0.5vw solid white;
-        margin-right: 2vw;
+
+    $width: 90vw;
+    $imageratio: 1/2.39;
+
+    .HomePage {
+        width: 90vw;
+        margin-left: 5vw;
+        text-align: center;
     }
 
-    .HeroImageArea {
-        width: 100vw;
-        height: 62.5vw;
-        background-size: cover;
+    .HeroImage {
+        width: $width;
+        height: $imageratio*$width;
+        object-fit: cover;
+        margin-bottom: 4vw;
     }
 
     .ContentContainer {
         position: absolute;
-        vertical-align: middle;
-        top: 15vw;
-        left: 22vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: $width;
+        height: $imageratio*$width;
+        background-color: #00000080;
     }
-
-    .TextContainer {
-        padding-top: 2vw;
-        height: 25vw;
-        width: 40vw;
-    }
-
-    .HomePage {
-        position: relative;
-        font-family: $font;
-        overflow: hidden;
-    }
-
-    .HomePageH1 {
-        font-weight: bold;
-        font-size: 3vw;
-        color: white
-    }
-
-    .HomePageTag {
-        font-size: 1.2vw;
-        color: white;
-        animation: tagFadeIn 2s ease-in-out;
-    }
-
-    .CardsArea {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(18vw, 1fr));
-        background: #1a1a1a; 
-        padding: 5vw 10vw;
-    }
-
-    .CardTitle {
-        font-weight: bold;
-        font-size: 1.5vw;
-        font-family: $font;
-    }
-
-    .Card {
-        color: white;
-        background: #303030;
-        border-radius: 25px;
-        box-shadow: 5px 5px black;
-        padding: 2vw;
-        font-family: $font;
-        background-size: cover;
-    }
-
-    .TallCard {
-        grid-row: span 2 / auto;
-    }
-
-    .LongCard {
-        grid-column: span 2 / auto;
-    }
-
-    .ActionButton {
-        border-radius: 0 !important;
-        color: #1a1a1a !important;
-        background: white !important;
-        font-weight: bold !important;
-    }
-
-    .HomePageH1.mobile {
-        display: none;
-    }
-
-    .TextContainer.mobile {
-        display: none;
-    }
-
-    .HomePageTag.mobile {
-        display: none;
-    }
-
-    .MobileContentContainer {
-        display: none;
-    }
-
-    .MobileRectangle {
-        display: none;
-    }
-
-    .CardList {
-        font-size: 1.2vw;
-    }
-
-}
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-    .CardsArea {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(18vw, 1fr));
-        background: #1a1a1a; 
-        padding: 5vw 2vw;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    .Rectangle {
-        float: left;
-        width: 5vw;
-        height: 25vw;
-        border: 0.5vw solid white;
-        margin-right: 2vw;
-    }
-
-    .HeroImageArea {
-        width: 100vw;
-        height: 62.5vw;
-        background-size: cover;
-    }
-
-    .ContentContainer {
-        position: absolute;
-        vertical-align: middle;
-        top: 15vw;
-        left: 22vw;
-    }
-
-    .TextContainer {
-        padding-top: 2vw;
-        height: 25vw;
-        width: 40vw;
-    }
-
-    .HomePage {
-        position: relative;
-        font-family: $font;
-        overflow: hidden;
-    }
-
-    .HomePageH1 {
-        font-weight: bold;
-        font-size: 3vw;
-        color: white
-    }
-
-    .HomePageTag {
-        font-size: 1.2vw;
-        color: white;
-        animation: tagFadeIn 2s ease-in-out;
-    }
-
-    .CardsArea {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(18vw, 1fr));
-        background: #1a1a1a; 
-        padding: 5vw 10vw;
-    }
-
-    .CardTitle {
-        font-weight: bold;
-        font-size: 1.5vw;
-        font-family: $font;
-    }
-
-    .Card {
-        color: white;
-        background: #303030;
-        border-radius: 25px;
-        box-shadow: 5px 5px black;
-        padding: 2vw;
-        font-family: $font;
-        background-size: cover;
-    }
-
-    .TallCard {
-        grid-row: span 2 / auto;
-    }
-
-    .LongCard {
-        grid-column: span 2 / auto;
-    }
-
-    .ActionButton {
-        border-radius: 0 !important;
-        color: #1a1a1a !important;
-        background: white !important;
-        font-weight: bold !important;
-    }
-
-    .HomePageH1.mobile {
-        display: none;
-    }
-
-    .TextContainer.mobile {
-        display: none;
-    }
-
-    .HomePageTag.mobile {
-        display: none;
-    }
-
-    .MobileContentContainer {
-        display: none;
-    }
-
-    .MobileRectangle {
-        display: none;
-    }
-
-    .CardList {
-        font-size: 1.2vw;
-    }
-
 }
 
 @media (max-width: 767px) {
-    .Rectangle {
-        width: 10vw;
-        height: 60vw;
-        border: 1.5vw solid white;
-        border-top: 0;
-        margin-right: 2vw;
-        float: left;
+    $width: 100vw;
+    $imageratio: 1;
+
+
+    .HomePage {
+        width: 100vw;
+        text-align: center;
     }
 
-    .HeroImageArea {
-        width: 100vw;
-        height: 90vw;
-        background-size: cover;
+    .HeroImage {
+        width: $width;
+        height: $imageratio*$width;
+        object-fit: cover;
     }
 
     .ContentContainer {
         position: absolute;
-        top: 90vw;
-        left: 7.5vw;
-        width: 100%;
-    }
-
-    .MobileContentContainer {
-        position: absolute;
-        top: 30vw;
-        right: 7.5vw;
-        width: 80vw;
-    }
-
-    .MobileRectangle {
-        width: 10vw;
-        height: 60vw;
-        border: 1.5vw solid white;
-        border-bottom: 0;
-        margin-left: 2vw;
-        float: right;
-    }
-
-    .TextContainer {
-        padding-top: 10vw;
-        width: 80vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: $width;
+        height: $imageratio*$width;
+        background-color: #00000080;
     }
 
     .HomePage {
         position: relative;
         font-family: $font;
-        overflow-x: hidden;
+        overflow: hidden;
     }
 
     .HomePageH1 {
-        font-weight: bold;
-        font-size: 7.5vw;
-        color: white
-    }
-
-    .HomePageTag {
+        font-weight: 500;
         font-size: 5vw;
         color: white;
-        animation: tagFadeIn 2s ease-in-out;
-    }
-
-    .HomePageH1.mobile {
-        text-align: right;
-    }
-
-    .TextContainer.mobile {
-        padding-top: 25vw;
-        width: 80vw;
-    }
-
-    .HomePageTag.mobile {
-        text-align: right;
-        animation: mobileTagFadeIn 2s ease-in-out;
-    }
-
-    .HomePageTag.desktop {
-        display: none;
-    }
-
-    .HomePageH1.desktop {
-        display: none;
     }
 
     .CardsArea {
-        display: block;
-        background: #1a1a1a; 
-        padding-top: 70vw;
-        padding-bottom: 10vw;
-        padding-left: 5vw;
-        padding-right: 5vw;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(1, 90vw);
+        padding: 5vw;
     }
 
     .CardTitle {
         font-weight: bold;
-        font-size: 5vw;
+        font-size: 1.5vw;
         font-family: $font;
     }
 
     .Card {
         color: white;
-        background: #303030;
-        border-radius: 25px;
-        box-shadow: 5px 5px black;
-        padding: 5vw;
+        background: black;
+        padding: 2vw;
         font-family: $font;
-        margin-top: 5vw;
         background-size: cover;
-    }
-
-    .ImageOnly {
-        min-height: 50vw;
-    }
-
-    .CardList {
-        font-size: 4vw;
     }
 }
 
