@@ -5,7 +5,7 @@ Amplify Params - DO NOT EDIT */
 
 const AWS = require('aws-sdk');
 const sesClient = new AWS.SES();
-const sesConfirmedAddress = "jon.esparaz@gmail.com";
+const sesConfirmedAddress = "no-reply@jonesparaz.ca";
 const sanitizeHtml = require('sanitize-html');
 
 function getEmailMessage(emailObj) {
@@ -18,7 +18,7 @@ function getEmailMessage(emailObj) {
 
     const emailRequestParams = {
         Destination: {
-          ToAddresses: [ sesConfirmedAddress ]  
+          ToAddresses: [ 'jon.esparaz@gmail.com' ]  
         },
         Message: {
             Body: {
@@ -37,7 +37,7 @@ function getEmailMessage(emailObj) {
     return emailRequestParams;
 }
 
-exports.handler = async (event) => {
+exports.handler = async (event, context, callback) => {
 
     const emailObj = { 
         first: event.arguments.first, 
@@ -48,10 +48,14 @@ exports.handler = async (event) => {
     };
     const params = getEmailMessage(emailObj);
 
-    try {
-        const sendEmailPromise = await sesClient.sendEmail(params).promise();
-        console.log(sendEmailPromise)
-    } catch(e) {
-        console.error(e)
-    }
+    sesClient.sendEmail(params, function (err, data) {
+        callback(null, {err: err, data: data});
+        if (err) {
+            console.log(err);
+            context.fail(err);
+        } else {
+            console.log(data);
+            context.succeed(event);
+        }
+    });
 }

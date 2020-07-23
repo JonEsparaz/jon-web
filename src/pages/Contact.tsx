@@ -4,7 +4,8 @@ import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import { EmptyProps } from '../util';
 import { ContactQueryVariables } from '../API';
-import { API, graphqlOperation } from 'aws-amplify';
+import { API } from 'aws-amplify';
+import { GRAPHQL_AUTH_MODE } from '@aws-amplify/api/lib/types';
 import ReCAPTCHA from 'react-google-recaptcha';
 import * as query from '../graphql/queries';
 
@@ -30,8 +31,12 @@ export default class Contact extends React.Component<EmptyProps, ContactQueryVar
 
     if (recaptchaValue) {
       try {
-        const input = { first: this.state.first, last: this.state.last, email: this.state.email, subject: this.state.subject, message: this.state.message }
-        await API.graphql(graphqlOperation(query.contact, input));
+        const input = this.state
+        await API.graphql({
+          query: query.contact,
+          variables: input,
+          authMode: GRAPHQL_AUTH_MODE.API_KEY,
+        });
 
         this.setState({
           email: '',
