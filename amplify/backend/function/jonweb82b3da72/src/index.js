@@ -33,6 +33,7 @@ exports.handler = async (event) => {
 
     const mailOptions = {
         from: senderAddress,
+        to: 'jon.esparaz@gmail.com',
         replyTo : emailClean,
         subject: subjectClean,
         text: `${messageClean} from ${firstClean} ${lastClean} via jonesparaz.ca`,
