@@ -8,6 +8,10 @@ import './Admin.scss';
 
 interface State {
   editorState: EditorState
+  title: string;
+  date: string;
+  image: string;
+  toSave: { id: string, title: string, content: string, previewImage: string }
 }
 
 class Admin extends React.Component<EmptyProps, State> {
@@ -15,7 +19,11 @@ class Admin extends React.Component<EmptyProps, State> {
   constructor(props: EmptyProps) {
     super(props);
     this.state = {
-      editorState: EditorState.createEmpty()
+      editorState: EditorState.createEmpty(),
+      title: '',
+      date: '',
+      image: '',
+      toSave: { id: '', title: '', content: '', previewImage: '' },
     }
   }
 
@@ -31,10 +39,10 @@ class Admin extends React.Component<EmptyProps, State> {
         </AmplifySignIn>
         <div className="AdminContainer">
           <AmplifySignOut />
-          <div style={{ color: 'white' }}>Title</div>
-          <input></input>
-          <div style={{ color: 'white' }}>Date</div>
-          <input></input>
+          <input placeholder="title"></input>
+          <input placeholder="date" type="date"></input>
+          <label>preview image</label>
+          <input type="file"></input>
           <Editor
             editorClassName="jon-editor"
             editorState={this.state.editorState}
@@ -44,7 +52,6 @@ class Admin extends React.Component<EmptyProps, State> {
       </AmplifyAuthenticator >
     )
   }
-
 }
 
 export default Admin;
