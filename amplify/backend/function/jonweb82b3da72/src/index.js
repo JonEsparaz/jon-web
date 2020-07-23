@@ -3,59 +3,45 @@
 	REGION
 Amplify Params - DO NOT EDIT */
 
-const AWS = require('aws-sdk');
-const sesClient = new AWS.SES();
-const sesConfirmedAddress = "no-reply@jonesparaz.ca";
+const nodemailer = require("nodemailer");
 const sanitizeHtml = require('sanitize-html');
 
-function getEmailMessage(emailObj) {
+const smtpEndpoint = "email-smtp.us-east-2.amazonaws.com";
+const port = 587;
+const senderAddress = "jonesparaz.ca <no-reply@jonesparaz.ca>";
+const smtpUsername = process.env.SMTP_USER;
+const smtpPassword = process.env.SMTP_PASS;
 
-    const firstClean = sanitizeHtml(emailObj.first);
-    const lastClean = sanitizeHtml(emailObj.last);
-    const messageClean = sanitizeHtml(emailObj.message);
-    const emailClean = sanitizeHtml(emailObj.email);
-    const subjectClean = sanitizeHtml(emailObj.subject);
+exports.handler = async (event) => {
 
-    const emailRequestParams = {
-        Destination: {
-          ToAddresses: [ 'jon.esparaz@gmail.com' ]  
-        },
-        Message: {
-            Body: {
-                Text: {
-                    Data: `${messageClean} from ${firstClean} ${lastClean} via jonesparaz.ca`
-                }
-            },
-            Subject: {
-                Data: subjectClean
-            }
-        },
-        Source: sesConfirmedAddress,
-        ReplyToAddresses: [ emailClean ]
-    };
-    
-    return emailRequestParams;
-}
+    const emailClean = sanitizeHtml(event.arguments.email);
+    const subjectClean = sanitizeHtml(event.arguments.subject);
 
-exports.handler = async (event, context, callback) => {
+    const messageClean = sanitizeHtml(event.arguments.message);
+    const firstClean = sanitizeHtml(event.arguments.first);
+    const lastClean = sanitizeHtml(event.arguments.last);
 
-    const emailObj = { 
-        first: event.arguments.first, 
-        last: event.arguments.last, 
-        email: event.arguments.email, 
-        subject: event.arguments.subject,
-        message: event.arguments.message    
-    };
-    const params = getEmailMessage(emailObj);
-
-    sesClient.sendEmail(params, function (err, data) {
-        callback(null, {err: err, data: data});
-        if (err) {
-            console.log(err);
-            context.fail(err);
-        } else {
-            console.log(data);
-            context.succeed(event);
+    const transporter = nodemailer.createTransport({
+        host: smtpEndpoint,
+        port: port,
+        secure: false, // true for 465, false for other ports
+        auth: {
+          user: smtpUsername,
+          pass: smtpPassword
         }
-    });
+      });
+
+    const mailOptions = {
+        from: senderAddress,
+        replyTo : emailClean,
+        subject: subjectClean,
+        text: `${messageClean} from ${firstClean} ${lastClean} via jonesparaz.ca`,
+      };
+
+    try {
+        const res = await transporter.sendEmail(mailOptions);
+        console.log(res)
+    } catch (err) {
+        console.error(err)
+    }
 }
