@@ -6,20 +6,29 @@ import { EmptyProps } from '../util';
 import { ContactQueryVariables } from '../API';
 import { API } from 'aws-amplify';
 import { GRAPHQL_AUTH_MODE } from '@aws-amplify/api/lib/types';
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import ReCAPTCHA from 'react-google-recaptcha';
 import * as query from '../graphql/queries';
 
-export default class Contact extends React.Component<EmptyProps, ContactQueryVariables> {
+interface State {
+  emailObj: ContactQueryVariables
+  isSent: boolean;
+}
+
+export default class Contact extends React.Component<EmptyProps, State> {
 
   recaptchaRef: React.RefObject<ReCAPTCHA>;
   constructor(props: EmptyProps) {
     super(props);
     this.state = {
-      email: '',
-      first: '',
-      last: '',
-      subject: '',
-      message: '',
+      emailObj: {
+        email: '',
+        first: '',
+        last: '',
+        subject: '',
+        message: '',
+      },
+      isSent: false,
     }
     this.recaptchaRef = React.createRef();
   }
@@ -29,9 +38,9 @@ export default class Contact extends React.Component<EmptyProps, ContactQueryVar
 
     const recaptchaValue = this.recaptchaRef?.current?.getValue();
 
-    if (recaptchaValue) {
+    if (!recaptchaValue) {
       try {
-        const input = this.state
+        const input = this.state.emailObj;
         await API.graphql({
           query: query.contact,
           variables: input,
@@ -39,17 +48,24 @@ export default class Contact extends React.Component<EmptyProps, ContactQueryVar
         });
 
         this.setState({
-          email: '',
-          first: '',
-          last: '',
-          subject: '',
-          message: '',
+          emailObj: {
+            email: '',
+            first: '',
+            last: '',
+            subject: '',
+            message: '',
+          },
+          isSent: true
         })
 
       } catch (err) {
         console.error(err)
       }
     }
+  }
+
+  handleChange(field: keyof ContactQueryVariables, input: string) {
+    this.setState((prevState) => ({ emailObj: { ...prevState.emailObj, [field]: input } }));
   }
 
   render() {
@@ -65,16 +81,16 @@ export default class Contact extends React.Component<EmptyProps, ContactQueryVar
                 type="text"
                 placeholder="First name"
                 required
-                value={this.state.first}
-                onChange={(e) => this.setState({ first: e.target.value })}
+                value={this.state.emailObj.first}
+                onChange={(e) => this.handleChange('first', e.target.value)}
               ></input>
               <input
                 className="NameInput"
                 type="text"
                 placeholder="Last name"
                 required
-                value={this.state.last}
-                onChange={(e) => this.setState({ last: e.target.value })}
+                value={this.state.emailObj.last}
+                onChange={(e) => this.handleChange('last', e.target.value)}
               ></input>
             </div>
 
@@ -83,8 +99,8 @@ export default class Contact extends React.Component<EmptyProps, ContactQueryVar
               type="email"
               placeholder="Email"
               required
-              value={this.state.email}
-              onChange={(e) => this.setState({ email: e.target.value })}
+              value={this.state.emailObj.email}
+              onChange={(e) => this.handleChange('email', e.target.value)}
             ></input>
             <br />
             <input
@@ -92,16 +108,16 @@ export default class Contact extends React.Component<EmptyProps, ContactQueryVar
               type="text"
               placeholder="Subject"
               required
-              value={this.state.subject}
-              onChange={(e) => this.setState({ subject: e.target.value })}
+              value={this.state.emailObj.subject}
+              onChange={(e) => this.handleChange('subject', e.target.value)}
             ></input>
             <br />
             <textarea
               className="MessageInput"
               placeholder="Message..."
               required
-              value={this.state.message}
-              onChange={(e) => this.setState({ message: e.target.value })}
+              value={this.state.emailObj.message}
+              onChange={(e) => this.handleChange('message', e.target.value)}
             ></textarea>
             <br />
             <ReCAPTCHA
@@ -111,11 +127,13 @@ export default class Contact extends React.Component<EmptyProps, ContactQueryVar
             <button
               className="ActionButton2"
               type="submit"
+              disabled={this.state.isSent}
             >
-              <span className="Underline2">
-                Send
+              <span className={this.state.isSent ? "" : "Underline2"}>
+                {this.state.isSent ? 'Sent' : 'Send'}
               </span>
             </button>
+            {this.state.isSent ? <span className="CheckIcon"><CheckCircleOutlineIcon style={{ color: 'limegreen', marginLeft: '10px' }} fontSize='large' /></span> : null}
           </form>
         </div>
         <Footer />

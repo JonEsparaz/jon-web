@@ -5,6 +5,15 @@ $font2: Raleway;
     color: white !important;
 }
 
+@keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 @media (min-width: 768px) {
     .ActionButton, .ActionButton2 {
         padding: 1em 1.5em;
@@ -22,6 +31,11 @@ $font2: Raleway;
     .ActionButton2 {
         background: black;
         color: white;
+
+        &:disabled {
+            background: grey;
+            cursor: default;
+        }
     }
     
     .ActionButton:hover, .ActionButton2:hover {

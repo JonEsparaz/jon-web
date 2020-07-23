@@ -1,5 +1,9 @@
 @import '../theme.scss';
 
+.CheckIcon {
+  animation: FadeIn 0.9s;
+}
+
 .ContactContainer {
     text-align: center;
     position: relative;
