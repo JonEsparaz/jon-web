@@ -154,11 +154,11 @@ export type DeletePostMutation = {
 };
 
 export type ContactQueryVariables = {
-  first?: string | null,
-  last?: string | null,
-  email?: string | null,
-  subject?: string | null,
-  message?: string | null,
+  first: string,
+  last: string,
+  email: string,
+  subject: string,
+  message: string,
 };
 
 export type ContactQuery = {

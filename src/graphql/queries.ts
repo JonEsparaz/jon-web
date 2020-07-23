@@ -4,11 +4,11 @@
 
 export const contact = /* GraphQL */ `
   query Contact(
-    $first: String
-    $last: String
-    $email: String
-    $subject: String
-    $message: String
+    $first: String!
+    $last: String!
+    $email: String!
+    $subject: String!
+    $message: String!
   ) {
     contact(
       first: $first

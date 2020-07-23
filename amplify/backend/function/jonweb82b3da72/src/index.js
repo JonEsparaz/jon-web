@@ -47,11 +47,11 @@ exports.handler = async (event) => {
         message: event.arguments.message    
     };
     const params = getEmailMessage(emailObj);
-    const sendEmailPromise = await sesClient.sendEmail(params).promise();
-        
-    sendEmailPromise.then(function(result) {
-        console.log(result);
-    }).catch(function(err) {
-        console.log(err);
-    });
+
+    try {
+        const sendEmailPromise = await sesClient.sendEmail(params).promise();
+        console.log(sendEmailPromise)
+    } catch(e) {
+        console.error(e)
+    }
 }

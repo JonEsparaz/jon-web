@@ -1,5 +1,5 @@
 type Query {
-  contact(first: String, last: String, email: String, subject: String, message: String): String @function(name: "contact-form-${env}")
+  contact(first: String!, last: String!, email: String!, subject: String!, message: String!): String @function(name: "contact-form-${env}")
 }
 
 
