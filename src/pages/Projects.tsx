@@ -8,7 +8,7 @@ function Projects() {
     <div>
       <Menu />
       <div className="ProjectsContainer">
-        <h2 className="Header2">projects</h2>
+        <h2 className="Header2 Big">projects</h2>
       </div>
       <Footer />
     </div>

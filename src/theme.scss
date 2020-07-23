@@ -55,7 +55,7 @@ $font2: Raleway;
     .Header1 {
         font-family: $font2;
         text-transform: uppercase;
-        font-weight: 200;
+        font-weight: lighter;
         font-size: 4vw;
         color: black;
         text-align: center;
@@ -64,8 +64,13 @@ $font2: Raleway;
     .Header2 {
         font-weight: bold;
         font-size: 1.5vw;
-        font-family: $font;
+        font-weight: lighter;
+        font-family: $font2;
         text-transform: uppercase;
+    }
+
+    .Big {
+        font-size: 3vw;
     }
 
     .Text1 {
@@ -81,10 +86,10 @@ $font2: Raleway;
     }
 
     .CardArea {
-        margin-left: 6vw;
+        margin-left: 4.5vw;
         display: grid;
-        gap: 2vw;
-        grid-template-columns: repeat(2, 36vw);
+        gap: 1vw;
+        grid-template-columns: repeat(2, 40vw);
     }
 
     .Card {

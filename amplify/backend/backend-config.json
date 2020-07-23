@@ -23,5 +23,13 @@
 			"dependsOn": [],
 			"customAuth": false
 		}
+	},
+	"function": {
+		"jonweb82b3da72": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda",
+			"dependsOn": []
+		}
 	}
 }
