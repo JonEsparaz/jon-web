@@ -46,7 +46,7 @@ class Admin extends React.Component<EmptyProps, State> {
         const down = await Storage.get(filename)
 
         console.log(down, upload)
-        const previewImage = "" + filename
+        const previewImage = "https://jonweb65cef38d4e0542d187d7fd8936c1eb11222929-prod.s3.us-east-2.amazonaws.com/public/" + filename
         this.setState({ previewImage })
       } catch (err) {
         console.error(err)
@@ -99,7 +99,7 @@ class Admin extends React.Component<EmptyProps, State> {
                     contentType: "image/*",
                     acl: "public-read"
                   })
-                  const download = "https://jonweb57de4f1ecfbb4d6caf3580e93fd53c39222929-prod.s3.us-east-2.amazonaws.com/public/" + filename;
+                  const download = "https://jonweb65cef38d4e0542d187d7fd8936c1eb11222929-prod.s3.us-east-2.amazonaws.com/public/" + filename;
                   return { data: { link: download } }
                 },
                 previewImage: true,
