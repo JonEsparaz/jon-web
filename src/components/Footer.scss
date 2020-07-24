@@ -2,7 +2,7 @@
 
 @media (min-width: 768px) {
     .FooterContainer {
-        width: 100%;
+        width: 100vw;
         text-align: center;    
         padding: 40px;
         bottom: 0;
@@ -22,9 +22,8 @@
 
 @media (max-width: 767px) {
     .FooterContainer {
-        width: 100%;
+        width: 100vw;
         text-align: center;    
-        background: #E0E0E0;
         padding: 40px;
         bottom: 0;
         font-family: $font;
