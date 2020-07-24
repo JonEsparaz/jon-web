@@ -37,13 +37,16 @@ class Admin extends React.Component<EmptyProps, State> {
     if (temp) {
       try {
         const file = temp[0]
-        const filepath = +new Date() + file.name;
-        const upload = await Storage.put(filepath, file, {
+        const filename = +new Date() + file.name;
+        const upload = await Storage.put(filename, file, {
           contentType: "image/*",
+          acl: "public-read"
         })
 
-        console.log(upload)
-        const previewImage = "https://jonweb57de4f1ecfbb4d6caf3580e93fd53c39222929-prod.s3.us-east-2.amazonaws.com/public/" + filepath
+        const down = await Storage.get(filename)
+
+        console.log(down, upload)
+        const previewImage = "" + filename
         this.setState({ previewImage })
       } catch (err) {
         console.error(err)
@@ -91,12 +94,12 @@ class Admin extends React.Component<EmptyProps, State> {
               image: {
                 uploadEnabled: true,
                 uploadCallback: async (file: any) => {
-                  const filepath = +new Date() + file.name;
-                  await Storage.put(filepath, file, {
+                  const filename = +new Date() + file.name;
+                  await Storage.put(filename, file, {
                     contentType: "image/*",
                     acl: "public-read"
                   })
-                  const download = "https://jonweb57de4f1ecfbb4d6caf3580e93fd53c39222929-prod.s3.us-east-2.amazonaws.com/public/" + filepath;
+                  const download = "https://jonweb57de4f1ecfbb4d6caf3580e93fd53c39222929-prod.s3.us-east-2.amazonaws.com/public/" + filename;
                   return { data: { link: download } }
                 },
                 previewImage: true,
