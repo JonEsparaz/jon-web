@@ -14,7 +14,7 @@ function Home() {
           <div className="Text1 White" style={{ textAlign: 'center' }}>3rd Year Undergraduate Machine Intelligence Major</div>
           <button className="ActionButton"><span className="Underline">Learn More</span></button>
         </div>
-        <img className="HeroImage" src="/images/Keyboard.jpg" alt="mechanical keyboard"></img>
+        <img className="HeroImage" src="/images/keyboard.jpg" alt="mechanical keyboard"></img>
         <h2 className="Header2">check out my previous work</h2>
         <div className="CardArea">
           <a className="Card" href="/projects">

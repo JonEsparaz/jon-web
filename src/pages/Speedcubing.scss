@@ -23,10 +23,11 @@
     .YTtitle {
         font-family: $font;
         font-weight: bold;
-        font-size: 1vw;
+        font-size: 1.2vw;
         color: black;
         text-align: left;
     }
+
     .imageContainer {
         position: relative;
         text-align: center;
@@ -34,9 +35,10 @@
         border: none;
         outline: none;
         background: transparent;
+        padding: 0;
     }
 
-    .imageContainer:hover {
+    .imageContainer:hover, .imageContainer:focus {
         cursor: pointer;
         .YTimage {
             opacity: 0.8;

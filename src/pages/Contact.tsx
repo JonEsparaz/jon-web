@@ -6,7 +6,6 @@ import { EmptyProps } from '../util';
 import { ContactQueryVariables } from '../API';
 import { API } from 'aws-amplify';
 import { GRAPHQL_AUTH_MODE } from '@aws-amplify/api/lib/types';
-import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import ReCAPTCHA from 'react-google-recaptcha';
 import * as query from '../graphql/queries';
 
@@ -38,7 +37,7 @@ export default class Contact extends React.Component<EmptyProps, State> {
 
     const recaptchaValue = this.recaptchaRef?.current?.getValue();
 
-    if (!recaptchaValue) {
+    if (recaptchaValue) {
       try {
         const input = this.state.emailObj;
         await API.graphql({
@@ -70,7 +69,7 @@ export default class Contact extends React.Component<EmptyProps, State> {
 
   render() {
     return (
-      <div>
+      <div className="Contact">
         <Menu />
         <div className="ContactContainer">
           <form className="ContactForm" onSubmit={(e) => this.send(e)} >
@@ -133,7 +132,7 @@ export default class Contact extends React.Component<EmptyProps, State> {
                 {this.state.isSent ? 'Sent' : 'Send'}
               </span>
             </button>
-            {this.state.isSent ? <span className="CheckIcon"><CheckCircleOutlineIcon style={{ color: 'limegreen', marginLeft: '10px' }} fontSize='large' /></span> : null}
+            {this.state.isSent ? <span style={{ marginLeft: 12 }}><img src="/svg/check_circle_outline.svg" alt="" className="CheckIcon" /></span> : null}
           </form>
         </div>
         <Footer />
