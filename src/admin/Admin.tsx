@@ -1,17 +1,19 @@
 import React from 'react';
 import { Editor } from 'react-draft-wysiwyg';
 import '../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-import { EditorState } from 'draft-js';
+import { EditorState, ContentState, convertToRaw } from 'draft-js';
 import { EmptyProps } from '../util';
+import draftToHtml from 'draftjs-to-html';
+import htmlToDraft from 'html-to-draftjs';
 import { AmplifyAuthenticator, AmplifySignIn, AmplifySignOut } from '@aws-amplify/ui-react';
+import { Storage } from 'aws-amplify';
 import './Admin.scss';
 
 interface State {
-  editorState: EditorState
+  editorState: EditorState | string
   title: string;
   date: string;
-  image: string;
-  toSave: { id: string, title: string, content: string, previewImage: string }
+  previewImage: string;
 }
 
 class Admin extends React.Component<EmptyProps, State> {
@@ -22,13 +24,43 @@ class Admin extends React.Component<EmptyProps, State> {
       editorState: EditorState.createEmpty(),
       title: '',
       date: '',
-      image: '',
-      toSave: { id: '', title: '', content: '', previewImage: '' },
+      previewImage: '',
     }
   }
 
   onChange = (editorState: EditorState) => {
     this.setState({ editorState })
+  }
+
+  async handleImageUpload(event: React.ChangeEvent<HTMLInputElement>): Promise<void> {
+    const temp = event?.target?.files;
+    if (temp) {
+      try {
+        const file = temp[0]
+        const filepath = +new Date() + file.name;
+        const upload = await Storage.put(filepath, file, {
+          contentType: "image/*",
+        })
+
+        console.log(upload)
+        const previewImage = "https://jonweb57de4f1ecfbb4d6caf3580e93fd53c39222929-prod.s3.us-east-2.amazonaws.com/public/" + filepath
+        this.setState({ previewImage })
+      } catch (err) {
+        console.error(err)
+      }
+    }
+  }
+
+  convertFromHTML(item: string): EditorState {
+    const { contentBlocks, entityMap } = htmlToDraft(item);
+    const newEditorState = ContentState.createFromBlockArray(contentBlocks, entityMap);
+    return EditorState.createWithContent(newEditorState)
+  }
+
+  convertToHTML(item: EditorState): string {
+    const contentState = item.getCurrentContent();
+    const html = draftToHtml(convertToRaw(contentState));
+    return html;
   }
 
   render() {
@@ -37,16 +69,48 @@ class Admin extends React.Component<EmptyProps, State> {
         <AmplifySignIn slot="sign-in">
           <div slot="secondary-footer-content"></div>
         </AmplifySignIn>
+        <AmplifySignOut />
         <div className="AdminContainer">
-          <AmplifySignOut />
-          <input placeholder="title"></input>
-          <input placeholder="date" type="date"></input>
+          <input placeholder="title" value={this.state.title} onChange={(e) => this.setState({ title: e.target.value })}></input>
+          <input placeholder="date" type="date" value={this.state.date} onChange={(e) => this.setState({ date: e.target.value })}></input>
           <label>preview image</label>
-          <input type="file"></input>
+          <input type="file" accept="image/*" onChange={(e) => this.handleImageUpload(e)}
+          ></input>
           <Editor
             editorClassName="jon-editor"
-            editorState={this.state.editorState}
+            editorState={this.state.editorState as EditorState}
             onEditorStateChange={this.onChange}
+            toolbar={{
+              options: ['inline', 'blockType', 'fontSize', 'list', 'link', 'textAlign', 'image', 'history'],
+              inline: {
+                options: ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript'],
+              },
+              list: {
+                options: ['unordered', 'ordered'],
+              },
+              image: {
+                uploadEnabled: true,
+                uploadCallback: async (file: any) => {
+                  const filepath = +new Date() + file.name;
+                  await Storage.put(filepath, file, {
+                    contentType: "image/*",
+                    acl: "public-read"
+                  })
+                  const download = "https://jonweb57de4f1ecfbb4d6caf3580e93fd53c39222929-prod.s3.us-east-2.amazonaws.com/public/" + filepath;
+                  return { data: { link: download } }
+                },
+                previewImage: true,
+                alt: {
+                  present: true,
+                  mandatory: true
+                },
+                defaultSize: {
+                  height: 'auto',
+                  width: '100%',
+                },
+                alignmentEnabled: false
+              }
+            }}
           />
         </div>
       </AmplifyAuthenticator >

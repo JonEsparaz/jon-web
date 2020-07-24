@@ -1,6 +1,6 @@
 {
     "identityPoolName": "jonweb44e73b7f_identitypool_44e73b7f",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "jonweb44e73b7f",
     "userPoolName": "jonweb44e73b7f_userpool_44e73b7f",
     "autoVerifiedAttributes": [

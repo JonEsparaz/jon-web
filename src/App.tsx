@@ -1,6 +1,6 @@
 import React from 'react';
 import { Suspense } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 const Home = React.lazy(() => import('./pages/Home'));
 const Speedcubing = React.lazy(() => import('./pages/Speedcubing'));
@@ -13,14 +13,16 @@ function App() {
   return (
     <div className="AppContainer">
       <Suspense fallback={<div></div>}>
-        <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/speedcubing" component={Speedcubing} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/projects" component={Projects} />
-          <Route path="/admin" component={Admin} />
-          <Route component={Error} />
-        </Switch>
+        <BrowserRouter>
+          <Switch>
+            <Route path="/" component={Home} exact />
+            <Route path="/speedcubing" component={Speedcubing} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/projects" component={Projects} />
+            <Route path="/admin" component={Admin} />
+            <Route component={Error} />
+          </Switch>
+        </BrowserRouter>
       </Suspense>
     </div>
   );
