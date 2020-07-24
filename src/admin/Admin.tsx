@@ -6,7 +6,11 @@ import { EmptyProps } from '../util';
 import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
 import { AmplifyAuthenticator, AmplifySignIn, AmplifySignOut } from '@aws-amplify/ui-react';
-import { Storage } from 'aws-amplify';
+import { Storage, API } from 'aws-amplify';
+import * as query from '../graphql/queries';
+import * as mutation from '../graphql/mutations';
+import { GRAPHQL_AUTH_MODE, GraphQLResult } from '@aws-amplify/api/lib/types';
+import { CreatePostInput, ListPostsQuery } from '../API';
 import './Admin.scss';
 
 interface State {
@@ -14,6 +18,8 @@ interface State {
   title: string;
   date: string;
   previewImage: string;
+  listPosts: NonNullable<ListPostsQuery['listPosts']>['items'];
+  selected: string;
 }
 
 class Admin extends React.Component<EmptyProps, State> {
@@ -25,11 +31,74 @@ class Admin extends React.Component<EmptyProps, State> {
       title: '',
       date: '',
       previewImage: '',
+      listPosts: [],
+      selected: 'none'
+    }
+
+    this.getPosts();
+  }
+
+  componentDidUpdate(_prevProps: EmptyProps, prevState: State) {
+    if (prevState.selected !== this.state.selected) {
+      const obj = this.state.listPosts?.filter(item => item?.title === this.state.selected)[0];
+
+      if (obj) {
+        const editor = this.convertFromHTML(obj.content)
+        this.setState({ title: obj.title, date: obj.date, previewImage: obj.previewImage, editorState: editor })
+      }
     }
   }
 
   onChange = (editorState: EditorState) => {
     this.setState({ editorState })
+  }
+
+  handleSelectPost(): void {
+    console.log('selected')
+  }
+
+  async getPosts(): Promise<void> {
+    try {
+      const json = await API.graphql({
+        query: query.listPosts,
+        authMode: GRAPHQL_AUTH_MODE.AMAZON_COGNITO_USER_POOLS,
+      }) as GraphQLResult<ListPostsQuery>
+
+      if (json.data?.listPosts?.items)
+        this.setState({ listPosts: json.data.listPosts.items })
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  async save(): Promise<void> {
+    const html = this.convertToHTML(this.state.editorState as EditorState);
+    const post: CreatePostInput = { id: this.state.title, title: this.state.title, date: this.state.date, previewImage: this.state.previewImage, content: html };
+    try {
+      const res = await API.graphql({
+        query: mutation.createPost,
+        variables: { input: post },
+        authMode: GRAPHQL_AUTH_MODE.AMAZON_COGNITO_USER_POOLS,
+      });
+      console.log(res)
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  async update(): Promise<void> {
+    const html = this.convertToHTML(this.state.editorState as EditorState);
+    const post: CreatePostInput = { id: this.state.title, title: this.state.title, date: this.state.date, previewImage: this.state.previewImage, content: html };
+    try {
+      const res = await API.graphql({
+        query: mutation.updatePost,
+        variables: { input: post },
+        authMode: GRAPHQL_AUTH_MODE.AMAZON_COGNITO_USER_POOLS,
+      });
+      console.log(res)
+    } catch (e) {
+      console.error(e)
+    }
   }
 
   async handleImageUpload(event: React.ChangeEvent<HTMLInputElement>): Promise<void> {
@@ -43,9 +112,8 @@ class Admin extends React.Component<EmptyProps, State> {
           acl: "public-read"
         })
 
-        const down = await Storage.get(filename)
+        console.log(upload)
 
-        console.log(down, upload)
         const previewImage = "https://jonweb65cef38d4e0542d187d7fd8936c1eb11222929-prod.s3.us-east-2.amazonaws.com/public/" + filename
         this.setState({ previewImage })
       } catch (err) {
@@ -79,6 +147,11 @@ class Admin extends React.Component<EmptyProps, State> {
           <label>preview image</label>
           <input type="file" accept="image/*" onChange={(e) => this.handleImageUpload(e)}
           ></input>
+          {this.state.previewImage ? <img src={this.state.previewImage} alt='' style={{ width: 100 }}></img> : null}
+          <select value={this.state.selected} onChange={(e) => this.setState({ selected: e.target.value })}>
+            <option value={'none'}>none selected</option>
+            {this.state.listPosts?.map(item => { return <option value={item?.title}>{item?.title}</option> })}
+          </select>
           <Editor
             editorClassName="jon-editor"
             editorState={this.state.editorState as EditorState}
@@ -115,6 +188,8 @@ class Admin extends React.Component<EmptyProps, State> {
               }
             }}
           />
+          <button onClick={() => this.save()}>save</button>
+          <button onClick={() => this.update()}>update</button>
         </div>
       </AmplifyAuthenticator >
     )

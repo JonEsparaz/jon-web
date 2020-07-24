@@ -29,8 +29,8 @@ export default class Menu extends React.Component<EmptyProps, State> {
       <div className="MenuContainer">
         <Navbar expand="md">
           <NavbarBrand href="/"><img alt="logo" src="/logos/je-logo.png" style={{ height: "80px", marginRight: "0.5vw" }}></img></NavbarBrand>
-          <NavbarToggler onClick={() => this.toggle}>
-            <HamburgerMenu isOpen={this.state.isOpen} menuClicked={() => this.toggle} width={24} height={16} strokeWidth={2} borderRadius={45} color="black" />
+          <NavbarToggler onClick={() => this.toggle()}>
+            <HamburgerMenu isOpen={this.state.isOpen} menuClicked={() => this.toggle()} width={24} height={16} strokeWidth={2} borderRadius={45} color="black" />
           </NavbarToggler>
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav navbar className="mr-auto" >

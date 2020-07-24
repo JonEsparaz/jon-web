@@ -74,7 +74,7 @@ class Speedcubing extends React.Component<EmptyProps, State> {
           <div className="YTgrid">
             {this.videoData.map(item => {
               return (
-                <div>
+                <div className="SpeedcubingItem">
                   <button className="imageContainer" onClick={() => { this.handleOpen(item.id) }}>
                     <img className="YTimage" alt="youtube thumbnail" src={`https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`}></img>
                     <img className="playArrow" src='/svg/play_arrow-white.svg' alt=""></img>

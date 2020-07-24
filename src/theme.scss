@@ -81,10 +81,15 @@ $font2: Raleway;
         font-weight: lighter;
         font-family: $font2;
         text-transform: uppercase;
+        margin-top: 4vw;
     }
 
     .Big {
         font-size: 3vw;
+    }
+
+    .Small {
+        font-size: 1.3vw;
     }
 
     .Text1 {
@@ -100,10 +105,10 @@ $font2: Raleway;
     }
 
     .CardArea {
-        margin-left: 4.5vw;
+        margin-left: 5vw;
         display: grid;
         gap: 1vw;
-        grid-template-columns: repeat(2, 40vw);
+        grid-template-columns: repeat(2, 39.5vw);
     }
 
     .Card {
@@ -140,32 +145,12 @@ $font2: Raleway;
         }
     }
         
-    .ActionButton:hover, .ActionButton2:hover {
-        .Underline:before, .Underline2:before {
-            visibility: visible;
-            transform: scaleX(1);
-        }
-    }
-    
     .Underline, .Underline2 {
         position: relative;
     }
     
     .Underline:before, .Underline2:before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        bottom: -2px;
-        left: 0;
-        background: black;
-        visibility: hidden;
-        transform: scaleX(0);
-        transition: all 0.3s ease-in-out;
-    }
-
-    .Underline2:before {
-        background: white;
+        display: none;
     }
 
     .Header1 {
@@ -176,15 +161,20 @@ $font2: Raleway;
     }
 
     .Header2 {
+        margin-top: 12vw;
         font-weight: bold;
-        font-size: 2vw;
+        font-size: 6vw;
         font-weight: lighter;
         font-family: $font2;
         text-transform: uppercase;
     }
 
     .Big {
-        font-size: 3vw;
+        font-size: 7vw;
+    }
+
+    .Small {
+        font-size: 5vw;
     }
 
     .Text1 {
@@ -196,15 +186,15 @@ $font2: Raleway;
 
     .Text2 {
         font-family: $font;
-        font-size: 1vw;
+        font-size: 3vw;
         color: black;
     }
 
     .CardArea {
-        margin-left: 4.5vw;
+        margin-left: 5vw;
         display: grid;
         gap: 1vw;
-        grid-template-columns: repeat(2, 40vw);
+        grid-template-columns: repeat(2, 39.5vw);
     }
 
     .Card {
@@ -213,5 +203,26 @@ $font2: Raleway;
         font-family: $font;
         background-size: cover;
         text-align: center;
+    }
+
+    .CardsArea {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(1, 90vw);
+        padding: 5vw;
+    }
+
+    .CardTitle {
+        font-weight: bold;
+        font-size: 1.5vw;
+        font-family: $font;
+    }
+
+    .Card {
+        color: white;
+        background: black;
+        padding: 2vw;
+        font-family: $font;
+        background-size: cover;
     }
 }

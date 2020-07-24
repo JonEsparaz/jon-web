@@ -13,13 +13,13 @@
         width: 90vw;
         margin-left: 5vw;
         text-align: center;
+        margin-bottom: 10vw;
     }
 
     .HeroImage {
         width: $width;
         height: $imageratio*$width;
         object-fit: cover;
-        margin-bottom: 4vw;
     }
 
     .ContentContainer {
@@ -32,6 +32,47 @@
         height: $imageratio*$width;
         background-color: #00000080;
     }
+
+    .Skill {
+        padding: 1vw;
+        text-align: left;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        width: 20vw;
+        margin-right: 1vw;
+    }
+
+    .SkillImage {
+        height: $imageratio*19vw;
+        background-size: cover;
+    }
+
+    .SkillsArea {
+        display: flex;
+        flex-direction: row;
+        margin-left: 14vw;
+        align-items: flex-start;
+    }
+
+    .SkillTitle {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 1vw;
+    }
+
+    .SkillIcon {
+        width: 2.5vw;
+        margin-right: 0.5vw;
+    }
+
+    .SkillText {
+        font-family: $font;
+        font-size: 0.9vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        padding-bottom: 1vw;
+    }
 }
 
 @media (max-width: 767px) {
@@ -42,6 +83,7 @@
     .HomePage {
         width: 100vw;
         text-align: center;
+        margin-bottom: 10vw;
     }
 
     .HeroImage {
@@ -72,26 +114,29 @@
         font-size: 5vw;
         color: white;
     }
+    
+    .SkillsArea {
+        display: block;
+    }
 
-    .CardsArea {
+    .SkillIcon {
+        width: 10vw;
+    }
+
+    .Skill {
+        padding-left: 20vw;
+        padding-right: 20vw;
+        margin-top: 5vw;
+    }
+
+    .SkillItemArea {
         display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(1, 90vw);
-        padding: 5vw;
+        grid-template-columns: repeat(2, 30vw);
     }
 
-    .CardTitle {
-        font-weight: bold;
-        font-size: 1.5vw;
+    .SkillItem {
         font-family: $font;
-    }
-
-    .Card {
-        color: white;
-        background: black;
-        padding: 2vw;
-        font-family: $font;
-        background-size: cover;
+        font-size: 3vw;
     }
 }
 

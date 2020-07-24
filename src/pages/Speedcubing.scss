@@ -15,15 +15,16 @@
     }
 
     .YTimage {
-        width: 26vw;
+        width: 24vw;
+        height: (9/16)*24vw;
         cursor: pointer;
         opacity: 1;
         transition: opacity 0.3s ease-in-out;
     }
+
     .YTtitle {
         font-family: $font;
-        font-weight: bold;
-        font-size: 1.2vw;
+        font-size: 1vw;
         color: black;
         text-align: left;
     }
@@ -33,7 +34,7 @@
         text-align: center;
         display: block;
         border: none;
-        outline: none;
+        outline: none !important;
         background: transparent;
         padding: 0;
     }
@@ -74,6 +75,11 @@
     .videoPlayer {
         width: 50vw;
         height: calc(50vw * 9/16);
+    }
+
+    .SpeedcubingItem {
+        padding: 1vw;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
 }

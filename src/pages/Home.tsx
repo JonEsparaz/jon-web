@@ -25,19 +25,32 @@ function Home() {
           </div>
         </div>
 
-        <h2 className="Header2">about me</h2>
-        <div className="CardArea">
-          <div className="Card">
-            Frameworks
+        <h2 className="Header2">my expertise and experience</h2>
+        <div className="SkillsArea">
+          <div className="Skill">
+            <div className="SkillTitle" >
+              <img src='/svg/code.svg' alt='' className="SkillIcon"></img>
+              <div className="Header2 Small" style={{ margin: 0 }}>Languages</div>
+            </div>
+            <div className="SkillText">My top languages are: Typescript, Python, C/C++, Javascript, GraphQL, CSS/SASS, HTML5 and VTL. Languages I'm familar with and/or learning include: Go, Web Assembly and ARM Assembly.</div>
+            <div className="SkillImage" style={{ backgroundImage: "url(https://source.unsplash.com/NsyU41QcsxM/720x1080)" }} />
+
           </div>
-          <div className="Card">
-            alyssaesparaz.ca
+          <div className="Skill" >
+            <div className="SkillTitle">
+              <img src='/svg/cloud.svg' alt='' className="SkillIcon"></img>
+              <div className="Header2 Small" style={{ margin: 0 }}>Cloud</div>
+            </div>
+            <div className="SkillText">I have nearly one year of professional experience with AWS Amplify and I've deployed projects using Google Firebase and Microsoft Azure. Specfic cloud services I've used include: DynamoDB, AWS Appsync, AWS Lambda, Google Firestore and S3 Storage, just to name a few.</div>
+            <div className="SkillImage" style={{ backgroundImage: "url(https://source.unsplash.com/G9i_plbfDgk/720x1080)" }} />
           </div>
-          <div className="Card">
-            Cloud Experience
-          </div>
-          <div className="Card">
-            alyssaesparaz.ca
+          <div className="Skill">
+            <div className="SkillTitle">
+              <img src='/svg/build.svg' alt='' className="SkillIcon"></img>
+              <div className="Header2 Small" style={{ margin: 0 }}>Frameworks &amp; More</div>
+            </div>
+            <div className="SkillText">I have professional experience working with ReactJS, React Native, NodeJS, Expo, Bootstrap, and of course, GitHub. As a Machine Learning major, I am learning both Tensorflow and PyTorch.</div>
+            <div className="SkillImage" style={{ backgroundImage: "url(https://source.unsplash.com/cwqG1N1AtI0/1080x720)" }} />
           </div>
         </div>
         <h2 className="Header2">have an idea you want to discuss?</h2>
