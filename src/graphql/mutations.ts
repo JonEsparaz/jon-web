@@ -13,6 +13,8 @@ export const createPost = /* GraphQL */ `
       date
       content
       previewImage
+      tags
+      status
       createdAt
       updatedAt
     }
@@ -29,6 +31,8 @@ export const updatePost = /* GraphQL */ `
       date
       content
       previewImage
+      tags
+      status
       createdAt
       updatedAt
     }
@@ -45,6 +49,8 @@ export const deletePost = /* GraphQL */ `
       date
       content
       previewImage
+      tags
+      status
       createdAt
       updatedAt
     }

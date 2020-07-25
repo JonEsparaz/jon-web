@@ -8,6 +8,8 @@ export type CreatePostInput = {
   date: string,
   content: string,
   previewImage: string,
+  tags?: Array< string | null > | null,
+  status?: string | null,
 };
 
 export type ModelPostConditionInput = {
@@ -15,6 +17,8 @@ export type ModelPostConditionInput = {
   date?: ModelStringInput | null,
   content?: ModelStringInput | null,
   previewImage?: ModelStringInput | null,
+  tags?: ModelStringInput | null,
+  status?: ModelStringInput | null,
   and?: Array< ModelPostConditionInput | null > | null,
   or?: Array< ModelPostConditionInput | null > | null,
   not?: ModelPostConditionInput | null,
@@ -66,6 +70,8 @@ export type UpdatePostInput = {
   date?: string | null,
   content?: string | null,
   previewImage?: string | null,
+  tags?: Array< string | null > | null,
+  status?: string | null,
 };
 
 export type DeletePostInput = {
@@ -78,6 +84,8 @@ export type ModelPostFilterInput = {
   date?: ModelStringInput | null,
   content?: ModelStringInput | null,
   previewImage?: ModelStringInput | null,
+  tags?: ModelStringInput | null,
+  status?: ModelStringInput | null,
   and?: Array< ModelPostFilterInput | null > | null,
   or?: Array< ModelPostFilterInput | null > | null,
   not?: ModelPostFilterInput | null,
@@ -99,6 +107,22 @@ export type ModelIDInput = {
   size?: ModelSizeInput | null,
 };
 
+export type ModelStringKeyConditionInput = {
+  eq?: string | null,
+  le?: string | null,
+  lt?: string | null,
+  ge?: string | null,
+  gt?: string | null,
+  between?: Array< string | null > | null,
+  beginsWith?: string | null,
+};
+
+export enum ModelSortDirection {
+  ASC = "ASC",
+  DESC = "DESC",
+}
+
+
 export type CreatePostMutationVariables = {
   input: CreatePostInput,
   condition?: ModelPostConditionInput | null,
@@ -112,6 +136,8 @@ export type CreatePostMutation = {
     date: string,
     content: string,
     previewImage: string,
+    tags: Array< string | null > | null,
+    status: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -130,6 +156,8 @@ export type UpdatePostMutation = {
     date: string,
     content: string,
     previewImage: string,
+    tags: Array< string | null > | null,
+    status: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -148,6 +176,8 @@ export type DeletePostMutation = {
     date: string,
     content: string,
     previewImage: string,
+    tags: Array< string | null > | null,
+    status: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -177,6 +207,8 @@ export type GetPostQuery = {
     date: string,
     content: string,
     previewImage: string,
+    tags: Array< string | null > | null,
+    status: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -198,6 +230,36 @@ export type ListPostsQuery = {
       date: string,
       content: string,
       previewImage: string,
+      tags: Array< string | null > | null,
+      status: string | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null > | null,
+    nextToken: string | null,
+  } | null,
+};
+
+export type PostsByStatusQueryVariables = {
+  status?: string | null,
+  date?: ModelStringKeyConditionInput | null,
+  sortDirection?: ModelSortDirection | null,
+  filter?: ModelPostFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type PostsByStatusQuery = {
+  postsByStatus:  {
+    __typename: "ModelPostConnection",
+    items:  Array< {
+      __typename: "Post",
+      id: string,
+      title: string,
+      date: string,
+      content: string,
+      previewImage: string,
+      tags: Array< string | null > | null,
+      status: string | null,
       createdAt: string,
       updatedAt: string,
     } | null > | null,
@@ -213,6 +275,8 @@ export type OnCreatePostSubscription = {
     date: string,
     content: string,
     previewImage: string,
+    tags: Array< string | null > | null,
+    status: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -226,6 +290,8 @@ export type OnUpdatePostSubscription = {
     date: string,
     content: string,
     previewImage: string,
+    tags: Array< string | null > | null,
+    status: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -239,6 +305,8 @@ export type OnDeletePostSubscription = {
     date: string,
     content: string,
     previewImage: string,
+    tags: Array< string | null > | null,
+    status: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,

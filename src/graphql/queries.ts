@@ -27,6 +27,8 @@ export const getPost = /* GraphQL */ `
       date
       content
       previewImage
+      tags
+      status
       createdAt
       updatedAt
     }
@@ -45,6 +47,40 @@ export const listPosts = /* GraphQL */ `
         date
         content
         previewImage
+        tags
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const postsByStatus = /* GraphQL */ `
+  query PostsByStatus(
+    $status: String
+    $date: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelPostFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    postsByStatus(
+      status: $status
+      date: $date
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        title
+        date
+        content
+        previewImage
+        tags
+        status
         createdAt
         updatedAt
       }

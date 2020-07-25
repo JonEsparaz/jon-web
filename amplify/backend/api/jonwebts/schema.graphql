@@ -8,10 +8,13 @@ type Post @model
   { allow: groups, operations:[read,update,delete,create], groups: ["Admin"], provider:userPools },
   { allow: public, operations: [read] }
  ])
+ @key(fields: ["status", "date"], name: "byStatus", queryField: "postsByStatus")
 {
   id: ID!
   title: String!
   date: String!
   content: String!
   previewImage: String!
+  tags: [String]
+  status: String
 }

@@ -11,7 +11,7 @@ const Admin = React.lazy(() => import('./admin/Admin'))
 
 function App() {
   return (
-    <div className="AppContainer">
+    <div className="AppContainer" style={{ overflowX: 'hidden' }}>
       <Suspense fallback={<div></div>}>
         <BrowserRouter>
           <Switch>

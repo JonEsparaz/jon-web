@@ -41,7 +41,7 @@ function Home() {
               <img src='/svg/cloud.svg' alt='' className="SkillIcon"></img>
               <div className="Header2 Small" style={{ margin: 0 }}>Cloud</div>
             </div>
-            <div className="SkillText">I have nearly one year of professional experience with AWS Amplify and I've deployed projects using Google Firebase and Microsoft Azure. Specfic cloud services I've used include: DynamoDB, AWS Appsync, AWS Lambda, Google Firestore and S3 Storage, just to name a few.</div>
+            <div className="SkillText">I have six months of professional experience with AWS Amplify and I've deployed projects using Google Firebase and Microsoft Azure. Specfic cloud services I've used include: DynamoDB, AWS Appsync, AWS Lambda, Google Firestore and S3 Storage, just to name a few.</div>
             <div className="SkillImage" style={{ backgroundImage: "url(https://source.unsplash.com/G9i_plbfDgk/720x1080)" }} />
           </div>
           <div className="Skill">
@@ -54,7 +54,7 @@ function Home() {
           </div>
         </div>
         <h2 className="Header2">have an idea you want to discuss?</h2>
-        <button className="ActionButton2"><span className="Underline2">Contact Me</span></button>
+        <a href="/contact" className="ActionButton2"><span className="Underline2">Contact Me</span></a>
       </div>
       <Footer />
     </div >
