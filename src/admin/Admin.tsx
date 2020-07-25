@@ -20,6 +20,9 @@ interface State {
   previewImage: string;
   listPosts: NonNullable<ListPostsQuery['listPosts']>['items'];
   selected: string;
+  tag: string;
+  tags: Array<string | null>;
+  status: string;
 }
 
 class Admin extends React.Component<EmptyProps, State> {
@@ -32,29 +35,49 @@ class Admin extends React.Component<EmptyProps, State> {
       date: '',
       previewImage: '',
       listPosts: [],
-      selected: 'none'
+      selected: 'none',
+      tag: '',
+      tags: [],
+      status: 'unlisted'
     }
 
     this.getPosts();
   }
 
-  componentDidUpdate(_prevProps: EmptyProps, prevState: State) {
+  componentDidUpdate(_prevProps: EmptyProps, prevState: State): void {
     if (prevState.selected !== this.state.selected) {
-      const obj = this.state.listPosts?.filter(item => item?.title === this.state.selected)[0];
-
-      if (obj) {
-        const editor = this.convertFromHTML(obj.content)
-        this.setState({ title: obj.title, date: obj.date, previewImage: obj.previewImage, editorState: editor })
-      }
+      this.handleSelectPost();
     }
   }
 
-  onChange = (editorState: EditorState) => {
+  onChange = (editorState: EditorState): void => {
     this.setState({ editorState })
   }
 
   handleSelectPost(): void {
-    console.log('selected')
+    if (this.state.selected !== 'none') {
+      const temp = this.state.listPosts?.filter(item => item?.title === this.state.selected)[0];
+      console.log(temp)
+      if (temp) {
+        const editor = this.convertFromHTML(temp.content)
+        this.setState({ title: temp.title, date: temp.date, previewImage: temp.previewImage, editorState: editor, tags: temp.tags ?? [], status: temp.status ?? 'unlisted' })
+      }
+
+    }
+  }
+
+  addTag(): void {
+    if (this.state.tag) {
+      const tags = this.state.tags;
+      tags.push(this.state.tag.toLowerCase());
+      this.setState({ tags, tag: '' })
+    }
+  }
+
+  removeTag(index: number): void {
+    const tags = this.state.tags;
+    tags.splice(index, 1);
+    this.setState({ tags })
   }
 
   async getPosts(): Promise<void> {
@@ -73,7 +96,7 @@ class Admin extends React.Component<EmptyProps, State> {
 
   async save(): Promise<void> {
     const html = this.convertToHTML(this.state.editorState as EditorState);
-    const post: CreatePostInput = { id: this.state.title, title: this.state.title, date: this.state.date, previewImage: this.state.previewImage, content: html };
+    const post: CreatePostInput = { id: this.state.title.replace('.', ''), title: this.state.title, date: this.state.date, previewImage: this.state.previewImage, content: html, status: this.state.status, tags: this.state.tags };
     try {
       const res = await API.graphql({
         query: mutation.createPost,
@@ -88,7 +111,7 @@ class Admin extends React.Component<EmptyProps, State> {
 
   async update(): Promise<void> {
     const html = this.convertToHTML(this.state.editorState as EditorState);
-    const post: CreatePostInput = { id: this.state.title, title: this.state.title, date: this.state.date, previewImage: this.state.previewImage, content: html };
+    const post: CreatePostInput = { id: this.state.title.replace('.', ''), title: this.state.title, date: this.state.date, previewImage: this.state.previewImage, content: html, status: this.state.status, tags: this.state.tags };
     try {
       const res = await API.graphql({
         query: mutation.updatePost,
@@ -150,12 +173,13 @@ class Admin extends React.Component<EmptyProps, State> {
           {this.state.previewImage ? <img src={this.state.previewImage} alt='' style={{ width: 100 }}></img> : null}
           <select value={this.state.selected} onChange={(e) => this.setState({ selected: e.target.value })}>
             <option value={'none'}>none selected</option>
-            {this.state.listPosts?.map(item => { return <option value={item?.title}>{item?.title}</option> })}
+            {this.state.listPosts?.map((item, index) => { return <option key={index} value={item?.title}>{item?.title}</option> })}
           </select>
           <Editor
             editorClassName="jon-editor"
             editorState={this.state.editorState as EditorState}
             onEditorStateChange={this.onChange}
+            spellCheck
             toolbar={{
               options: ['inline', 'blockType', 'fontSize', 'list', 'link', 'textAlign', 'image', 'history'],
               inline: {
@@ -188,6 +212,30 @@ class Admin extends React.Component<EmptyProps, State> {
               }
             }}
           />
+
+          <input value={this.state.tag} onChange={(e) => this.setState({ tag: e.target.value })}></input>
+          <button className="TagsButton" onClick={() => this.addTag()}>
+            + ADD
+            </button>
+          <div>
+            {this.state.tags.map((tag, index) => {
+              return (
+                <span
+                  key={index}
+                  className="Tag"
+                  onClick={() => this.removeTag(index)}
+                >
+                  {tag}
+                </span>
+              );
+            })}
+          </div>
+          <select value={this.state.status} onChange={(e) => this.setState({ status: e.target.value })}>
+            <option value={'unlisted'}>unlisted</option>
+            <option value={'private'}>private</option>
+          </select>
+          <br />
+
           <button onClick={() => this.save()}>save</button>
           <button onClick={() => this.update()}>update</button>
         </div>

@@ -12,6 +12,7 @@ export const onCreatePost = /* GraphQL */ `
       previewImage
       tags
       status
+      description
       createdAt
       updatedAt
     }
@@ -27,6 +28,7 @@ export const onUpdatePost = /* GraphQL */ `
       previewImage
       tags
       status
+      description
       createdAt
       updatedAt
     }
@@ -42,6 +44,7 @@ export const onDeletePost = /* GraphQL */ `
       previewImage
       tags
       status
+      description
       createdAt
       updatedAt
     }

@@ -12,3 +12,12 @@
     margin-bottom: 2vw;
     border: 1px solid black;
 }
+
+.Tag {
+    margin-right: 10px;
+    &:hover {
+        color: red;
+        cursor: pointer;
+    }
+
+}

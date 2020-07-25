@@ -29,6 +29,7 @@ export const getPost = /* GraphQL */ `
       previewImage
       tags
       status
+      description
       createdAt
       updatedAt
     }
@@ -49,6 +50,7 @@ export const listPosts = /* GraphQL */ `
         previewImage
         tags
         status
+        description
         createdAt
         updatedAt
       }
@@ -81,6 +83,7 @@ export const postsByStatus = /* GraphQL */ `
         previewImage
         tags
         status
+        description
         createdAt
         updatedAt
       }

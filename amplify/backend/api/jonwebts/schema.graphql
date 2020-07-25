@@ -17,4 +17,5 @@ type Post @model
   previewImage: String!
   tags: [String]
   status: String
+  description: String
 }
