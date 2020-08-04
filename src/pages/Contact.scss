@@ -29,6 +29,7 @@
     margin-left: 27.5vw;
     margin-top: 4vw;
     min-height: calc(100vh - 106px - 159px - 4vw);
+    margin-bottom: 5vw;
   }
 
   .ContactForm {
@@ -43,9 +44,9 @@
 
   .NameInput {
     flex: 1;
-    height: 2vw;
+    height: 3vw;
     font-family: $font;
-    font-size: 1vw;
+    font-size: 1.5vw;
     margin-bottom: 1vw;
     border: 1px black solid;
     background: #f5f5f5;
@@ -53,9 +54,9 @@
 
   .FormInput {
     width: 45vw;
-    height: 2vw;
+    height: 3vw;
     font-family: $font;
-    font-size: 1vw;
+    font-size: 1.5vw;
     margin-bottom: 1vw;
     border: 1px black solid;
     background: #f5f5f5;
@@ -63,9 +64,9 @@
 
   .MessageInput {
     width: 45vw;
-    height: 4vw;
+    height: 8vw;
     font-family: $font;
-    font-size: 1vw;
+    font-size: 1.5vw;
     border: 1px black solid;
     resize: vertical;
     margin-top: 1vw;
@@ -85,7 +86,8 @@
     position: relative;
     font-family: $font;
     margin-top: 4vw;
-    min-height: calc(100vh - 106px - 159px - 4vw);
+    min-height: calc(100vh - 106px - 159px - 14vw);
+    margin-bottom: 10vw;
   }
 
   .ContactForm {

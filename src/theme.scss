@@ -78,12 +78,12 @@ $font2: Raleway;
     }
 
     .Header2 {
-        font-weight: bold;
         font-size: 2vw;
         font-weight: lighter;
         font-family: $font2;
         text-transform: uppercase;
         margin-top: 4vw;
+        margin-bottom: 1vw;
     }
 
     .Big {
@@ -100,10 +100,8 @@ $font2: Raleway;
         color: black;
     }
 
-    .Text2 {
-        font-family: $font;
-        font-size: 1.2vw;
-        color: black;
+    .Text1 br {
+        display: none;
     }
 
     .CardArea {
@@ -158,39 +156,30 @@ $font2: Raleway;
     }
 
     .Header1 {
-        font-family: $font;
-        font-weight: 200;
-        font-size: 12vw;
+        font-family: $font2;
+        text-transform: uppercase;
+        font-weight: lighter;
+        font-size: 10.5vw;
         color: black;
+        text-align: center;
     }
 
     .Header2 {
-        margin-top: 12vw;
-        font-weight: bold;
-        font-size: 6vw;
+        margin-top: 10vw;
+        font-size: 8vw;
         font-weight: lighter;
         font-family: $font2;
         text-transform: uppercase;
-    }
-
-    .Big {
-        font-size: 7vw;
+        margin-bottom: 4vw;
     }
 
     .Small {
-        font-size: 5vw;
+        font-size: 6vw;
     }
 
     .Text1 {
         font-family: $font;
-        font-size: 4vw;
-        color: black;
-        width: 90vw;
-    }
-
-    .Text2 {
-        font-family: $font;
-        font-size: 3vw;
+        font-size: 4.5vw;
         color: black;
     }
 

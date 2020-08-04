@@ -1,6 +1,6 @@
 import React from 'react';
 import AppsIcon from '@material-ui/icons/Apps';
-import CodeIcon from '@material-ui/icons/Code';
+//import CodeIcon from '@material-ui/icons/Code';
 import EmailIcon from '@material-ui/icons/Email';
 import { Collapse, NavbarToggler, Nav, NavLink, Navbar, NavbarBrand } from 'reactstrap';
 import HamburgerMenu from 'react-hamburger-menu';
@@ -34,7 +34,7 @@ export default class Menu extends React.Component<EmptyProps, State> {
           </NavbarToggler>
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav navbar className="mr-auto" >
-              <NavLink className="navlink-custom" href="/projects"><CodeIcon style={{ marginRight: "5px", marginBottom: "2px" }} /><span className="Underline">Projects</span></NavLink>
+              {/*<NavLink className="navlink-custom" href="/projects"><CodeIcon style={{ marginRight: "5px", marginBottom: "2px" }} /><span className="Underline">Projects</span></NavLink>*/}
               <NavLink className="navlink-custom" href="/speedcubing"><AppsIcon style={{ marginRight: "5px", marginBottom: "2px" }} /><span className="Underline">Speedcubing</span></NavLink>
               <NavLink className="navlink-custom" href="/contact"><EmailIcon style={{ marginRight: "5px", marginBottom: "2px" }} /><span className="Underline">Contact</span></NavLink>
             </Nav>

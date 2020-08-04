@@ -66,7 +66,7 @@ class Speedcubing extends React.Component<EmptyProps, State> {
         <div className="CubingContainer">
           {this.videoModal()}
           <h2 className="Header2 Big">Speedcubing</h2>
-          <div className="Text2 SpeedcubingText"> I have been competing in World Cube Association competitions for the past {new Date().getFullYear() - 2013} years. Back in 2018, I broke the North American Record for solving the Rubik's Cube one-handed with a time of 7.57 seconds. At the time, this ranked me second in the world.
+          <div className="Text1 SpeedcubingText"> I have been competing in World Cube Association competitions for the past {new Date().getFullYear() - 2013} years. In 2018, I broke the North American Record for solving the Rubik's Cube one-handed with a time of 7.57 seconds. At the time, this ranked me second in the world.
           Today, I organize and officiate competitions as a Junior Delegate for the World Cube Association.</div>
 
           <h2 className="Header2">Watch some of my best solves</h2>
@@ -74,7 +74,7 @@ class Speedcubing extends React.Component<EmptyProps, State> {
           <div className="YTgrid">
             {this.videoData.map(item => {
               return (
-                <div className="SpeedcubingItem">
+                <div className="SpeedcubingItem" key={item.id}>
                   <button className="imageContainer" onClick={() => { this.handleOpen(item.id) }}>
                     <img className="YTimage" alt="youtube thumbnail" src={`https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`}></img>
                     <img className="playArrow" src='/svg/play_arrow-white.svg' alt=""></img>

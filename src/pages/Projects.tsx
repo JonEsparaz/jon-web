@@ -9,6 +9,7 @@ function Projects() {
       <Menu />
       <div className="ProjectsContainer">
         <h2 className="Header2 Big">projects</h2>
+        <div className="Text1">(coming soon)</div>
       </div>
       <Footer />
     </div>

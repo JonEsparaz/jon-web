@@ -30,15 +30,16 @@
         flex-direction: column;
         width: $width;
         height: $imageratio*$width;
-        background-color: #00000080;
+        background-color: #00000070;
     }
 
     .Skill {
         padding: 1vw;
         text-align: left;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        width: 20vw;
-        margin-right: 1vw;
+        width: 21.5vw;
+        margin-left: 0.5vw;
+        margin-right: 0.5vw;
     }
 
     .SkillImage {
@@ -49,8 +50,8 @@
     .SkillsArea {
         display: flex;
         flex-direction: row;
-        margin-left: 14vw;
         align-items: flex-start;
+        justify-content: center;
     }
 
     .SkillTitle {
@@ -68,7 +69,7 @@
 
     .SkillText {
         font-family: $font;
-        font-size: 0.9vw;
+        font-size: 1.1vw;
         padding-left: 1vw;
         padding-right: 1vw;
         padding-bottom: 1vw;
@@ -79,6 +80,10 @@
     $width: 100vw;
     $imageratio: 1;
 
+    .HomeContainer {
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
 
     .HomePage {
         width: 100vw;
@@ -100,43 +105,51 @@
         flex-direction: column;
         width: $width;
         height: $imageratio*$width;
-        background-color: #00000080;
+        background-color: #00000070;
+        padding-left: 5vw;
+        padding-right: 5vw;
     }
 
-    .HomePage {
-        position: relative;
-        font-family: $font;
-        overflow: hidden;
-    }
-
-    .HomePageH1 {
-        font-weight: 500;
-        font-size: 5vw;
-        color: white;
-    }
-    
-    .SkillsArea {
-        display: block;
-    }
-
-    .SkillIcon {
-        width: 10vw;
-    }
+    $skill-padding: 5vw;
 
     .Skill {
-        padding-left: 20vw;
-        padding-right: 20vw;
-        margin-top: 5vw;
+        padding: $skill-padding;
+        text-align: left;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        width: 90vw;
+        margin-bottom: $skill-padding;
     }
 
-    .SkillItemArea {
-        display: grid;
-        grid-template-columns: repeat(2, 30vw);
+    .SkillImage {
+        height: 25vw;
+        background-size: cover;
     }
 
-    .SkillItem {
+    .SkillsArea {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .SkillTitle {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: $skill-padding;
+    }
+
+    .SkillText {
         font-family: $font;
-        font-size: 3vw;
+        font-size: 4vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        padding-bottom: $skill-padding;
+    }
+    
+    .SkillIcon {
+        width: 10vw;
+        margin-right: 2vw;
     }
 }
 
