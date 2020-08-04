@@ -23,6 +23,7 @@ interface State {
   tag: string;
   tags: Array<string | null>;
   status: string;
+  description: string;
 }
 
 class Admin extends React.Component<EmptyProps, State> {
@@ -38,7 +39,8 @@ class Admin extends React.Component<EmptyProps, State> {
       selected: 'none',
       tag: '',
       tags: [],
-      status: 'unlisted'
+      status: 'unlisted',
+      description: '',
     }
 
     this.getPosts();
@@ -60,7 +62,7 @@ class Admin extends React.Component<EmptyProps, State> {
       console.log(temp)
       if (temp) {
         const editor = this.convertFromHTML(temp.content)
-        this.setState({ title: temp.title, date: temp.date, previewImage: temp.previewImage, editorState: editor, tags: temp.tags ?? [], status: temp.status ?? 'unlisted' })
+        this.setState({ title: temp.title, date: temp.date, previewImage: temp.previewImage, editorState: editor, tags: temp.tags ?? [], status: temp.status ?? 'unlisted', description: temp.description ?? '' })
       }
 
     }
@@ -96,7 +98,7 @@ class Admin extends React.Component<EmptyProps, State> {
 
   async save(): Promise<void> {
     const html = this.convertToHTML(this.state.editorState as EditorState);
-    const post: CreatePostInput = { id: this.state.title.replace('.', ''), title: this.state.title, date: this.state.date, previewImage: this.state.previewImage, content: html, status: this.state.status, tags: this.state.tags };
+    const post: CreatePostInput = { id: this.state.title.replace('.', ''), title: this.state.title, date: this.state.date, previewImage: this.state.previewImage, content: html, status: this.state.status, tags: this.state.tags, description: this.state.description };
     try {
       const res = await API.graphql({
         query: mutation.createPost,
@@ -111,7 +113,7 @@ class Admin extends React.Component<EmptyProps, State> {
 
   async update(): Promise<void> {
     const html = this.convertToHTML(this.state.editorState as EditorState);
-    const post: CreatePostInput = { id: this.state.title.replace('.', ''), title: this.state.title, date: this.state.date, previewImage: this.state.previewImage, content: html, status: this.state.status, tags: this.state.tags };
+    const post: CreatePostInput = { id: this.state.title.replace('.', ''), title: this.state.title, date: this.state.date, previewImage: this.state.previewImage, content: html, status: this.state.status, tags: this.state.tags, description: this.state.description };
     try {
       const res = await API.graphql({
         query: mutation.updatePost,
@@ -212,6 +214,8 @@ class Admin extends React.Component<EmptyProps, State> {
               }
             }}
           />
+          <textarea value={this.state.description} onChange={(e) => this.setState({ description: e.target.value })} style={{ width: 800 }}></textarea>
+          <br />
 
           <input value={this.state.tag} onChange={(e) => this.setState({ tag: e.target.value })}></input>
           <button className="TagsButton" onClick={() => this.addTag()}>
