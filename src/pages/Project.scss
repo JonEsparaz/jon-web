@@ -1,0 +1,12 @@
+@import '../theme.scss';
+
+    .ProjectsContainer {
+        text-align: center;
+        position: relative;
+        font-family: $font;
+        height: calc(100vh - 159px - 106px - 5vw)
+    }
+
+    .ProjectsH1 {
+        color: white;
+    }

@@ -1,36 +1,36 @@
+@import '../theme.scss';
+
 @media (min-width: 768px) {
     .FooterContainer {
-        width: 100%;
+        width: 100vw;
         text-align: center;    
-        background: #1a1a1a;
-        padding: 5vw;
+        padding: 40px;
         bottom: 0;
-        font-family: Ubuntu;
+        font-family: $font;
     }
 
-    .footer-link:hover {
-        color: #989898 !important;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    .FooterContainer {
-        width: 100%;
-        text-align: center;    
-        background: #1a1a1a;
-        padding: 5vw;
-        bottom: 0;
-        font-family: Ubuntu;
+    .footer-link {
+        margin-left: 1vw;
+        margin-right: 1vw;
+        transition: opacity 0.3s;
+        opacity: 1;
+        &:hover {
+            opacity: 0.6;
+        }
     }
 }
 
 @media (max-width: 767px) {
     .FooterContainer {
-        width: 100%;
+        width: 100vw;
         text-align: center;    
-        background: #1a1a1a;
-        padding: 5vw;
+        padding: 40px;
         bottom: 0;
-        font-family: Ubuntu;
+        font-family: $font;
+    }
+
+    .footer-link {
+        margin-left: 1vw;
+        margin-right: 1vw;
     }
 }

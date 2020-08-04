@@ -1,0 +1,167 @@
+@import '../theme.scss';
+
+@media (min-width: 768px) {
+    .CubingContainer {
+        font-family: $font;
+        text-align: center;
+        width: 80vw;
+        margin-left: 10vw;
+        min-height: calc(100vh - 106px - 159px);
+        margin-bottom: 5vw;
+    }
+
+    .SpeedcubingText {
+        text-align: left;
+        margin-bottom: 4vw;
+    }
+
+    .YTimage {
+        width: 24vw;
+        height: (9/16)*24vw;
+        cursor: pointer;
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .YTtitle {
+        font-family: $font;
+        font-size: 1.2vw;
+        color: black;
+        text-align: left;
+    }
+
+    .imageContainer {
+        position: relative;
+        text-align: center;
+        display: block;
+        border: none;
+        outline: none !important;
+        background: transparent;
+        padding: 0;
+    }
+
+    .imageContainer:hover, .imageContainer:focus {
+        cursor: pointer;
+        .YTimage {
+            opacity: 0.8;
+        }
+        .playArrow {
+            opacity: 0.9;
+        }
+    }
+
+    .YTgrid {
+        display: grid;
+        margin-bottom: 4vw;
+        grid-template-columns: repeat(3,26vw);
+        gap: 1vw;
+    }
+
+    .playArrow {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .custom-modal {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        top: 10vw !important;
+    }
+
+    .videoPlayer {
+        width: 50vw;
+        height: calc(50vw * 9/16);
+    }
+
+    .SpeedcubingItem {
+        padding: 1vw;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+}
+
+@media (max-width: 767px) {
+    .CubingContainer {
+        font-family: $font;
+        text-align: center;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        margin-bottom: 10vw;
+    }
+
+    .SpeedcubingText {
+        text-align: left;
+    }
+
+    .YTimage {
+        width: 80vw;
+        height: (9/16)*80vw;
+        cursor: pointer;
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .YTtitle {
+        font-family: $font;
+        font-size: 4vw;
+        color: black;
+        text-align: left;
+    }
+
+    .imageContainer {
+        position: relative;
+        text-align: center;
+        display: block;
+        border: none;
+        outline: none !important;
+        background: transparent;
+        padding: 0;
+    }
+
+    .imageContainer:hover, .imageContainer:focus {
+        cursor: pointer;
+        .YTimage {
+            opacity: 0.8;
+        }
+        .playArrow {
+            opacity: 0.9;
+        }
+    }
+
+    .YTgrid {
+        display: grid;
+        grid-template-columns: repeat(1,90vw);
+        gap: 5vw;
+    }
+
+    .playArrow {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .custom-modal {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        top: 10vw !important;
+    }
+
+    .videoPlayer {
+        width: 50vw;
+        height: calc(50vw * 9/16);
+    }
+
+    .SpeedcubingItem {
+        padding: 5vw;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+}

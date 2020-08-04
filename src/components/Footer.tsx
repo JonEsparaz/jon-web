@@ -1,0 +1,20 @@
+import React from 'react';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import './Footer.scss';
+
+function Footer() {
+  return (
+    <div className="FooterContainer">
+      <span><a href="https://twitter.com/JonEsparaz" rel="noopener noreferrer" target="_blank" className="footer-link"><TwitterIcon fontSize="large" style={{ color: "black" }} /></a></span>
+      <span><a href="https://github.com/JonEsparaz" rel="noopener noreferrer" target="_blank" className="footer-link"><GitHubIcon fontSize="large" style={{ color: "black" }} /></a></span>
+      <span><a href="https://www.youtube.com/c/JonEsparaz" rel="noopener noreferrer" target="_blank" className="footer-link"><YouTubeIcon fontSize="large" style={{ color: "black" }} /></a></span>
+      <span><a href="https://www.linkedin.com/in/jonathanesparaz/" rel="noopener noreferrer" target="_blank" className="footer-link"><LinkedInIcon fontSize="large" style={{ color: "black" }} /></a></span>
+      <div style={{ marginTop: "20px", color: "black" }}> &copy; {new Date().getFullYear()} Jonathan Esparaz</div>
+    </div>
+  );
+}
+
+export default Footer;

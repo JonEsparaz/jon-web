@@ -1,0 +1,155 @@
+@import '../theme.scss';
+
+.Home {
+    animation: FadeIn 1s;
+}
+
+@media (min-width: 768px) {
+
+    $width: 90vw;
+    $imageratio: 1/2.39;
+
+    .HomePage {
+        width: 90vw;
+        margin-left: 5vw;
+        text-align: center;
+        margin-bottom: 5vw;
+    }
+
+    .HeroImage {
+        width: $width;
+        height: $imageratio*$width;
+        object-fit: cover;
+    }
+
+    .ContentContainer {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: $width;
+        height: $imageratio*$width;
+        background-color: #00000070;
+    }
+
+    .Skill {
+        padding: 1vw;
+        text-align: left;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        width: 21.5vw;
+        margin-left: 0.5vw;
+        margin-right: 0.5vw;
+    }
+
+    .SkillImage {
+        height: $imageratio*19vw;
+        background-size: cover;
+    }
+
+    .SkillsArea {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .SkillTitle {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 1vw;
+    }
+
+    .SkillIcon {
+        width: 2.5vw;
+        margin-right: 0.5vw;
+    }
+
+    .SkillText {
+        font-family: $font;
+        font-size: 1.1vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        padding-bottom: 1vw;
+    }
+}
+
+@media (max-width: 767px) {
+    $width: 100vw;
+    $imageratio: 1;
+
+    .HomeContainer {
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+
+    .HomePage {
+        width: 100vw;
+        text-align: center;
+        margin-bottom: 10vw;
+    }
+
+    .HeroImage {
+        width: $width;
+        height: $imageratio*$width;
+        object-fit: cover;
+    }
+
+    .ContentContainer {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: $width;
+        height: $imageratio*$width;
+        background-color: #00000070;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    $skill-padding: 5vw;
+
+    .Skill {
+        padding: $skill-padding;
+        text-align: left;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        width: 90vw;
+        margin-bottom: $skill-padding;
+    }
+
+    .SkillImage {
+        height: 25vw;
+        background-size: cover;
+    }
+
+    .SkillsArea {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .SkillTitle {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: $skill-padding;
+    }
+
+    .SkillText {
+        font-family: $font;
+        font-size: 4vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        padding-bottom: $skill-padding;
+    }
+    
+    .SkillIcon {
+        width: 10vw;
+        margin-right: 2vw;
+    }
+}
+
