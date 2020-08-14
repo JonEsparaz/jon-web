@@ -27,7 +27,7 @@ function Home() {
           </div>
         </div>*/}
 
-          <h2 className="Header2" >my expertise and experience</h2>
+          <h2 className="Header2" >expertise and experience</h2>
           <div className="SkillsArea">
             <div className="Skill">
               <div className="SkillTitle" >
