@@ -2,18 +2,23 @@ import React from 'react';
 import AppsIcon from '@material-ui/icons/Apps';
 //import CodeIcon from '@material-ui/icons/Code';
 import EmailIcon from '@material-ui/icons/Email';
-import { Collapse, NavbarToggler, Nav, NavLink, Navbar, NavbarBrand } from 'reactstrap';
+import { Collapse, NavbarToggler, Nav, Navbar, NavbarBrand } from 'reactstrap';
 import HamburgerMenu from 'react-hamburger-menu';
 import './Menu.scss';
-import { EmptyProps } from '../util';
+import { Link } from 'react-router-dom'
+
+interface Props {
+  mode: 'light' | 'dark';
+  absolute?: boolean
+}
 
 interface State {
   isOpen: boolean;
 }
 
-export default class Menu extends React.Component<EmptyProps, State> {
+export default class Menu extends React.Component<Props, State> {
 
-  constructor(props: EmptyProps) {
+  constructor(props: Props) {
     super(props);
     this.state = { isOpen: false };
   }
@@ -26,17 +31,19 @@ export default class Menu extends React.Component<EmptyProps, State> {
 
   render() {
     return (
-      <div className="MenuContainer">
-        <Navbar expand="md">
-          <NavbarBrand href="/"><img alt="logo" src="/logos/je-logo.png" style={{ height: "80px", marginRight: "0.5vw" }}></img></NavbarBrand>
+      <div className="MenuContainer" style={{ position: this.props.absolute ? 'absolute' : 'relative', zIndex: 9999 }} >
+        <Navbar expand="md" style={{ padding: 0 }}  >
+          <Link to="/">
+            <NavbarBrand><img alt="logo" src={this.props.mode === 'light' ? "/logos/je-logo-white.png" : "/logos/je-logo.png"} style={{ height: "80px", marginRight: "0.5vw" }}></img></NavbarBrand>
+          </Link>
           <NavbarToggler onClick={() => this.toggle()}>
             <HamburgerMenu isOpen={this.state.isOpen} menuClicked={() => this.toggle()} width={24} height={16} strokeWidth={2} borderRadius={45} color="black" />
           </NavbarToggler>
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav navbar className="mr-auto" >
               {/*<NavLink className="navlink-custom" href="/projects"><CodeIcon style={{ marginRight: "5px", marginBottom: "2px" }} /><span className="Underline">Projects</span></NavLink>*/}
-              <NavLink className="navlink-custom" href="/speedcubing"><AppsIcon style={{ marginRight: "5px", marginBottom: "2px" }} /><span className="Underline">Speedcubing</span></NavLink>
-              <NavLink className="navlink-custom" href="/contact"><EmailIcon style={{ marginRight: "5px", marginBottom: "2px" }} /><span className="Underline">Contact</span></NavLink>
+              <Link className={this.props.mode === 'light' ? "navlink-custom white-link" : "navlink-custom"} to="/speedcubing"><AppsIcon style={{ marginRight: "5px", marginBottom: "2px" }} /><span className="Underline">Speedcubing</span></Link>
+              <Link className={this.props.mode === 'light' ? "navlink-custom white-link" : "navlink-custom"} to="/contact"><EmailIcon style={{ marginRight: "5px", marginBottom: "2px" }} /><span className="Underline">Contact</span></Link>
             </Nav>
           </Collapse>
         </Navbar>

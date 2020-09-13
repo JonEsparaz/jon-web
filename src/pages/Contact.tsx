@@ -70,7 +70,7 @@ export default class Contact extends React.Component<EmptyProps, State> {
   render() {
     return (
       <div className="Contact">
-        <Menu />
+        <Menu mode='dark' />
         <div className="ContactContainer">
           <form className="ContactForm" onSubmit={(e) => this.send(e)} >
             <div className="NameInputContainer">

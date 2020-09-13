@@ -1,10 +1,20 @@
 @import '../theme.scss';
 
+.navlink-custom {
+    text-decoration: none !important;
+}
+
 .navlink-custom:hover {
     .Underline:before {
         visibility: visible;
         transform: scaleX(1);
     }
+
+    color: inherit;
+}
+
+.white-link {
+    color: white !important;
 }
 
 @media (min-width: 768px) {
@@ -14,10 +24,11 @@
     }
 
     .navlink-custom {
-        color: black !important;
+        color: black;
         font-family: $font;
         text-transform: uppercase;
         font-size: 14px;
+        margin-right: 1rem;
     }
 }
 
@@ -35,7 +46,7 @@
     }
 
     .navlink-custom {
-        color: black !important;
+        color: black;
         font-family: $font;
         text-transform: uppercase;
         font-size: 16px;
