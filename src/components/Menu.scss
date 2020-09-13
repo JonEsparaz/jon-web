@@ -5,12 +5,12 @@
 }
 
 .navlink-custom:hover {
-    .Underline:before {
+    color: inherit;
+
+    .Underline:before, .Underline2:before {
         visibility: visible;
         transform: scaleX(1);
     }
-
-    color: inherit;
 }
 
 .white-link {
@@ -19,7 +19,7 @@
 
 @media (min-width: 768px) {
     .MenuContainer {
-        margin-left: 10vw;
+        margin-left: 7.5vw;
         width: 80vw;
     }
 

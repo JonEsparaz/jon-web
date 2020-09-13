@@ -1,5 +1,6 @@
 $font: Work Sans;
 $font2: Raleway;
+$accent: #ff3333;
 
 .White {
     color: white !important;
@@ -100,7 +101,7 @@ $font2: Raleway;
         color: black;
     }
 
-    .Text1 br {
+    .Text1 > br, .Header2 > br {
         display: none;
     }
 

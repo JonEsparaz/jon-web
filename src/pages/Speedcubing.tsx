@@ -21,8 +21,8 @@ class Speedcubing extends React.Component<EmptyProps, State> {
     }
     this.videoData = [
       { id: "E5h2XIfgcow", text: "North American Record: 7.57 3x3 One-Handed Solve" },
-      { id: "U5x6YN1k6T8", text: "First Place @ Newmarket Open 2019: 7.39 3x3 Rubik's Cube Average" },
-      { id: "aJKcaV2tP_o", text: "Second Place @ Canadian Championship 2019: 12.94 3x3 One-Handed Average" },
+      { id: "U5x6YN1k6T8", text: "1st Place @ Newmarket Open 2019: 7.39 3x3 Rubik's Cube Average" },
+      { id: "aJKcaV2tP_o", text: "2nd Place @ Canadian Championship 2019: 12.94 3x3 One-Handed Average" },
     ]
   }
 
@@ -70,17 +70,17 @@ class Speedcubing extends React.Component<EmptyProps, State> {
           In 2018, I broke the North American Record for solving the Rubik's Cube one-handed with a time of 7.57 seconds. At the time, this ranked me second in the world.
           Today, I organize and officiate competitions as a Junior Delegate for the World Cube Association.</div>
 
-          <h2 className="Header2">Speedcubing Highlights</h2>
+          <h2 className="Header2">Highlight Reel</h2>
 
           <div className="YTgrid">
             {this.videoData.map(item => {
               return (
                 <div className="SpeedcubingItem" key={item.id}>
-                  <button className="imageContainer" onClick={() => { this.handleOpen(item.id) }}>
+                  <button aria-labelledby={item.id} className="imageContainer" onClick={() => { this.handleOpen(item.id) }} >
                     <img className="YTimage" alt="youtube thumbnail" src={`https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`}></img>
                     <img className="playArrow" src='/svg/play_arrow-white.svg' alt=""></img>
                   </button>
-                  <div className="YTtitle">{item.text}</div>
+                  <div className="YTtitle" id={item.id}>{item.text}</div>
                 </div>
               )
             }
