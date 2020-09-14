@@ -1,14 +1,10 @@
 @import '../theme.scss';
 
 .error {
-    padding-top: 10vw;
+    padding-top: 5vw;
     text-align: center;
     position: relative;
-    min-height: 100vh;
+    height: calc(100vh - 96px - 159px - 5vw);
     font-family: $font;
-    background: #1a1a1a;
-}
-
-.errortext {
-    color: white;
+    background:white;
 }

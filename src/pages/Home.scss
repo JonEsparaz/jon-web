@@ -29,6 +29,7 @@
     .HomePage {
         text-align: center;
         margin-bottom: 5vw;
+        min-height: calc(100vh - 96px - 159px);
     }
 
     .HeroImage {

@@ -21,8 +21,8 @@ function Home() {
           <div className="Text1 White">Engineering Science | University of Toronto</div>
           <button className="ActionButton" onClick={scroll} ><span className="Underline">About Me</span></button>
         </div>
-        <img className="HeroImage" src="/images/keyboard.jpg"
-          srcSet="/images/keyboard-720.jpg 720w, /images/keyboard-1080.jpg 1080w, /images/keyboard-1921.jpg 1921w, /images/keyboard.jpg 2870w"
+        <img className="HeroImage" src="https://d3posj7vfpgqcz.cloudfront.net/keyboard.jpg"
+          srcSet="https://d3posj7vfpgqcz.cloudfront.net/keyboard-720.jpg 720w, https://d3posj7vfpgqcz.cloudfront.net/keyboard-1080.jpg 1080w, https://d3posj7vfpgqcz.cloudfront.net/keyboard-1921.jpg 1921w, https://d3posj7vfpgqcz.cloudfront.net/keyboard.jpg 2870w"
           sizes="(min-width: 768px) 100vw, 50vw" alt="mechanical keyboard"
         />
         <div className="Text1 AboutMe" id="about-me"><b>About me: </b>I'm in my 3rd year of the University of Toronto's
@@ -36,7 +36,7 @@ function Home() {
                 <div className="Header2 Small" style={{ margin: 0 }}>Languages</div>
               </div>
               <div className="SkillText">Typescript, Python, C/C++, Javascript, GraphQL, CSS/SASS and HTML5. Languages I'm familar with and/or learning include: Go, VTL, Web Assembly, ARM Assembly and Verilog.</div>
-              <div className="SkillImage" style={{ backgroundImage: "url(/images/code-1.jpg)" }} />
+              <div className="SkillImage" style={{ backgroundImage: "url(https://d3posj7vfpgqcz.cloudfront.net/code-1.jpg)" }} />
             </div>
           </div>
           <div className="SkillColumn" >
@@ -46,7 +46,7 @@ function Home() {
                 <div className="Header2 Small" style={{ margin: 0 }}>Cloud</div>
               </div>
               <div className="SkillText">I have six months of professional experience with AWS Amplify and I've deployed projects on Google Firebase and Microsoft Azure. Cloud services I've used in production include: DynamoDB, AWS Appsync, AWS Lambda, Google Firestore and S3 Storage, just to name a few.</div>
-              <div className="SkillImage" style={{ backgroundImage: "url(/images/cloud.jpg)" }} />
+              <div className="SkillImage" style={{ backgroundImage: "url(https://d3posj7vfpgqcz.cloudfront.net/cloud.jpg)" }} />
             </div>
           </div>
           <div className="SkillColumn" >
@@ -56,7 +56,7 @@ function Home() {
                 <div className="Header2 Small" style={{ margin: 0 }}>Frameworks &amp; More</div>
               </div>
               <div className="SkillText">I have professional experience working with ReactJS, React Native, NodeJS, Expo, Bootstrap, and of course, GitHub. As a Machine Learning major, I am learning both Tensorflow and PyTorch.</div>
-              <div className="SkillImage" style={{ backgroundImage: "url(/images/code-2.jpg)" }} />
+              <div className="SkillImage" style={{ backgroundImage: "url(https://d3posj7vfpgqcz.cloudfront.net/code-2.jpg)" }} />
             </div>
           </div>
         </div>

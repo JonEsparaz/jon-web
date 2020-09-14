@@ -1,5 +1,4 @@
-import React from 'react';
-import { Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 const Home = React.lazy(() => import('./pages/Home'));
@@ -12,7 +11,7 @@ const Admin = React.lazy(() => import('./admin/Admin'))
 function App() {
   return (
     <div className="AppContainer" style={{ overflowX: 'hidden' }}>
-      <Suspense fallback={<div></div>}>
+      <Suspense fallback={<div />}>
         <BrowserRouter>
           <Switch>
             <Route path="/" component={Home} exact />

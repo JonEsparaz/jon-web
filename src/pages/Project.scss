@@ -1,12 +1,20 @@
 @import '../theme.scss';
 
+@media (min-width: 768px) {
+
     .ProjectsContainer {
         text-align: center;
         position: relative;
         font-family: $font;
-        height: calc(100vh - 159px - 106px - 5vw)
+        height: calc(100vh - 159px - 96px - 10vw)
     }
+}
 
-    .ProjectsH1 {
-        color: white;
+@media (max-width: 767px) {
+    .ProjectsContainer {
+        text-align: center;
+        position: relative;
+        font-family: $font;
+        height: calc(100vh - 159px - 96px - 14vw)
     }
+}

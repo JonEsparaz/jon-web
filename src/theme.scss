@@ -6,15 +6,6 @@ $accent: #ff3333;
     color: white !important;
 }
 
-@keyframes FadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 @media (min-width: 768px) {
     .ActionButton, .ActionButton2 {
         display: inline-block;
@@ -104,21 +95,6 @@ $accent: #ff3333;
     .Text1 > br, .Header2 > br {
         display: none;
     }
-
-    .CardArea {
-        margin-left: 5vw;
-        display: grid;
-        gap: 1vw;
-        grid-template-columns: repeat(2, 39.5vw);
-    }
-
-    .Card {
-        color: white;
-        background: black;
-        font-family: $font;
-        background-size: cover;
-        text-align: center;
-    }
 }
 
 @media (max-width: 767px) {
@@ -182,41 +158,5 @@ $accent: #ff3333;
         font-family: $font;
         font-size: 4.5vw;
         color: black;
-    }
-
-    .CardArea {
-        margin-left: 5vw;
-        display: grid;
-        gap: 1vw;
-        grid-template-columns: repeat(2, 39.5vw);
-    }
-
-    .Card {
-        color: white;
-        background: black;
-        font-family: $font;
-        background-size: cover;
-        text-align: center;
-    }
-
-    .CardsArea {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(1, 90vw);
-        padding: 5vw;
-    }
-
-    .CardTitle {
-        font-weight: bold;
-        font-size: 1.5vw;
-        font-family: $font;
-    }
-
-    .Card {
-        color: white;
-        background: black;
-        padding: 2vw;
-        font-family: $font;
-        background-size: cover;
     }
 }

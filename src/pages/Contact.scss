@@ -22,9 +22,9 @@
     text-align: center;
     position: relative;
     font-family: $font;
-    margin-left: 27.5vw;
+    left: 27.5vw;
     margin-top: 4vw;
-    min-height: calc(100vh - 106px - 159px - 4vw);
+    min-height: calc(100vh - 96px - 159px - 9vw);
     margin-bottom: 5vw;
   }
 
@@ -82,7 +82,7 @@
     position: relative;
     font-family: $font;
     margin-top: 4vw;
-    min-height: calc(100vh - 106px - 159px - 14vw);
+    min-height: calc(100vh - 96px - 159px - 14vw);
     margin-bottom: 10vw;
   }
 
