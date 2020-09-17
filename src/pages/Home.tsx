@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Home.scss';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
+import smoothscroll from 'smoothscroll-polyfill';
 
 function Home() {
+
+  useEffect(() => {
+    smoothscroll.polyfill();
+  }, [])
 
   const scroll = () => {
     const elem = document.getElementById('about-me');
