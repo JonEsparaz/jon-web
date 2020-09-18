@@ -1,3 +1,6 @@
+# jon-web
+![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/JonEsparaz/jon-web)
+
 ## Local Development
 
 In the project directory, run:
@@ -7,6 +10,6 @@ In the project directory, run:
 
 View the project in your browser at `localhost:3003`
 
-Check out beta releases at [https://beta.jonesparaz.ca/](https://beta.jonesparaz.ca)
+Beta releases at [https://beta.jonesparaz.ca/](https://beta.jonesparaz.ca)
 
 Select images from [https://unsplash.com/](https://unsplash.com/)
