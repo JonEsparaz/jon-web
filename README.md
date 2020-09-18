@@ -1,5 +1,7 @@
 # jon-web
 ![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/JonEsparaz/jon-web)
+![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/JonEsparaz/jon-web/react)
+![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/JonEsparaz/jon-web/aws-amplify?color=orange)
 
 ## Local Development
 
