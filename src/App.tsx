@@ -6,13 +6,15 @@ const Speedcubing = React.lazy(() => import('./pages/Speedcubing'));
 const Contact = React.lazy(() => import('./pages/Contact'));
 const Projects = React.lazy(() => import('./pages/Projects'));
 const Error = React.lazy(() => import('./pages/Error'));
-const Admin = React.lazy(() => import('./admin/Admin'))
+const Admin = React.lazy(() => import('./admin/Admin'));
+const ScrollToTop = React.lazy(() => import('./components/ScrollToTop'));
 
 function App() {
   return (
     <div className="AppContainer" style={{ overflowX: 'hidden' }}>
       <Suspense fallback={<div />}>
         <BrowserRouter>
+          <ScrollToTop />
           <Switch>
             <Route path="/" component={Home} exact />
             <Route path="/speedcubing" component={Speedcubing} />
