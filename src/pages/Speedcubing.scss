@@ -1,9 +1,16 @@
 @import '../theme.scss';
 
+.CubingContainer {
+    font-family: $font;
+    text-align: center;
+}
+
+.SpeedcubingText {
+    text-align: left;
+}
+
 @media (min-width: 768px) {
     .CubingContainer {
-        font-family: $font;
-        text-align: center;
         width: 80vw;
         margin-left: 10vw;
         min-height: calc(100vh - 96px - 159px - 10vw);
@@ -11,7 +18,6 @@
     }
 
     .SpeedcubingText {
-        text-align: left;
         margin-bottom: 4vw;
     }
 
@@ -87,15 +93,9 @@
 
 @media (max-width: 767px) {
     .CubingContainer {
-        font-family: $font;
-        text-align: center;
         margin-left: 5vw;
         margin-right: 5vw;
         margin-bottom: 10vw;
-    }
-
-    .SpeedcubingText {
-        text-align: left;
     }
 
     .YTimage {

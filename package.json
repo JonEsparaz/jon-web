@@ -6,14 +6,6 @@
     "@aws-amplify/ui-react": "^0.2.14",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^26.0.9",
-    "@types/node": "^14.0.27",
-    "@types/react": "^16.9.43",
-    "@types/react-dom": "^16.9.8",
-    "@types/smoothscroll-polyfill": "^0.3.1",
     "aws-amplify": "^3.0.23",
     "bootstrap": "^4.5.2",
     "draft-js": "^0.11.7",
@@ -29,8 +21,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
     "reactstrap": "^8.5.1",
-    "smoothscroll-polyfill": "^0.4.4",
-    "typescript": "^3.9.7"
+    "smoothscroll-polyfill": "^0.4.4"
   },
   "scripts": {
     "start": "PORT=3003 react-scripts start",
@@ -54,16 +45,24 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
     "@types/draft-js": "^0.10.43",
     "@types/draftjs-to-html": "^0.8.0",
     "@types/html-to-draftjs": "^1.4.0",
+    "@types/jest": "^26.0.9",
     "@types/node": "^14.0.27",
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
     "@types/react-draft-wysiwyg": "^1.13.0",
     "@types/react-google-recaptcha": "^2.1.0",
     "@types/react-hamburger-menu": "0.0.3",
     "@types/react-router-dom": "^5.1.5",
     "@types/reactstrap": "^8.5.0",
+    "@types/smoothscroll-polyfill": "^0.3.1",
     "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^4.0.8"
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "typescript": "^4.0.3"
   }
 }

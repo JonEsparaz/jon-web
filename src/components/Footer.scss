@@ -1,14 +1,14 @@
 @import '../theme.scss';
 
-@media (min-width: 768px) {
-    .FooterContainer {
-        width: 100vw;
-        text-align: center;    
-        padding: 40px;
-        bottom: 0;
-        font-family: $font;
-    }
+.FooterContainer {
+    width: 100vw;
+    text-align: center;
+    padding: 40px;
+    bottom: 0;
+    font-family: $font;
+}
 
+@media (min-width: 768px) {
     .footer-link {
         margin-left: 1vw;
         margin-right: 1vw;
@@ -21,14 +21,6 @@
 }
 
 @media (max-width: 767px) {
-    .FooterContainer {
-        width: 100vw;
-        text-align: center;    
-        padding: 40px;
-        bottom: 0;
-        font-family: $font;
-    }
-
     .footer-link {
         margin-left: 1vw;
         margin-right: 1vw;
