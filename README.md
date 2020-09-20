@@ -1,7 +1,8 @@
 # jon-web
 ![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/JonEsparaz/jon-web)
-![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/JonEsparaz/jon-web/react)
-![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/JonEsparaz/jon-web/aws-amplify?color=orange)
+![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/JonEsparaz/jon-web/react?color=%2361dafb)
+![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/JonEsparaz/jon-web/aws-amplify?color=%23ff9900)
+![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/JonEsparaz/jon-web/dev/typescript?color=%233178c6)
 
 ## Local Development
 
