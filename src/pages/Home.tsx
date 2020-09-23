@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, createRef, useState } from 'react';
 import './Home.scss';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
@@ -7,13 +7,28 @@ import smoothscroll from 'smoothscroll-polyfill';
 
 function Home() {
 
+  const [showButton, setShowButton] = useState(true);
+  const aboutRef = createRef<HTMLDivElement>();
+
   useEffect(() => {
     smoothscroll.polyfill();
   }, [])
 
+  useEffect(() => {
+    const cleanup = window.addEventListener('resize', () => {
+      const h = window.innerHeight;
+      const w = window.innerWidth;
+
+      if (w / h <= 1.6 && w >= 768)
+        setShowButton(false);
+      else
+        setShowButton(true);
+    })
+    return () => cleanup;
+  })
+
   const scroll = () => {
-    const elem = document.getElementById('about-me');
-    elem?.scrollIntoView({ behavior: "smooth" });
+    aboutRef?.current?.scrollIntoView({ behavior: "smooth" });
   }
 
   return (
@@ -24,13 +39,13 @@ function Home() {
           <h1 className="Header1 White NameHeader">Jon Esparaz</h1>
           <div className='AccentBar' />
           <div className="Text1 White">Engineering Science | University of Toronto</div>
-          <button className="ActionButton" onClick={scroll} ><span className="Underline">About Me</span></button>
+          {showButton ? <button className="ActionButton" onClick={scroll} ><span className="Underline">About Me</span></button> : null}
         </div>
         <img className="HeroImage" src="https://d3posj7vfpgqcz.cloudfront.net/images/keyboard.jpg"
           srcSet="https://d3posj7vfpgqcz.cloudfront.net/images/keyboard-720.jpg 720w, https://d3posj7vfpgqcz.cloudfront.net/images/keyboard-1080.jpg 1080w, https://d3posj7vfpgqcz.cloudfront.net/images/keyboard-1921.jpg 1921w, https://d3posj7vfpgqcz.cloudfront.net/images/keyboard.jpg 2870w"
           sizes="(min-width: 768px) 100vw, 50vw" alt="mechanical keyboard"
         />
-        <div className="Text1 AboutMe" id="about-me"><b>About me: </b>I'm in my 3rd year of the University of Toronto's
+        <div className="Text1 AboutMe" ref={aboutRef}><b>About me: </b>I'm in my 3rd year of the University of Toronto's
         Engineering Science program, majoring in Machine Intelligence.
         I enjoy writing software, solving Rubik's Cubes and a good game of basketball.</div>
         <div className="SkillsArea">
