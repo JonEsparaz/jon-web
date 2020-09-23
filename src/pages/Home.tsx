@@ -6,25 +6,28 @@ import { Link } from 'react-router-dom';
 import smoothscroll from 'smoothscroll-polyfill';
 
 function Home() {
-
-  const [showButton, setShowButton] = useState(true);
+  const [showButton, setShowButton] = useState(false);
   const aboutRef = createRef<HTMLDivElement>();
+
+  const handleResize = () => {
+    const h = window.innerHeight;
+    const w = window.innerWidth;
+    if (w / h <= 1.6 && w >= 768)
+      setShowButton(false);
+    else
+      setShowButton(true);
+  }
 
   useEffect(() => {
     smoothscroll.polyfill();
+    handleResize();
   }, [])
 
   useEffect(() => {
-    const cleanup = window.addEventListener('resize', () => {
-      const h = window.innerHeight;
-      const w = window.innerWidth;
-
-      if (w / h <= 1.6 && w >= 768)
-        setShowButton(false);
-      else
-        setShowButton(true);
+    const cleanUp = window.addEventListener('resize', () => {
+      handleResize();
     })
-    return () => cleanup;
+    return () => cleanUp;
   })
 
   const scroll = () => {
