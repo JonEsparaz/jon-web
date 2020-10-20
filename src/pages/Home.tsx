@@ -58,7 +58,7 @@ function Home() {
                 <img src='/svg/code.svg' alt='' className="SkillIcon"></img>
                 <div className="Header2 Small" style={{ margin: 0 }}>Languages</div>
               </div>
-              <div className="SkillText">Typescript, Python, C/C++, Javascript, GraphQL, CSS/SASS and HTML5. Languages I'm familar with and/or learning include: Go, VTL, Web Assembly, ARM Assembly and Verilog.</div>
+              <div className="SkillText">TypeScript, Python, C/C++, JavaScript, CSS/SASS, HTML5 and MATLAB. Languages I'm familar with include: Go, C#, VTL, Bash, ARM Assembly and Verilog.</div>
               <div className="SkillImage" style={{ backgroundImage: "url(https://d3posj7vfpgqcz.cloudfront.net/images/code-1.jpg)" }} />
             </div>
           </div>
@@ -68,7 +68,7 @@ function Home() {
                 <img src='/svg/cloud.svg' alt='' className="SkillIcon"></img>
                 <div className="Header2 Small" style={{ margin: 0 }}>Cloud</div>
               </div>
-              <div className="SkillText">I have six months of professional experience with AWS Amplify and I've deployed projects on Google Firebase and Microsoft Azure. Cloud services I've used in production include: DynamoDB, AWS Appsync, AWS Lambda, Google Firestore and S3 Storage, just to name a few.</div>
+              <div className="SkillText">I have developed several applications using the AWS Amplify and Google Firebase frameworks. AWS products I've used in production include: DynamoDB, AppSync, Lambda, CloudFront and S3 Storage.</div>
               <div className="SkillImage" style={{ backgroundImage: "url(https://d3posj7vfpgqcz.cloudfront.net/images/cloud.jpg)" }} />
             </div>
           </div>
@@ -78,7 +78,7 @@ function Home() {
                 <img src='/svg/build.svg' alt='' className="SkillIcon"></img>
                 <div className="Header2 Small" style={{ margin: 0 }}>Frameworks &amp; More</div>
               </div>
-              <div className="SkillText">I have professional experience working with ReactJS, React Native, NodeJS, Expo, Bootstrap, and of course, GitHub. As a Machine Learning major, I am learning both Tensorflow and PyTorch.</div>
+              <div className="SkillText">I am highly experienced with React, React Native, NodeJS, GitHub and Linux. As a Machine Intelligence major, I have experience using: PyTorch, OpenCV, NumPy and Pandas.</div>
               <div className="SkillImage" style={{ backgroundImage: "url(https://d3posj7vfpgqcz.cloudfront.net/images/code-2.jpg)" }} />
             </div>
           </div>
