@@ -1,56 +1,57 @@
 @import '../theme.scss';
 
 .navlink-custom {
-    text-decoration: none !important;
+  text-decoration: none !important;
 }
 
 .navlink-custom:hover {
-    color: inherit;
+  color: inherit;
 
-    .Underline:before, .Underline2:before {
-        visibility: visible;
-        transform: scaleX(1);
-    }
+  .Underline:before,
+  .Underline2:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
 }
 
 .white-link {
-    color: white !important;
+  color: white !important;
 }
 
 @media (min-width: 768px) {
-    .MenuContainer {
-        margin-left: 7.5vw;
-        width: 80vw;
-    }
+  .MenuContainer {
+    margin-left: 7.5vw;
+    width: 80vw;
+  }
 
-    .navlink-custom {
-        color: black;
-        font-family: $font;
-        text-transform: uppercase;
-        font-size: 14px;
-        margin-right: 1rem;
-    }
+  .navlink-custom {
+    color: black;
+    font-family: $font;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-right: 1rem;
+  }
 }
 
 @media (max-width: 767px) {
-    .MenuContainer {
-        width: 100vw;
-    }
+  .MenuContainer {
+    width: 100vw;
+  }
 
-    .navbar-toggler {
-        outline: none;
-        background-color: #ffffff00 !important;
-        left:86.5vw;
-        top:5.35vw;
-        height:8vw;
-    }
+  .navbar-toggler {
+    outline: none;
+    background-color: #ffffff00 !important;
+    left: 86.5vw;
+    top: 5.35vw;
+    height: 8vw;
+  }
 
-    .navlink-custom {
-        color: black;
-        font-family: $font;
-        text-transform: uppercase;
-        font-size: 16px;
-        padding-top: 4px;
-        padding-bottom: 4px;
-    }
+  .navlink-custom {
+    color: black;
+    font-family: $font;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
 }

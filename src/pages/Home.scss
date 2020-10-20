@@ -1,200 +1,198 @@
 @import '../theme.scss';
 
 .NameHeader {
-    text-align: left !important;
+  text-align: left !important;
 }
 
 @media (min-width: 768px) {
+  $width: 100vw;
+  $imageratio: 9/16;
+  $imageratio2: 1/2.39;
 
-    $width: 100vw;
-    $imageratio: 9/16;
-    $imageratio2: 1/2.39;
+  .AccentBar {
+    background: $accent;
+    height: 5px;
+    width: 50vw;
+    margin-bottom: 8px;
+  }
 
-    .AccentBar {
-        background: $accent;
-        height: 5px;
-        width: 50vw;
-        margin-bottom: 8px;
-    }
+  .AboutMe {
+    position: relative;
+    width: 67.5vw;
+    left: 16.25vw;
+    text-align: left;
+    margin-top: 2.5vw;
+    padding-top: 5vw;
+  }
 
-    .AboutMe {
-        position: relative;
-        width: 67.5vw;
-        left: 16.25vw;
-        text-align: left;
-        margin-top: 2.5vw;
-        padding-top: 5vw;
-    }
+  .HomePage {
+    text-align: center;
+    margin-bottom: 5vw;
+    min-height: calc(100vh - 96px - 159px);
+  }
 
-    .HomePage {
-        text-align: center;
-        margin-bottom: 5vw;
-        min-height: calc(100vh - 96px - 159px);
-    }
+  .HeroImage {
+    width: $width;
+    height: $imageratio * $width;
+    object-fit: cover;
+    object-position: 100% 0;
+  }
 
-    .HeroImage {
-        width: $width;
-        height: $imageratio*$width;
-        object-fit: cover;
-        object-position: 100% 0;
-    }
+  .ContentContainer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: $imageratio * $width;
+    z-index: 999;
+    width: 100%;
+    background-color: #00000070;
+  }
 
-    .ContentContainer {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        height: $imageratio*$width;
-        z-index: 999;
-        width: 100%;
-        background-color: #00000070;
-    }
+  .Skill {
+    padding: 1vw;
+    text-align: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 21.5vw;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    margin-bottom: 1vw;
+  }
 
-    .Skill {
-        padding: 1vw;
-        text-align: left;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        width: 21.5vw;
-        margin-left: 0.5vw;
-        margin-right: 0.5vw;
-        margin-bottom: 1vw;
-    }
+  .SkillColumn {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .SkillColumn {
-        display: flex;
-        flex-direction: column;
-    }
+  .SkillImage {
+    height: $imageratio2 * 19vw;
+    background-size: cover;
+  }
 
-    .SkillImage {
-        height: $imageratio2*19vw;
-        background-size: cover;
-    }
+  .SkillsArea {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 67.5vw;
+    left: 16.25vw;
+    margin-top: 5vw;
+  }
 
-    .SkillsArea {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: center;
-        flex-wrap: wrap;
-        width: 67.5vw;
-        left: 16.25vw;
-        margin-top: 5vw;
-    }
+  .SkillTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1vw;
+  }
 
-    .SkillTitle {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 1vw;
-    }
+  .SkillIcon {
+    width: 2.5vw;
+    margin-right: 0.5vw;
+  }
 
-    .SkillIcon {
-        width: 2.5vw;
-        margin-right: 0.5vw;
-    }
-
-    .SkillText {
-        font-family: $font;
-        font-size: 1.1vw;
-        padding-left: 1vw;
-        padding-right: 1vw;
-        padding-bottom: 1vw;
-    }
+  .SkillText {
+    font-family: $font;
+    font-size: 1.1vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-bottom: 1vw;
+  }
 }
 
 @media (max-width: 767px) {
-    $width: 100vw;
+  $width: 100vw;
 
-    .AboutMe {
-        position: relative;
-        width: 90vw;
-        left: 5vw;
-        margin-top: 7.5vw;
-        margin-bottom: 10vw;
-        padding-top: 7.5vw;
-        text-align: left;
-    }
+  .AboutMe {
+    position: relative;
+    width: 90vw;
+    left: 5vw;
+    margin-top: 7.5vw;
+    margin-bottom: 10vw;
+    padding-top: 7.5vw;
+    text-align: left;
+  }
 
-    .AccentBar {
-        background: $accent;
-        height: 5px;
-        width: 80vw;
-        margin-bottom: 8px;
-    }
+  .AccentBar {
+    background: $accent;
+    height: 5px;
+    width: 80vw;
+    margin-bottom: 8px;
+  }
 
-    .HomeContainer {
-        margin-left: 5vw;
-        margin-right: 5vw;
-    }
+  .HomeContainer {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
 
-    .HomePage {
-        width: 100vw;
-        text-align: center;
-        margin-bottom: 10vw;
-    }
+  .HomePage {
+    width: 100vw;
+    text-align: center;
+    margin-bottom: 10vw;
+  }
 
-    .HeroImage {
-        width: $width;
-        height: 100vh;
-        object-fit: cover;
-    }
+  .HeroImage {
+    width: $width;
+    height: 100vh;
+    object-fit: cover;
+  }
 
-    .ContentContainer {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        width: $width;
-        height: 100vh;
-        background-color: #00000070;
-        padding-left: 5vw;
-        padding-right: 5vw;
-    }
+  .ContentContainer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: $width;
+    height: 100vh;
+    background-color: #00000070;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
 
-    $skill-padding: 5vw;
+  $skill-padding: 5vw;
 
-    .Skill {
-        padding: $skill-padding;
-        text-align: left;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        width: 90vw;
-        margin-bottom: $skill-padding;
-    }
+  .Skill {
+    padding: $skill-padding;
+    text-align: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 90vw;
+    margin-bottom: $skill-padding;
+  }
 
-    .SkillImage {
-        height: 25vw;
-        background-size: cover;
-    }
+  .SkillImage {
+    height: 25vw;
+    background-size: cover;
+  }
 
-    .SkillsArea {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .SkillsArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .SkillTitle {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: $skill-padding;
-    }
+  .SkillTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: $skill-padding;
+  }
 
-    .SkillText {
-        font-family: $font;
-        font-size: 4vw;
-        padding-left: 1vw;
-        padding-right: 1vw;
-        padding-bottom: $skill-padding;
-    }
-    
-    .SkillIcon {
-        width: 10vw;
-        margin-right: 2vw;
-    }
+  .SkillText {
+    font-family: $font;
+    font-size: 4vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-bottom: $skill-padding;
+  }
+
+  .SkillIcon {
+    width: 10vw;
+    margin-right: 2vw;
+  }
 }
-

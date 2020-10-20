@@ -10,12 +10,11 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import * as query from '../graphql/queries';
 
 interface State {
-  emailObj: ContactQueryVariables
+  emailObj: ContactQueryVariables;
   isSent: boolean;
 }
 
 export default class Contact extends React.Component<EmptyProps, State> {
-
   recaptchaRef: React.RefObject<ReCAPTCHA>;
   constructor(props: EmptyProps) {
     super(props);
@@ -28,7 +27,7 @@ export default class Contact extends React.Component<EmptyProps, State> {
         message: '',
       },
       isSent: false,
-    }
+    };
     this.recaptchaRef = React.createRef();
   }
 
@@ -54,25 +53,26 @@ export default class Contact extends React.Component<EmptyProps, State> {
             subject: '',
             message: '',
           },
-          isSent: true
-        })
-
+          isSent: true,
+        });
       } catch (err) {
-        console.error(err)
+        console.error(err);
       }
     }
   }
 
   handleChange(field: keyof ContactQueryVariables, input: string) {
-    this.setState((prevState) => ({ emailObj: { ...prevState.emailObj, [field]: input } }));
+    this.setState((prevState) => ({
+      emailObj: { ...prevState.emailObj, [field]: input },
+    }));
   }
 
   render() {
     return (
       <div className="Contact">
-        <Menu mode='dark' />
+        <Menu mode="dark" />
         <div className="ContactContainer">
-          <form className="ContactForm" onSubmit={(e) => this.send(e)} >
+          <form className="ContactForm" onSubmit={(e) => this.send(e)}>
             <div className="NameInputContainer">
               <input
                 style={{ marginRight: 10 }}
@@ -128,15 +128,23 @@ export default class Contact extends React.Component<EmptyProps, State> {
               type="submit"
               disabled={this.state.isSent}
             >
-              <span className={this.state.isSent ? "" : "Underline2"}>
+              <span className={this.state.isSent ? '' : 'Underline2'}>
                 {this.state.isSent ? 'Sent' : 'Send'}
               </span>
             </button>
-            {this.state.isSent ? <span style={{ marginLeft: 12 }}><img src="/svg/check_circle_outline.svg" alt="" className="CheckIcon" /></span> : null}
+            {this.state.isSent ? (
+              <span style={{ marginLeft: 12 }}>
+                <img
+                  src="/svg/check_circle_outline.svg"
+                  alt=""
+                  className="CheckIcon"
+                />
+              </span>
+            ) : null}
           </form>
         </div>
         <Footer />
-      </div >
+      </div>
     );
   }
 }

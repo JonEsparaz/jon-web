@@ -6,24 +6,34 @@ import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import './Speedcubing.scss';
 
-type VideoData = { id: string, text: string }
+type VideoData = { id: string; text: string };
 
 interface State {
-  video: string | null
+  video: string | null;
 }
 
 class Speedcubing extends React.Component<EmptyProps, State> {
-  videoData: VideoData[]
+  videoData: VideoData[];
   constructor(props: EmptyProps) {
     super(props);
     this.state = {
-      video: null
-    }
+      video: null,
+    };
     this.videoData = [
-      { id: "E5h2XIfgcow", text: "North American Record: 7.57 3x3 One-Handed Solve" },
-      { id: "U5x6YN1k6T8", text: "1st Place @ Newmarket Open 2019: 7.39 3x3 Rubik's Cube Average" },
-      { id: "aJKcaV2tP_o", text: "2nd Place @ Canadian Championship 2019: 12.94 3x3 One-Handed Average" },
-    ]
+      {
+        id: 'E5h2XIfgcow',
+        text: 'North American Record: 7.57 3x3 One-Handed Solve',
+      },
+      {
+        id: 'U5x6YN1k6T8',
+        text: "1st Place @ Newmarket Open 2019: 7.39 3x3 Rubik's Cube Average",
+      },
+      {
+        id: 'aJKcaV2tP_o',
+        text:
+          '2nd Place @ Canadian Championship 2019: 12.94 3x3 One-Handed Average',
+      },
+    ];
   }
 
   handleOpen(data: string) {
@@ -31,15 +41,15 @@ class Speedcubing extends React.Component<EmptyProps, State> {
       window.location.href = `https://www.youtube.com/watch?v=${data}`;
     } else {
       this.setState({
-        video: data
-      })
+        video: data,
+      });
     }
-  };
+  }
 
   handleClose = () => {
     this.setState({
-      video: null
-    })
+      video: null,
+    });
   };
 
   videoModal() {
@@ -47,7 +57,7 @@ class Speedcubing extends React.Component<EmptyProps, State> {
       <Modal
         open={Boolean(this.state.video)}
         onClose={this.handleClose}
-        className={"custom-modal"}
+        className={'custom-modal'}
       >
         <iframe
           className="videoPlayer"
@@ -56,42 +66,61 @@ class Speedcubing extends React.Component<EmptyProps, State> {
           frameBorder="0"
         />
       </Modal>
-    )
+    );
   }
 
   render() {
     return (
       <div>
-        <Menu mode='dark' />
+        <Menu mode="dark" />
         <div className="CubingContainer">
           {this.videoModal()}
           <h2 className="Header2 Big">Speedcubing</h2>
-          <div className="Text1 SpeedcubingText">For the past {new Date().getFullYear() - 2013} years, I have competed in World Cube Association competitions.
-          In 2018, I broke the North American Record for solving the Rubik's Cube one-handed with a time of 7.57 seconds. At the time, this ranked me second in the world.
-          Today, I organize and officiate competitions as a Junior Delegate for the World Cube Association.</div>
+          <div className="Text1 SpeedcubingText">
+            For the past {new Date().getFullYear() - 2013} years, I have
+            competed in World Cube Association competitions. In 2018, I broke
+            the North American Record for solving the Rubik's Cube one-handed
+            with a time of 7.57 seconds. At the time, this ranked me second in
+            the world. Today, I organize and officiate competitions as a Junior
+            Delegate for the World Cube Association.
+          </div>
 
           <h2 className="Header2">Highlight Reel</h2>
 
           <div className="YTgrid">
-            {this.videoData.map(item => {
+            {this.videoData.map((item) => {
               return (
                 <div className="SpeedcubingItem" key={item.id}>
-                  <button aria-labelledby={item.id} className="imageContainer" onClick={() => { this.handleOpen(item.id) }} >
-                    <img className="YTimage" alt="youtube thumbnail" src={`https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`}></img>
-                    <img className="playArrow" src='/svg/play_arrow-white.svg' alt=""></img>
+                  <button
+                    aria-labelledby={item.id}
+                    className="imageContainer"
+                    onClick={() => {
+                      this.handleOpen(item.id);
+                    }}
+                  >
+                    <img
+                      className="YTimage"
+                      alt="youtube thumbnail"
+                      src={`https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`}
+                    ></img>
+                    <img
+                      className="playArrow"
+                      src="/svg/play_arrow-white.svg"
+                      alt=""
+                    ></img>
                   </button>
-                  <div className="YTtitle" id={item.id}>{item.text}</div>
+                  <div className="YTtitle" id={item.id}>
+                    {item.text}
+                  </div>
                 </div>
-              )
-            }
-            )}
+              );
+            })}
           </div>
         </div>
         <Footer />
-      </div >
-    )
+      </div>
+    );
   }
-
 }
 
 export default Speedcubing;

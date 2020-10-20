@@ -8,11 +8,46 @@ import './Footer.scss';
 function Footer() {
   return (
     <div className="FooterContainer">
-      <a aria-label='Twitter' href="https://twitter.com/JonEsparaz" rel="noopener noreferrer" target="_blank" className="footer-link"><TwitterIcon fontSize="large" style={{ color: "black" }} /></a>
-      <a aria-label='Github' href="https://github.com/JonEsparaz" rel="noopener noreferrer" target="_blank" className="footer-link"><GitHubIcon fontSize="large" style={{ color: "black" }} /></a>
-      <a aria-label='Youtube' href="https://www.youtube.com/c/JonEsparaz" rel="noopener noreferrer" target="_blank" className="footer-link"><YouTubeIcon fontSize="large" style={{ color: "black" }} /></a>
-      <a aria-label='Linked In' href="https://www.linkedin.com/in/jonathanesparaz/" rel="noopener noreferrer" target="_blank" className="footer-link"><LinkedInIcon fontSize="large" style={{ color: "black" }} /></a>
-      <div style={{ marginTop: "20px", color: "black" }}> &copy; {new Date().getFullYear()} Jonathan Esparaz</div>
+      <a
+        aria-label="Twitter"
+        href="https://twitter.com/JonEsparaz"
+        rel="noopener noreferrer"
+        target="_blank"
+        className="footer-link"
+      >
+        <TwitterIcon fontSize="large" style={{ color: 'black' }} />
+      </a>
+      <a
+        aria-label="Github"
+        href="https://github.com/JonEsparaz"
+        rel="noopener noreferrer"
+        target="_blank"
+        className="footer-link"
+      >
+        <GitHubIcon fontSize="large" style={{ color: 'black' }} />
+      </a>
+      <a
+        aria-label="Youtube"
+        href="https://www.youtube.com/c/JonEsparaz"
+        rel="noopener noreferrer"
+        target="_blank"
+        className="footer-link"
+      >
+        <YouTubeIcon fontSize="large" style={{ color: 'black' }} />
+      </a>
+      <a
+        aria-label="Linked In"
+        href="https://www.linkedin.com/in/jonathanesparaz/"
+        rel="noopener noreferrer"
+        target="_blank"
+        className="footer-link"
+      >
+        <LinkedInIcon fontSize="large" style={{ color: 'black' }} />
+      </a>
+      <div style={{ marginTop: '20px', color: 'black' }}>
+        {' '}
+        &copy; {new Date().getFullYear()} Jonathan Esparaz
+      </div>
     </div>
   );
 }
