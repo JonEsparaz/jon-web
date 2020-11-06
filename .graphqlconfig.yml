@@ -1,6 +1,6 @@
 projects:
   jonwebts:
-    schemaPath: src/graphql/schema.json
+    schemaPath: amplify/backend/api/jonwebts/build/schema.graphql
     includes:
       - src/graphql/**/*.ts
     excludes:
