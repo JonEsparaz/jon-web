@@ -10,11 +10,6 @@
             "StackName": "amplify-jonweb-prod-222929",
             "StackId": "arn:aws:cloudformation:us-east-2:848045425465:stack/amplify-jonweb-prod-222929/614bc1a0-ab8b-11ea-a0c6-0aeddbb89fe2",
             "AmplifyAppId": "d39xfv3z3bln6l"
-        },
-        "categories": {
-            "auth": {
-                "jonweb44e73b7f": {}
-            }
         }
     }
 }
