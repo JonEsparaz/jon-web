@@ -57,8 +57,8 @@ function Home() {
         />
         <div className="Text1 AboutMe" ref={aboutRef}>
           <b>About me: </b>I'm a 3rd year Machine Intelligence major in the
-          University of Toronto's Engineering Science program. I enjoy
-          writing software, solving Rubik's Cubes and a good game of basketball.
+          University of Toronto's Engineering Science program. I enjoy writing
+          software, solving Rubik's Cubes and a good game of basketball.
         </div>
         <div className="SkillsArea">
           <div className="SkillColumn">
@@ -70,8 +70,8 @@ function Home() {
                 </div>
               </div>
               <div className="SkillText">
-                TypeScript, Python, C/C++, JavaScript, CSS/SASS, HTML5 and MATLAB.
-                I'm familiar with Go, VTL and C#. Additionally, I have
+                TypeScript, Python, C/C++, JavaScript, CSS/SASS, HTML5 and
+                MATLAB. I'm familiar with Go, VTL and C#. Additionally, I have
                 experience writing ARM Assembly and Verilog for coursework.
               </div>
               <div
@@ -114,9 +114,9 @@ function Home() {
                 </div>
               </div>
               <div className="SkillText">
-                I am highly experienced with React, React Native, NodeJS and GitHub.
-                As a Machine Intelligence major, I have experience using PyTorch,
-                NumPy, OpenCV, pandas and scikit-learn.
+                I am highly experienced with React, React Native, NodeJS and
+                GitHub. As a Machine Intelligence major, I have experience using
+                PyTorch, NumPy, OpenCV, pandas and scikit-learn.
               </div>
               <div
                 className="SkillImage"

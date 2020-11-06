@@ -1,8 +1,3 @@
-/* Amplify Params - DO NOT EDIT
-	ENV
-	REGION
-Amplify Params - DO NOT EDIT */
-
 const nodemailer = require('nodemailer');
 const sanitizeHtml = require('sanitize-html');
 
@@ -44,3 +39,4 @@ exports.handler = async (event) => {
     console.error(err);
   }
 };
+

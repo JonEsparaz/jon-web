@@ -33,16 +33,15 @@
 		}
 	},
 	"function": {
-		"jonweb82b3da72": {
-			"build": true,
-			"providerPlugin": "awscloudformation",
-			"service": "Lambda",
-			"dependsOn": []
-		},
 		"S3Trigger23ac304f": {
 			"service": "Lambda",
 			"providerPlugin": "awscloudformation",
 			"build": true
+		},
+		"contactform2": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda"
 		}
 	},
 	"storage": {
