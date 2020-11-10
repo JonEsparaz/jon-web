@@ -116,7 +116,7 @@ function Home() {
               <div className="SkillText">
                 I am highly experienced with React, React Native, NodeJS and
                 GitHub. As a Machine Intelligence major, I have experience using
-                PyTorch, NumPy, OpenCV, pandas and scikit-learn.
+                PyTorch, NumPy, OpenCV, pandas, Matplotlib and scikit-learn.
               </div>
               <div
                 className="SkillImage"
