@@ -75,6 +75,7 @@ export default class Contact extends React.Component<EmptyProps, State> {
           <form className="ContactForm" onSubmit={(e) => this.send(e)}>
             <div className="NameInputContainer">
               <input
+                aria-label="First name"
                 style={{ marginRight: 10 }}
                 className="NameInput"
                 type="text"
@@ -84,6 +85,7 @@ export default class Contact extends React.Component<EmptyProps, State> {
                 onChange={(e) => this.handleChange('first', e.target.value)}
               ></input>
               <input
+                aria-label="Last name"
                 className="NameInput"
                 type="text"
                 placeholder="Last name"
@@ -94,6 +96,7 @@ export default class Contact extends React.Component<EmptyProps, State> {
             </div>
 
             <input
+              aria-label="Email Address"
               className="FormInput"
               type="email"
               placeholder="Email"
@@ -103,6 +106,7 @@ export default class Contact extends React.Component<EmptyProps, State> {
             ></input>
             <br />
             <input
+              aria-label="Subject Line"
               className="FormInput"
               type="text"
               placeholder="Subject"
@@ -112,6 +116,7 @@ export default class Contact extends React.Component<EmptyProps, State> {
             ></input>
             <br />
             <textarea
+              aria-label="Message"
               className="MessageInput"
               placeholder="Message..."
               required

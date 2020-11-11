@@ -58,7 +58,11 @@ function Home() {
         <div className="Text1 AboutMe" ref={aboutRef}>
           <b>About me: </b>I'm a 3rd year Machine Intelligence major in the
           University of Toronto's Engineering Science program. I enjoy writing
-          software, solving Rubik's Cubes and a good game of basketball.
+          software,{' '}
+          <Link className="Link" to="/speedcubing">
+            solving Rubik's Cubes
+          </Link>{' '}
+          and a good game of basketball.
         </div>
         <div className="SkillsArea">
           <div className="SkillColumn">
@@ -114,7 +118,7 @@ function Home() {
                 </div>
               </div>
               <div className="SkillText">
-                I am highly experienced with React, React Native, NodeJS and
+                I am highly experienced with React, React Native, Node.js and
                 GitHub. As a Machine Intelligence major, I have experience using
                 PyTorch, NumPy, OpenCV, pandas, Matplotlib and scikit-learn.
               </div>

@@ -34,7 +34,9 @@ $accent: #ff3333;
   }
 
   .ActionButton:hover,
-  .ActionButton2:hover {
+  .ActionButton2:hover,
+  .ActionButton:focus,
+  .ActionButton2:focus {
     .Underline:before,
     .Underline2:before {
       visibility: visible;

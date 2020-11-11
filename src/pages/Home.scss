@@ -4,6 +4,11 @@
   text-align: left !important;
 }
 
+.Link {
+  color: black;
+  text-decoration: underline;
+}
+
 @media (min-width: 768px) {
   $width: 100vw;
   $imageratio: 9/16;
