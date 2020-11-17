@@ -13,8 +13,8 @@
   .CubingContainer {
     width: 80vw;
     margin-left: 10vw;
-    min-height: calc(100vh - 96px - 159px - 10vw);
     margin-bottom: 5vw;
+    min-height: calc(100vh - 96px - 159px - 10vw);
   }
 
   .SpeedcubingText {
@@ -93,9 +93,7 @@
 
 @media (max-width: 767px) {
   .CubingContainer {
-    margin-left: 5vw;
-    margin-right: 5vw;
-    margin-bottom: 10vw;
+    margin: 0 5vw 10vw;
   }
 
   .YTimage {

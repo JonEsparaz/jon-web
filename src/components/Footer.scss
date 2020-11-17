@@ -10,8 +10,7 @@
 
 @media (min-width: 768px) {
   .footer-link {
-    margin-left: 1vw;
-    margin-right: 1vw;
+    margin: 0 1vw;
     transition: opacity 0.3s;
     opacity: 1;
     &:hover {
@@ -22,7 +21,6 @@
 
 @media (max-width: 767px) {
   .footer-link {
-    margin-left: 2vw;
-    margin-right: 2vw;
+    margin: 0 2.5vw;
   }
 }

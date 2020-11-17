@@ -27,9 +27,8 @@
     position: relative;
     font-family: $font;
     left: 27.5vw;
-    margin-top: 4vw;
+    margin: 4vw 0 5vw;
     min-height: calc(100vh - 96px - 159px - 9vw);
-    margin-bottom: 5vw;
   }
 
   .NameInputContainer {
@@ -81,15 +80,13 @@
     text-align: center;
     position: relative;
     font-family: $font;
-    margin-top: 4vw;
+    margin: 4vw 0 10vw;
     min-height: calc(100vh - 96px - 159px - 14vw);
-    margin-bottom: 10vw;
   }
 
   .ContactForm {
     width: 90vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    margin: 0 5vw;
   }
 
   .NameInputContainer {
