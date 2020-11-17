@@ -65,71 +65,65 @@ function Home() {
           and a good game of basketball.
         </div>
         <div className="SkillsArea">
-          <div className="SkillColumn">
-            <div className="Skill">
-              <div className="SkillTitle">
-                <img src="/svg/code.svg" alt="" className="SkillIcon"></img>
-                <div className="Header2 Small" style={{ margin: 0 }}>
-                  Languages
-                </div>
+          <div className="Skill">
+            <div className="SkillTitle">
+              <img src="/svg/code.svg" alt="" className="SkillIcon"></img>
+              <div className="Header2 Small" style={{ margin: 0 }}>
+                Languages
               </div>
-              <div className="SkillText">
-                TypeScript, Python, C/C++, JavaScript, CSS/SASS, HTML5, Go, C#,
-                GraphQL and MATLAB. Additionally, I have experience writing ARM
-                Assembly and Verilog for coursework.
-              </div>
-              <div
-                className="SkillImage"
-                style={{
-                  backgroundImage:
-                    'url(https://d3posj7vfpgqcz.cloudfront.net/images/code-1.jpg)',
-                }}
-              />
             </div>
+            <div className="SkillText">
+              TypeScript, Python, C/C++, JavaScript, CSS/SASS, HTML5, Go, C#,
+              GraphQL and MATLAB. Additionally, I have experience writing ARM
+              Assembly and Verilog for coursework.
+            </div>
+            <div
+              className="SkillImage"
+              style={{
+                backgroundImage:
+                  'url(https://d3posj7vfpgqcz.cloudfront.net/images/code-1.jpg)',
+              }}
+            />
           </div>
-          <div className="SkillColumn">
-            <div className="Skill">
-              <div className="SkillTitle">
-                <img src="/svg/cloud.svg" alt="" className="SkillIcon"></img>
-                <div className="Header2 Small" style={{ margin: 0 }}>
-                  Cloud
-                </div>
+          <div className="Skill">
+            <div className="SkillTitle">
+              <img src="/svg/cloud.svg" alt="" className="SkillIcon"></img>
+              <div className="Header2 Small" style={{ margin: 0 }}>
+                Cloud
               </div>
-              <div className="SkillText">
-                I have developed several applications using the AWS Amplify and
-                Google Firebase frameworks. AWS products I've used in production
-                include: DynamoDB, AppSync, Lambda, CloudFront and S3 Storage.
-              </div>
-              <div
-                className="SkillImage"
-                style={{
-                  backgroundImage:
-                    'url(https://d3posj7vfpgqcz.cloudfront.net/images/cloud.jpg)',
-                }}
-              />
             </div>
+            <div className="SkillText">
+              I have developed several applications using the AWS Amplify and
+              Google Firebase frameworks. AWS products I've used in production
+              include: DynamoDB, AppSync, Lambda, CloudFront and S3 Storage.
+            </div>
+            <div
+              className="SkillImage"
+              style={{
+                backgroundImage:
+                  'url(https://d3posj7vfpgqcz.cloudfront.net/images/cloud.jpg)',
+              }}
+            />
           </div>
-          <div className="SkillColumn">
-            <div className="Skill">
-              <div className="SkillTitle">
-                <img src="/svg/build.svg" alt="" className="SkillIcon"></img>
-                <div className="Header2 Small" style={{ margin: 0 }}>
-                  Frameworks &amp; More
-                </div>
+          <div className="Skill">
+            <div className="SkillTitle">
+              <img src="/svg/build.svg" alt="" className="SkillIcon"></img>
+              <div className="Header2 Small" style={{ margin: 0 }}>
+                Frameworks &amp; More
               </div>
-              <div className="SkillText">
-                I am highly experienced with React, React Native, Node.js and
-                GitHub. As a Machine Intelligence major, I have experience using
-                PyTorch, NumPy, OpenCV, pandas, Matplotlib and scikit-learn.
-              </div>
-              <div
-                className="SkillImage"
-                style={{
-                  backgroundImage:
-                    'url(https://d3posj7vfpgqcz.cloudfront.net/images/code-2.jpg)',
-                }}
-              />
             </div>
+            <div className="SkillText">
+              I am highly experienced with React, React Native, Node.js and
+              GitHub. As a Machine Intelligence major, I have experience using
+              PyTorch, NumPy, OpenCV, pandas, Matplotlib and scikit-learn.
+            </div>
+            <div
+              className="SkillImage"
+              style={{
+                backgroundImage:
+                  'url(https://d3posj7vfpgqcz.cloudfront.net/images/code-2.jpg)',
+              }}
+            />
           </div>
         </div>
         <h2 className="Header2" style={{ marginBottom: 0 }}>
