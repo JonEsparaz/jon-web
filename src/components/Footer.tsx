@@ -18,7 +18,7 @@ function Footer() {
         <TwitterIcon fontSize="large" style={{ color: 'black' }} />
       </a>
       <a
-        aria-label="Github"
+        aria-label="GitHub"
         href="https://github.com/JonEsparaz"
         rel="noopener noreferrer"
         target="_blank"
@@ -27,7 +27,7 @@ function Footer() {
         <GitHubIcon fontSize="large" style={{ color: 'black' }} />
       </a>
       <a
-        aria-label="Youtube"
+        aria-label="YouTube"
         href="https://www.youtube.com/c/JonEsparaz"
         rel="noopener noreferrer"
         target="_blank"
@@ -36,7 +36,7 @@ function Footer() {
         <YouTubeIcon fontSize="large" style={{ color: 'black' }} />
       </a>
       <a
-        aria-label="Linked In"
+        aria-label="LinkedIn"
         href="https://www.linkedin.com/in/jonathanesparaz/"
         rel="noopener noreferrer"
         target="_blank"
