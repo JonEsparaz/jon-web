@@ -6,6 +6,7 @@ const port = 587;
 const senderAddress = 'no-reply@jonesparaz.ca';
 const smtpUsername = process.env.SMTP_USER;
 const smtpPassword = process.env.SMTP_PASS;
+const emailTo = process.env.EMAIL;
 
 exports.handler = async (event) => {
   const emailClean = sanitizeHtml(event.arguments.email);
@@ -17,7 +18,7 @@ exports.handler = async (event) => {
   const transporter = nodemailer.createTransport({
     host: smtpEndpoint,
     port: port,
-    secure: false, // true for 465, false for other ports
+    secure: false,
     auth: {
       user: smtpUsername,
       pass: smtpPassword,
@@ -26,7 +27,7 @@ exports.handler = async (event) => {
 
   const mailOptions = {
     from: senderAddress,
-    to: 'jon.esparaz@gmail.com',
+    to: emailTo,
     replyTo: emailClean,
     subject: subjectClean,
     text: `${messageClean} from ${firstClean} ${lastClean} via jonesparaz.ca`,
@@ -39,4 +40,3 @@ exports.handler = async (event) => {
     console.error(err);
   }
 };
-

@@ -68,7 +68,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-jonweb-prod-222929-deployment",
-					"S3Key": "amplify-builds/contactform2-466b6438676f5477726b-build.zip"
+					"S3Key": "amplify-builds/contactform2-7776504270546b726a2f-build.zip"
 				}
 			}
 		},
