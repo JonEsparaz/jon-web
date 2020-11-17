@@ -74,9 +74,9 @@ function Home() {
                 </div>
               </div>
               <div className="SkillText">
-                TypeScript, Python, C/C++, JavaScript, CSS/SASS, HTML5 and
-                MATLAB. I'm familiar with Go and C#. Additionally, I have
-                experience writing ARM Assembly and Verilog for coursework.
+                TypeScript, Python, C/C++, JavaScript, CSS/SASS, HTML5, Go, C#,
+                GraphQL and MATLAB. Additionally, I have experience writing ARM
+                Assembly and Verilog for coursework.
               </div>
               <div
                 className="SkillImage"
