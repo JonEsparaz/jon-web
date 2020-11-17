@@ -62,7 +62,7 @@ class Admin extends React.Component<EmptyProps, State> {
   handleSelectPost(): void {
     if (this.state.selected !== 'none') {
       const temp = this.state.listPosts?.filter(
-        (item) => item?.title === this.state.selected
+        (item) => item?.title === this.state.selected,
       )[0];
       console.log(temp);
       if (temp) {
@@ -157,7 +157,7 @@ class Admin extends React.Component<EmptyProps, State> {
   }
 
   async handleImageUpload(
-    event: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>,
   ): Promise<void> {
     const temp = event?.target?.files;
     if (temp) {
@@ -185,7 +185,7 @@ class Admin extends React.Component<EmptyProps, State> {
     const { contentBlocks, entityMap } = htmlToDraft(item);
     const newEditorState = ContentState.createFromBlockArray(
       contentBlocks,
-      entityMap
+      entityMap,
     );
     return EditorState.createWithContent(newEditorState);
   }
