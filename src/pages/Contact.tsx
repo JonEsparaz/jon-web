@@ -69,9 +69,9 @@ export default class Contact extends React.Component<EmptyProps, State> {
 
   render() {
     return (
-      <div className="Contact">
+      <div className="page-wrapper">
         <Menu mode="dark" />
-        <div className="ContactContainer">
+        <div className="ContactContainer center-wrapper page-body">
           <form className="ContactForm" onSubmit={(e) => this.send(e)}>
             <div className="NameInputContainer">
               <input

@@ -5,15 +5,3 @@
   position: relative;
   font-family: $font;
 }
-
-@media (min-width: 768px) {
-  .ProjectsContainer {
-    height: calc(100vh - 159px - 96px - 10vw);
-  }
-}
-
-@media (max-width: 767px) {
-  .ProjectsContainer {
-    height: calc(100vh - 159px - 96px - 14vw);
-  }
-}

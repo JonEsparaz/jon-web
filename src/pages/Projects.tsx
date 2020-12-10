@@ -5,9 +5,9 @@ import './Project.scss';
 
 function Projects() {
   return (
-    <div>
+    <div className="page-wrapper">
       <Menu mode="dark" />
-      <div className="ProjectsContainer">
+      <div className="ProjectsContainer page-body">
         <h2 className="Header2 Big">projects</h2>
         <div className="Text1">(coming soon)</div>
       </div>

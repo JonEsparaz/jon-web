@@ -1,7 +1,20 @@
 @import '../theme.scss';
 
+.MuiSvgIcon-root {
+  margin-right: 5px;
+  margin-bottom: 2px;
+}
+
 .navlink-custom {
   text-decoration: none !important;
+}
+
+.active-link {
+  .Underline:before,
+  .Underline2:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
 }
 
 .navlink-custom:hover {
@@ -53,5 +66,9 @@
     font-size: 16px;
     padding-top: 4px;
     padding-bottom: 4px;
+  }
+
+  .active-link {
+    font-weight: bolder;
   }
 }

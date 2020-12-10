@@ -12,9 +12,7 @@
 @media (min-width: 768px) {
   .CubingContainer {
     width: 80vw;
-    margin-left: 10vw;
     margin-bottom: 5vw;
-    min-height: calc(100vh - 96px - 159px - 10vw);
   }
 
   .SpeedcubingText {
@@ -82,7 +80,7 @@
 
   .videoPlayer {
     width: 50vw;
-    height: calc(50vw * 9 / 16);
+    height: 9/16 * 50vw;
   }
 
   .SpeedcubingItem {
@@ -155,7 +153,7 @@
 
   .videoPlayer {
     width: 50vw;
-    height: calc(50vw * 9 / 16);
+    height: 9/16 * 50vw;
   }
 
   .SpeedcubingItem {

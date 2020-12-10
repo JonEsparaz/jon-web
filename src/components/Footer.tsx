@@ -5,7 +5,7 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import './Footer.scss';
 
-function Footer() {
+export default function Footer() {
   return (
     <div className="FooterContainer">
       <a
@@ -51,5 +51,3 @@ function Footer() {
     </div>
   );
 }
-
-export default Footer;

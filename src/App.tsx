@@ -9,7 +9,7 @@ const Projects = React.lazy(() => import('./pages/Projects'));
 const Error = React.lazy(() => import('./pages/Error'));
 const Admin = React.lazy(() => import('./admin/Admin'));
 
-function App() {
+export default function App() {
   return (
     <div className="AppContainer" style={{ overflowX: 'hidden' }}>
       <Suspense fallback={<div />}>
@@ -28,5 +28,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

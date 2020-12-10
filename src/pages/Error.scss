@@ -1,10 +1,9 @@
 @import '../theme.scss';
 
-.error {
+.Error {
   padding-top: 5vw;
   text-align: center;
   position: relative;
-  height: calc(100vh - 96px - 159px - 5vw);
   font-family: $font;
   background: white;
 }
