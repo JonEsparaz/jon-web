@@ -7,7 +7,6 @@ const Speedcubing = React.lazy(() => import('./pages/Speedcubing'));
 const Contact = React.lazy(() => import('./pages/Contact'));
 const Projects = React.lazy(() => import('./pages/Projects'));
 const Error = React.lazy(() => import('./pages/Error'));
-const Admin = React.lazy(() => import('./admin/Admin'));
 
 export default function App() {
   return (
@@ -20,7 +19,6 @@ export default function App() {
             <Route path="/speedcubing" component={Speedcubing} />
             <Route path="/contact" component={Contact} />
             <Route path="/projects" component={Projects} />
-            <Route path="/admin" component={Admin} />
             <Route component={Error} />
           </Switch>
         </BrowserRouter>
