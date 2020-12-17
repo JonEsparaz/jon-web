@@ -1,8 +1,8 @@
 import React from 'react';
 import './Error.scss';
+import {Link} from 'react-router-dom';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
-import { Link } from 'react-router-dom';
 
 export default function Error() {
   return (
@@ -10,7 +10,8 @@ export default function Error() {
       <Menu mode="dark" />
       <div className="Error page-body">
         <h2 className="Header2 Big">
-          Page not found{' '}
+          Page not found
+          {' '}
           <span role="img" aria-label="confused emoji">
             😕
           </span>

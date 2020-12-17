@@ -1,9 +1,9 @@
 import React, { useEffect, createRef, useState } from 'react';
 import './Home.scss';
-import Menu from '../components/Menu';
-import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import smoothscroll from 'smoothscroll-polyfill';
+import Menu from '../components/Menu';
+import Footer from '../components/Footer';
 
 function Home() {
   const [showButton, setShowButton] = useState(false);
@@ -43,7 +43,7 @@ function Home() {
             Engineering Science | University of Toronto
           </div>
           {showButton ? (
-            <button className="ActionButton" onClick={scroll}>
+            <button className="ActionButton" onClick={scroll} type="button">
               <span className="Underline">About Me</span>
             </button>
           ) : null}
@@ -57,11 +57,12 @@ function Home() {
         />
         <div className="center-wrapper">
           <div className="Text1 AboutMe" ref={aboutRef}>
-            <b>About me: </b>I'm a 3rd year Machine Intelligence major in the
-            University of Toronto's Engineering Science program. I enjoy writing
+            <b>About me: </b>
+            I&apos;m a 3rd year Machine Intelligence major in the University of
+            Toronto&apos;s Engineering Science program. I enjoy writing
             software,{' '}
             <Link className="Link" to="/speedcubing">
-              solving Rubik's Cubes
+              solving Rubik&apos;s Cubes
             </Link>{' '}
             and a good game of basketball.
           </div>
@@ -70,7 +71,7 @@ function Home() {
           <div className="SkillsArea">
             <div className="Skill">
               <div className="SkillTitle">
-                <img src="/svg/code.svg" alt="" className="SkillIcon"></img>
+                <img src="/svg/code.svg" alt="" className="SkillIcon" />
                 <div className="Header2 Small" style={{ margin: 0 }}>
                   Languages
                 </div>
@@ -90,15 +91,16 @@ function Home() {
             </div>
             <div className="Skill">
               <div className="SkillTitle">
-                <img src="/svg/cloud.svg" alt="" className="SkillIcon"></img>
+                <img src="/svg/cloud.svg" alt="" className="SkillIcon" />
                 <div className="Header2 Small" style={{ margin: 0 }}>
                   Cloud
                 </div>
               </div>
               <div className="SkillText">
                 I have developed several applications using the AWS Amplify and
-                Google Firebase frameworks. AWS products I've used in production
-                include: DynamoDB, AppSync, Lambda, CloudFront and S3 Storage.
+                Google Firebase frameworks. AWS products I&apos;ve used in
+                production include: DynamoDB, AppSync, Lambda, CloudFront and S3
+                Storage.
               </div>
               <div
                 className="SkillImage"
@@ -110,7 +112,7 @@ function Home() {
             </div>
             <div className="Skill">
               <div className="SkillTitle">
-                <img src="/svg/build.svg" alt="" className="SkillIcon"></img>
+                <img src="/svg/build.svg" alt="" className="SkillIcon" />
                 <div className="Header2 Small" style={{ margin: 0 }}>
                   Frameworks &amp; More
                 </div>
@@ -131,7 +133,7 @@ function Home() {
           </div>
         </div>
         <h2 className="Header2" style={{ marginBottom: 0 }}>
-          Have an idea? <br /> Let's connect
+          Have an idea? <br /> Let&apos;s connect
         </h2>
         <Link to="/contact" className="ActionButton2">
           <span className="Underline2">Contact Me</span>

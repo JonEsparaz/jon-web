@@ -52,6 +52,7 @@ export default function Menu({ mode, absolute }: Props) {
             {links.map((link) => {
               return (
                 <NavLink
+                  key={link.title}
                   className={
                     mode === 'light'
                       ? 'navlink-custom white-link'

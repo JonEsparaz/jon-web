@@ -36,7 +36,7 @@ export default function Speedcubing() {
       <Modal
         open={Boolean(video)}
         onClose={() => setVideo('')}
-        className={'custom-modal'}
+        className="custom-modal"
       >
         <iframe
           className="videoPlayer"
@@ -58,10 +58,10 @@ export default function Speedcubing() {
           <div className="Text1 SpeedcubingText">
             For the past {new Date().getFullYear() - 2013} years, I have
             competed in World Cube Association competitions. In 2018, I broke
-            the North American Record for solving the Rubik's Cube one-handed
-            with a time of 7.57 seconds. At the time, this ranked me second in
-            the world. Today, I organize and officiate competitions as a Junior
-            Delegate for the World Cube Association.
+            the North American Record for solving the Rubik&apos;s Cube
+            one-handed with a time of 7.57 seconds. At the time, this ranked me
+            second in the world. Today, I organize and officiate competitions as
+            a Junior Delegate for the World Cube Association.
           </div>
           <h2 className="Header2">Highlight Reel</h2>
           <div className="YTgrid">
@@ -69,6 +69,7 @@ export default function Speedcubing() {
               return (
                 <div className="SpeedcubingItem" key={item.id}>
                   <button
+                    type="button"
                     aria-labelledby={item.id}
                     className="imageContainer"
                     onClick={() => {
@@ -79,12 +80,12 @@ export default function Speedcubing() {
                       className="YTimage"
                       alt="youtube thumbnail"
                       src={`https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`}
-                    ></img>
+                    />
                     <img
                       className="playArrow"
                       src="/svg/play_arrow-white.svg"
                       alt=""
-                    ></img>
+                    />
                   </button>
                   <div className="YTtitle" id={item.id}>
                     {item.text}
