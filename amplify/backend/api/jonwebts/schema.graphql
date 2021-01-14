@@ -1,21 +1,3 @@
 type Query {
-  contact(first: String!, last: String!, email: String!, subject: String!, message: String!): String @function(name: "contactform2-${env}") @auth(rules: [{ allow: public }])
-}
-
-
-type Post @model
- @auth(rules:[
-  { allow: groups, operations:[read,update,delete,create], groups: ["Admin"], provider:userPools },
-  { allow: public, operations: [read] }
- ])
- @key(fields: ["status", "date"], name: "byStatus", queryField: "postsByStatus")
-{
-  id: ID!
-  title: String!
-  date: String!
-  content: String!
-  previewImage: String!
-  tags: [String]
-  status: String
-  description: String
+  contact(first: String!, last: String!, email: String!, subject: String!, message: String!): String @function(name: "contactform2-${env}")
 }

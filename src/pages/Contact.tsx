@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Contact.scss';
-import { API } from 'aws-amplify';
-import { GRAPHQL_AUTH_MODE } from '@aws-amplify/api/lib/types';
+import { graphqlOperation, API } from 'aws-amplify';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
@@ -27,11 +26,7 @@ export default function Contact() {
 
     if (recaptchaValue) {
       try {
-        await API.graphql({
-          query: query.contact,
-          variables: emailObj,
-          authMode: GRAPHQL_AUTH_MODE.API_KEY,
-        });
+        await API.graphql(graphqlOperation(query.contact, emailObj));
 
         setEmailObj({
           email: '',
