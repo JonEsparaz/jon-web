@@ -54,5 +54,6 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
-  }
+  },
+  "hosting": {}
 }

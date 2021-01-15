@@ -1,3 +1,5 @@
+'use strict';
+
 const nodemailer = require('nodemailer');
 const sanitizeHtml = require('sanitize-html');
 
@@ -17,7 +19,7 @@ exports.handler = async (event) => {
 
   const transporter = nodemailer.createTransport({
     host: smtpEndpoint,
-    port: port,
+    port,
     secure: false,
     auth: {
       user: smtpUsername,
@@ -35,8 +37,10 @@ exports.handler = async (event) => {
 
   try {
     const res = await transporter.sendMail(mailOptions);
+    // eslint-disable-next-line no-console
     console.log(res);
   } catch (err) {
+    // eslint-disable-next-line no-console
     console.error(err);
   }
 };
