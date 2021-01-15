@@ -5,7 +5,7 @@ import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import './Speedcubing.scss';
 
-export default function Speedcubing() {
+export default function Speedcubing(): JSX.Element {
   const [video, setVideo] = useState('');
   const videoData = [
     {

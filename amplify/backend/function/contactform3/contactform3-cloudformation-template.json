@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "Lambda resource stack creation using Amplify CLI",
+  "Description": "Lambda Function resource stack creation using Amplify CLI",
   "Parameters": {
     "CloudWatchRule": {
       "Type": "String",
@@ -33,12 +33,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "contactform2",
+            "contactform3",
             {
               "Fn::Join": [
                 "",
                 [
-                  "contactform2",
+                  "contactform3",
                   "-",
                   {
                     "Ref": "env"
@@ -65,10 +65,11 @@
           ]
         },
         "Runtime": "nodejs12.x",
+        "Layers": [],
         "Timeout": "25",
         "Code": {
-          "S3Bucket": "amplify-jonweb-prod-222929-deployment",
-          "S3Key": "amplify-builds/contactform2-7776504270546b726a2f-build.zip"
+          "S3Bucket": "amplify-jonweb-main-11352-deployment",
+          "S3Key": "amplify-builds/contactform3-386a445652646a4b5278-build.zip"
         }
       }
     },
@@ -78,12 +79,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "jonwebLambdaRole772a689e",
+            "jonwebLambdaRolef2e88f5d",
             {
               "Fn::Join": [
                 "",
                 [
-                  "jonwebLambdaRole772a689e",
+                  "jonwebLambdaRolef2e88f5d",
                   "-",
                   {
                     "Ref": "env"

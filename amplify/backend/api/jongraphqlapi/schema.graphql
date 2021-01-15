@@ -1,0 +1,13 @@
+type Course @model @auth(rules: [{ allow: groups, groups: ["Admin"] }]) {
+  id: ID!
+  lectures: [Lecture!]!
+}
+
+type Lecture {
+  viewed: Boolean!
+  number: String!
+}
+
+type Query {
+  contact(first: String!, last: String!, email: String!, subject: String!, message: String!): String @function(name: "contactform3-${env}") @auth(rules: [{ allow: public }])
+}

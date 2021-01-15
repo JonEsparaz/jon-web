@@ -5,7 +5,7 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import './Footer.scss';
 
-export default function Footer() {
+export default function Footer(): JSX.Element {
   return (
     <div className="FooterContainer">
       <a

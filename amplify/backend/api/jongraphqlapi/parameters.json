@@ -1,10 +1,10 @@
 {
-  "AppSyncApiName": "jonwebts",
+  "AppSyncApiName": "jongraphqlapi",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": "false",
+  "DynamoDBEnableServerSideEncryption": false,
   "AuthCognitoUserPoolId": {
     "Fn::GetAtt": [
-      "authjonweb44e73b7f",
+      "authjonweb298cd244",
       "Outputs.UserPoolId"
     ]
   }

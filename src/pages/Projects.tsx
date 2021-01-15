@@ -3,7 +3,7 @@ import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import './Project.scss';
 
-function Projects() {
+function Projects(): JSX.Element {
   return (
     <div className="page-wrapper">
       <Menu mode="dark" />

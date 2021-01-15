@@ -1,17 +1,16 @@
 import React from 'react';
 import './Error.scss';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 
-export default function Error() {
+export default function Error(): JSX.Element {
   return (
     <div className="page-wrapper">
       <Menu mode="dark" />
       <div className="Error page-body">
         <h2 className="Header2 Big">
-          Page not found
-          {' '}
+          Page not found{' '}
           <span role="img" aria-label="confused emoji">
             😕
           </span>

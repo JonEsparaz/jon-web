@@ -6,9 +6,10 @@ const Home = React.lazy(() => import('./pages/Home'));
 const Speedcubing = React.lazy(() => import('./pages/Speedcubing'));
 const Contact = React.lazy(() => import('./pages/Contact'));
 const Projects = React.lazy(() => import('./pages/Projects'));
+const Lectures = React.lazy(() => import('./pages/Lectures'));
 const Error = React.lazy(() => import('./pages/Error'));
 
-export default function App() {
+export default function App(): JSX.Element {
   return (
     <div className="AppContainer" style={{ overflowX: 'hidden' }}>
       <Suspense fallback={<div />}>
@@ -19,6 +20,7 @@ export default function App() {
             <Route path="/speedcubing" component={Speedcubing} />
             <Route path="/contact" component={Contact} />
             <Route path="/projects" component={Projects} />
+            <Route path="/lectures" component={Lectures} />
             <Route component={Error} />
           </Switch>
         </BrowserRouter>

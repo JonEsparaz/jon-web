@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 import { ContactQueryVariables } from '../API';
 import { contact } from '../graphql/queries';
 
-export default function Contact() {
+export default function Contact(): JSX.Element {
   const [emailObj, setEmailObj] = useState<ContactQueryVariables>({
     email: '',
     first: '',

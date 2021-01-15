@@ -5,7 +5,7 @@ import smoothscroll from 'smoothscroll-polyfill';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 
-function Home() {
+function Home(): JSX.Element {
   const [showButton, setShowButton] = useState(false);
   const aboutRef = createRef<HTMLDivElement>();
 

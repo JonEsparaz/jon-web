@@ -12,7 +12,7 @@ interface Props {
   absolute?: boolean;
 }
 
-export default function Menu({ mode, absolute }: Props) {
+export default function Menu({ mode, absolute }: Props): JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
