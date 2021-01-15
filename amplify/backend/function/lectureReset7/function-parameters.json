@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "api": {
+      "jongraphqlapi": [
+        "read",
+        "update"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}
