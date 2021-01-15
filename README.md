@@ -12,7 +12,3 @@ In the project directory, run:
 - `npm start`
 
 View the project in your browser at `localhost:3003`
-
-Beta releases at [https://beta.jonesparaz.ca/](https://beta.jonesparaz.ca)
-
-Select images from [https://unsplash.com/](https://unsplash.com/)
