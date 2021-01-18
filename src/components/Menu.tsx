@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import AppsIcon from '@material-ui/icons/Apps';
-// import CodeIcon from '@material-ui/icons/Code';
 import EmailIcon from '@material-ui/icons/Email';
 import { Collapse, NavbarToggler, Nav, Navbar } from 'reactstrap';
-import HamburgerMenu from 'react-hamburger-menu';
-import './Menu.scss';
 import { NavLink, Link } from 'react-router-dom';
+import './Menu.scss';
 
 interface Props {
   mode: 'light' | 'dark';
@@ -37,15 +35,15 @@ export default function Menu({ mode, absolute }: Props): JSX.Element {
           />
         </Link>
         <NavbarToggler onClick={() => setIsOpen(!isOpen)}>
-          <HamburgerMenu
-            isOpen={isOpen}
-            menuClicked={() => setIsOpen(!isOpen)}
-            width={24}
-            height={16}
-            strokeWidth={2}
-            borderRadius={45}
-            color={mode === 'light' ? 'white' : 'black'}
-          />
+          <div
+            className={`hamburger hamburger--slider ${
+              isOpen ? 'is-active' : ''
+            } ${mode === 'light' ? 'wh-menu' : 'bl-menu'}`}
+          >
+            <div className="hamburger-box">
+              <div className="hamburger-inner" />
+            </div>
+          </div>
         </NavbarToggler>
         <Collapse isOpen={isOpen} navbar>
           <Nav navbar className="mr-auto">
