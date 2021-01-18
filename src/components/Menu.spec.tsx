@@ -1,40 +1,38 @@
 import React from 'react';
 import { render, waitFor, fireEvent } from '@testing-library/react';
-import { createMemoryHistory } from 'history';
-import { Router } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import Menu from './Menu';
 
 describe('navigation menu', () => {
   test('snapshots, light/dark mode, absolute/relative position', () => {
-    const history = createMemoryHistory();
     const { container, rerender } = render(
-      <Router history={history}>
+      <MemoryRouter>
         <Menu mode="light" />
-      </Router>,
+      </MemoryRouter>,
     );
 
     expect(container.innerHTML).toMatchSnapshot();
 
     rerender(
-      <Router history={history}>
+      <MemoryRouter>
         <Menu mode="light" absolute />
-      </Router>,
+      </MemoryRouter>,
     );
 
     expect(container.innerHTML).toMatchSnapshot();
 
     rerender(
-      <Router history={history}>
+      <MemoryRouter>
         <Menu mode="dark" />
-      </Router>,
+      </MemoryRouter>,
     );
 
     expect(container.innerHTML).toMatchSnapshot();
 
     rerender(
-      <Router history={history}>
+      <MemoryRouter>
         <Menu mode="dark" absolute />
-      </Router>,
+      </MemoryRouter>,
     );
 
     expect(container.innerHTML).toMatchSnapshot();
@@ -43,11 +41,10 @@ describe('navigation menu', () => {
   test('navbar toggler', async () => {
     Object.assign(window, { innerWidth: 300 });
 
-    const history = createMemoryHistory();
     const { getByLabelText, container } = render(
-      <Router history={history}>
+      <MemoryRouter>
         <Menu mode="light" />
-      </Router>,
+      </MemoryRouter>,
     );
 
     // toggler button

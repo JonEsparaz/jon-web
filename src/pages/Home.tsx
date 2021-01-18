@@ -43,7 +43,12 @@ function Home(): JSX.Element {
             Engineering Science | University of Toronto
           </div>
           {showButton ? (
-            <button className="ActionButton" onClick={scroll} type="button">
+            <button
+              className="ActionButton"
+              onClick={scroll}
+              type="button"
+              data-testid="about-me-btn"
+            >
               <span className="Underline">About Me</span>
             </button>
           ) : null}

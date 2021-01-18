@@ -70,7 +70,7 @@ export default function Speedcubing(): JSX.Element {
                 <div className="SpeedcubingItem" key={item.id}>
                   <button
                     type="button"
-                    aria-labelledby={item.id}
+                    aria-label={`Open video: ${item.text}`}
                     className="imageContainer"
                     onClick={() => {
                       handleOpen(item.id);
@@ -78,7 +78,7 @@ export default function Speedcubing(): JSX.Element {
                   >
                     <img
                       className="YTimage"
-                      alt="youtube thumbnail"
+                      alt="YouTube thumbnail"
                       src={`https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`}
                     />
                     <img
@@ -87,9 +87,7 @@ export default function Speedcubing(): JSX.Element {
                       alt=""
                     />
                   </button>
-                  <div className="YTtitle" id={item.id}>
-                    {item.text}
-                  </div>
+                  <div className="YTtitle">{item.text}</div>
                 </div>
               );
             })}
