@@ -21,12 +21,12 @@ export default function Home(): JSX.Element {
   }, []);
 
   useEffect(() => {
-    const resizeListner = () => {
+    const resizeListener = () => {
       handleResize();
     };
 
-    window.addEventListener('resize', resizeListner);
-    return () => window.removeEventListener('resize', resizeListner);
+    window.addEventListener('resize', resizeListener);
+    return () => window.removeEventListener('resize', resizeListener);
   }, []);
 
   const scroll = () => {

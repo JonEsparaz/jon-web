@@ -87,6 +87,13 @@ describe('speedcubing page', () => {
 
     expect(queryByRole('presentation')).toBeFalsy();
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    delete window.location;
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    window.location = { assign: jest.fn() };
+
     const button = getByLabelText(`Open video: ${videoData[0].text}`);
     fireEvent.click(button);
 
