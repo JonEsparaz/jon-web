@@ -10,6 +10,8 @@ import { contact } from '../graphql/queries';
 import './Contact.scss';
 
 export default function Contact(): JSX.Element {
+  const [isSent, setIsSent] = useState(false);
+  const [error, setError] = useState(false);
   const [emailObj, setEmailObj] = useState<ContactQueryVariables>({
     email: '',
     first: '',
@@ -18,7 +20,7 @@ export default function Contact(): JSX.Element {
     message: '',
   });
 
-  const [isSent, setIsSent] = useState(false);
+  const isLocalhost = window.location.hostname === 'localhost';
   const recaptchaRef = React.createRef<ReCAPTCHA>();
 
   const send = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -26,7 +28,7 @@ export default function Contact(): JSX.Element {
 
     const recaptchaValue = recaptchaRef.current?.getValue();
 
-    if (recaptchaValue) {
+    if (recaptchaValue || isLocalhost) {
       try {
         await API.graphql({
           query: contact,
@@ -44,6 +46,7 @@ export default function Contact(): JSX.Element {
         setIsSent(true);
       } catch (err) {
         Sentry.captureException(err);
+        setError(true);
       }
     }
   };
@@ -62,7 +65,7 @@ export default function Contact(): JSX.Element {
         <form className="ContactForm" onSubmit={(e) => send(e)}>
           <div className="NameInputContainer">
             <input
-              aria-label="First name"
+              aria-label="First Name"
               style={{ marginRight: 10 }}
               className="NameInput"
               type="text"
@@ -72,7 +75,7 @@ export default function Contact(): JSX.Element {
               onChange={(e) => handleChange('first', e.target.value)}
             />
             <input
-              aria-label="Last name"
+              aria-label="Last Name"
               className="NameInput"
               type="text"
               placeholder="Last name"
@@ -111,23 +114,43 @@ export default function Contact(): JSX.Element {
           />
           <br />
           <ReCAPTCHA
-            sitekey="6Lcq77QZAAAAAPuPm5u1lqeo-p_EyXxxLymBS-ZK"
+            sitekey={
+              isLocalhost
+                ? '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+                : '6Lcq77QZAAAAAPuPm5u1lqeo-p_EyXxxLymBS-ZK'
+            }
             ref={recaptchaRef}
           />
-          <button className="ActionButton2" type="submit" disabled={isSent}>
+          <button
+            className="ActionButton2"
+            type="submit"
+            disabled={isSent}
+            data-testid="send-btn"
+          >
             <span className={isSent ? '' : 'Underline2'}>
               {isSent ? 'Sent' : 'Send'}
             </span>
           </button>
-          {isSent ? (
+          {isSent && (
             <span style={{ marginLeft: 12 }}>
               <img
+                data-testid="success-icon"
                 src="/svg/check_circle_outline.svg"
-                alt=""
+                alt="message sent"
                 className="CheckIcon"
               />
             </span>
-          ) : null}
+          )}
+          {error && (
+            <span style={{ marginLeft: 12 }}>
+              <img
+                data-testid="error-icon"
+                src="/svg/error_outline.svg"
+                alt="message failed to send"
+                className="CheckIcon"
+              />
+            </span>
+          )}
         </form>
       </div>
       <Footer />

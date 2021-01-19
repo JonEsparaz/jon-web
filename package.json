@@ -44,6 +44,7 @@
     "collectCoverageFrom": [
       "src/**/*.tsx",
       "!src/components/ScrollToTop.tsx",
+      "!src/pages/Lectures.tsx",
       "!src/App.tsx",
       "!src/index.tsx"
     ]
