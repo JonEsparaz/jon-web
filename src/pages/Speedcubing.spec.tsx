@@ -63,11 +63,22 @@ describe('speedcubing page', () => {
       </MemoryRouter>,
     );
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    delete window.location;
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    window.location = { assign: jest.fn() };
+
     expect(queryByRole('presentation')).toBeFalsy();
 
     const button = getByLabelText(`Open video: ${videoData[0].text}`);
     fireEvent.click(button);
 
     expect(queryByRole('presentation')).toBeFalsy();
+    expect(window.location.assign).toHaveBeenCalledWith(
+      `https://www.youtube.com/watch?v=${videoData[0].id}`,
+    );
   });
 });

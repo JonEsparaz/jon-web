@@ -25,7 +25,7 @@ export default function Speedcubing(): JSX.Element {
 
   const handleOpen = (data: string) => {
     if (isMobile) {
-      window.location.href = `https://www.youtube.com/watch?v=${data}`;
+      window.location.assign(`https://www.youtube.com/watch?v=${data}`);
     } else {
       setVideo(data);
     }

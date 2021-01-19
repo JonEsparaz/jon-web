@@ -5,15 +5,14 @@ import smoothscroll from 'smoothscroll-polyfill';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 
-function Home(): JSX.Element {
+export default function Home(): JSX.Element {
   const [showButton, setShowButton] = useState(false);
   const aboutRef = createRef<HTMLDivElement>();
 
   const handleResize = () => {
     const h = window.innerHeight;
     const w = window.innerWidth;
-    if (w / h <= 1.6 && w >= 768) setShowButton(false);
-    else setShowButton(true);
+    setShowButton(!(w / h <= 1.6 && w >= 768));
   };
 
   useEffect(() => {
@@ -22,11 +21,13 @@ function Home(): JSX.Element {
   }, []);
 
   useEffect(() => {
-    const cleanUp = window.addEventListener('resize', () => {
+    const resizeListner = () => {
       handleResize();
-    });
-    return () => cleanUp;
-  });
+    };
+
+    window.addEventListener('resize', resizeListner);
+    return () => window.removeEventListener('resize', resizeListner);
+  }, []);
 
   const scroll = () => {
     aboutRef?.current?.scrollIntoView({ behavior: 'smooth' });
@@ -148,5 +149,3 @@ function Home(): JSX.Element {
     </div>
   );
 }
-
-export default Home;
