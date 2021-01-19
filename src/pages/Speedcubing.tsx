@@ -37,6 +37,7 @@ export default function Speedcubing(): JSX.Element {
         open={Boolean(video)}
         onClose={() => setVideo('')}
         className="custom-modal"
+        data-testid="modal"
       >
         <iframe
           className="videoPlayer"
