@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, waitFor, fireEvent } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import { MemoryRouter, Router } from 'react-router-dom';
 import Menu from './Menu';
 
 describe('navigation menu', () => {
@@ -66,5 +67,27 @@ describe('navigation menu', () => {
 
     // hamburger component is open
     expect(toggler.innerHTML).toMatchSnapshot();
+  });
+
+  test('navigate', async () => {
+    const history = createBrowserHistory();
+    const { getByText, getByAltText } = render(
+      <Router history={history}>
+        <Menu mode="light" />
+      </Router>,
+    );
+
+    const logoLink = getByAltText('logo');
+    const speedcubingLink = getByText('Speedcubing');
+    const contactLink = getByText('Contact');
+
+    fireEvent.click(contactLink);
+    expect(history.location.pathname).toBe('/contact');
+
+    fireEvent.click(speedcubingLink);
+    expect(history.location.pathname).toBe('/speedcubing');
+
+    fireEvent.click(logoLink);
+    expect(history.location.pathname).toBe('/');
   });
 });
