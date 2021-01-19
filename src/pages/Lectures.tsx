@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import * as Sentry from '@sentry/react';
 import { AmplifySignIn, AmplifyAuthenticator } from '@aws-amplify/ui-react';
 import { Modal } from 'reactstrap';
 import { API, Auth } from 'aws-amplify';
@@ -36,7 +37,7 @@ export default function Lectures(): JSX.Element {
         setIsAdmin(true);
       }
     } catch (e) {
-      console.debug(e);
+      Sentry.captureException(e);
     }
   };
 
@@ -49,7 +50,7 @@ export default function Lectures(): JSX.Element {
 
       setCourses(json.data?.listCourses?.items ?? []);
     } catch (e) {
-      console.debug(e);
+      Sentry.captureException(e);
     }
   };
 
@@ -85,7 +86,7 @@ export default function Lectures(): JSX.Element {
         setNumberOfLectures('');
         getCourses();
       } catch (e) {
-        console.debug(e);
+        Sentry.captureException(e);
       }
     }
   };
@@ -106,7 +107,7 @@ export default function Lectures(): JSX.Element {
         setCourseToDelete('');
         getCourses();
       } catch (e) {
-        console.debug(e);
+        Sentry.captureException(e);
       }
     }
   };
@@ -165,7 +166,7 @@ export default function Lectures(): JSX.Element {
         });
       }
     } catch (e) {
-      console.debug(e);
+      Sentry.captureException(e);
     }
   };
 
