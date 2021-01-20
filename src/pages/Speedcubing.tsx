@@ -45,7 +45,7 @@ export default function Speedcubing(): JSX.Element {
             tabIndex={0}
             className="videoPlayer"
             title="Video Player"
-            src={`https://www.youtube.com/embed/${video}?autoplay=1`}
+            src={`https://www.youtube.com/embed/${video}?autoplay=1&&origin=https://jonesparaz.ca`}
             frameBorder="0"
           />
         </ModalBody>

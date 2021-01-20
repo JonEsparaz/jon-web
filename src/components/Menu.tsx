@@ -57,23 +57,24 @@ export default function Menu({ mode, absolute }: Props): JSX.Element {
           <Nav navbar className="mr-auto">
             {links.map((link) => {
               return (
-                <NavLink
-                  key={link.title}
-                  className={
-                    mode === 'light'
-                      ? 'navlink-custom white-link'
-                      : 'navlink-custom'
-                  }
-                  activeClassName="active-link"
-                  to={link.to}
-                >
-                  <img src={link.icon} alt={link.alt} className="menu-icon" />
-                  <span
-                    className={mode === 'light' ? 'Underline2' : 'Underline'}
+                <li key={link.title}>
+                  <NavLink
+                    className={
+                      mode === 'light'
+                        ? 'navlink-custom white-link'
+                        : 'navlink-custom'
+                    }
+                    activeClassName="active-link"
+                    to={link.to}
                   >
-                    {link.title}
-                  </span>
-                </NavLink>
+                    <img src={link.icon} alt={link.alt} className="menu-icon" />
+                    <span
+                      className={mode === 'light' ? 'Underline2' : 'Underline'}
+                    >
+                      {link.title}
+                    </span>
+                  </NavLink>
+                </li>
               );
             })}
           </Nav>
