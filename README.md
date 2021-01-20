@@ -1,9 +1,8 @@
 # jon-web
 
 [![codecov](https://codecov.io/gh/JonEsparaz/jon-web/branch/main/graph/badge.svg?token=WzHFEEKtY4)](https://codecov.io/gh/JonEsparaz/jon-web)
-![CodeQL](https://github.com/JonEsparaz/jon-web/workflows/CodeQL/badge.svg)
 ![Node.js CI](https://github.com/JonEsparaz/jon-web/workflows/Node.js%20CI/badge.svg)
-
+![CodeQL](https://github.com/JonEsparaz/jon-web/workflows/CodeQL/badge.svg)
 ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/JonEsparaz/jon-web/react?color=%2361dafb)
 ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/JonEsparaz/jon-web/aws-amplify?color=%23ff9900)
 ![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/JonEsparaz/jon-web/dev/typescript?color=%233178c6)
