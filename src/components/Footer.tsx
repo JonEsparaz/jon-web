@@ -1,8 +1,4 @@
 import React from 'react';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import './Footer.scss';
 
 export default function Footer(): JSX.Element {
@@ -15,7 +11,7 @@ export default function Footer(): JSX.Element {
         target="_blank"
         className="footer-link"
       >
-        <TwitterIcon fontSize="large" style={{ color: 'black' }} />
+        <img src="/svg/twitter.svg" alt="" className="footer-icon" />
       </a>
       <a
         aria-label="GitHub"
@@ -24,16 +20,7 @@ export default function Footer(): JSX.Element {
         target="_blank"
         className="footer-link"
       >
-        <GitHubIcon fontSize="large" style={{ color: 'black' }} />
-      </a>
-      <a
-        aria-label="YouTube"
-        href="https://www.youtube.com/c/JonEsparaz"
-        rel="noopener noreferrer"
-        target="_blank"
-        className="footer-link"
-      >
-        <YouTubeIcon fontSize="large" style={{ color: 'black' }} />
+        <img src="/svg/github.svg" alt="" className="footer-icon" />
       </a>
       <a
         aria-label="LinkedIn"
@@ -42,10 +29,18 @@ export default function Footer(): JSX.Element {
         target="_blank"
         className="footer-link"
       >
-        <LinkedInIcon fontSize="large" style={{ color: 'black' }} />
+        <img src="/svg/linkedin.svg" alt="" className="footer-icon" />
+      </a>
+      <a
+        aria-label="YouTube"
+        href="https://www.youtube.com/c/JonEsparaz"
+        rel="noopener noreferrer"
+        target="_blank"
+        className="footer-link"
+      >
+        <img src="/svg/youtube.svg" alt="" className="footer-icon" />
       </a>
       <div style={{ marginTop: '20px', color: 'black' }}>
-        {' '}
         &copy; {new Date().getFullYear()} Jonathan Esparaz
       </div>
     </div>

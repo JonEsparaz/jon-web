@@ -9,6 +9,21 @@
   text-align: left;
 }
 
+.modal-body-custom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.modal-custom {
+  max-width: 70vw !important;
+}
+
+.videoPlayer {
+  width: 65vw;
+  height: 9/16 * 65vw;
+}
+
 @media (min-width: 768px) {
   .CubingContainer {
     width: 80vw;
@@ -69,18 +84,6 @@
     height: 100%;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-  }
-
-  .custom-modal {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    top: 10vw !important;
-  }
-
-  .videoPlayer {
-    width: 50vw;
-    height: 9/16 * 50vw;
   }
 
   .SpeedcubingItem {
@@ -144,20 +147,12 @@
     transition: opacity 0.3s ease-in-out;
   }
 
-  .custom-modal {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    top: 10vw !important;
-  }
-
-  .videoPlayer {
-    width: 50vw;
-    height: 9/16 * 50vw;
-  }
-
   .SpeedcubingItem {
     padding: 5vw;
     box-shadow: $shadow;
+  }
+
+  .modal-custom {
+    display: none !important;
   }
 }

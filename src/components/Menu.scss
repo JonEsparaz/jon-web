@@ -1,9 +1,11 @@
 @import '../theme.scss';
-@import './hamburgers/hamburgers.scss';
+@import './hamburgers.scss';
 
-.MuiSvgIcon-root {
+.menu-icon {
   margin-right: 5px;
   margin-bottom: 2px;
+  width: 24px;
+  height: 24px;
 }
 
 .navlink-custom {

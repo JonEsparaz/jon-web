@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import * as rdd from 'react-device-detect';
 import Speedcubing from './Speedcubing';
@@ -35,36 +35,36 @@ describe('speedcubing page', () => {
     expect(container.innerHTML).toMatchSnapshot();
   });
 
-  test('video modal, desktop', () => {
+  test('open video, desktop', async () => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     rdd.isMobile = false;
-    const { getByLabelText } = render(
+    const { getByLabelText, queryByTitle } = render(
       <MemoryRouter>
         <Speedcubing />
       </MemoryRouter>,
     );
 
     // modal is initially closed
-    expect(screen.queryByTestId('modal')).toBeFalsy();
+    expect(queryByTitle('Video Player')).toBeFalsy();
 
-    // open video
-    const button = getByLabelText(`Open video: ${videoData[0].text}`);
-    fireEvent.click(button);
+    // click on video
+    fireEvent.click(getByLabelText(`Open video: ${videoData[0].text}`));
 
     // modal is open
-    expect(screen.queryByTestId('modal')).toBeTruthy();
+    await waitFor(() => expect(queryByTitle('Video Player')).toBeTruthy());
 
-    // press esc to close modal
-    fireEvent.keyDown(screen.getByTestId('modal'), {
-      key: 'Escape',
-      code: 'Escape',
-    });
+    // close modal via button
+    fireEvent.click(getByLabelText('Close'));
 
     // modal is closed
-    expect(screen.queryByTestId('modal')).toBeFalsy();
+    await waitFor(() => expect(queryByTitle('Video Player')).toBeFalsy());
 
-    jest.clearAllMocks();
+    // click on another video
+    fireEvent.click(getByLabelText(`Open video: ${videoData[1].text}`));
+
+    // modal is open
+    await waitFor(() => expect(queryByTitle('Video Player')).toBeTruthy());
   });
 
   test('navigate to video, mobile', () => {

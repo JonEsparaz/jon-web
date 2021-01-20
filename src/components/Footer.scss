@@ -8,9 +8,14 @@
   font-family: $font;
 }
 
+.footer-icon {
+  width: 32px;
+  height: 32px;
+}
+
 @media (min-width: 768px) {
   .footer-link {
-    margin: 0 1vw;
+    margin: 0 1.3vw;
     transition: opacity 0.3s;
     opacity: 1;
     &:hover {
@@ -21,6 +26,6 @@
 
 @media (max-width: 767px) {
   .footer-link {
-    margin: 0 2.5vw;
+    margin: 0 3vw;
   }
 }

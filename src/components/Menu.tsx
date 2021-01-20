@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import AppsIcon from '@material-ui/icons/Apps';
-import EmailIcon from '@material-ui/icons/Email';
 import { Collapse, NavbarToggler, Nav, Navbar } from 'reactstrap';
 import { NavLink, Link } from 'react-router-dom';
 import './Menu.scss';
@@ -14,8 +12,18 @@ export default function Menu({ mode, absolute }: Props): JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { to: '/speedcubing', title: 'Speedcubing', icon: <AppsIcon /> },
-    { to: '/contact', title: 'Contact', icon: <EmailIcon /> },
+    {
+      to: '/speedcubing',
+      title: 'Speedcubing',
+      icon: `/svg/cubing-${mode === 'light' ? 'white' : 'black'}.svg`,
+      alt: '',
+    },
+    {
+      to: '/contact',
+      title: 'Contact',
+      icon: `/svg/email-${mode === 'light' ? 'white' : 'black'}.svg`,
+      alt: '',
+    },
   ];
 
   return (
@@ -23,7 +31,7 @@ export default function Menu({ mode, absolute }: Props): JSX.Element {
       className="MenuContainer"
       style={{
         position: absolute ? 'absolute' : 'relative',
-        zIndex: 9999,
+        zIndex: absolute ? 9999 : undefined,
       }}
     >
       <Navbar expand="md">
@@ -59,7 +67,7 @@ export default function Menu({ mode, absolute }: Props): JSX.Element {
                   activeClassName="active-link"
                   to={link.to}
                 >
-                  {link.icon}
+                  <img src={link.icon} alt={link.alt} className="menu-icon" />
                   <span
                     className={mode === 'light' ? 'Underline2' : 'Underline'}
                   >

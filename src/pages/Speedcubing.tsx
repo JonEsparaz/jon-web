@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal } from '@material-ui/core';
+import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 import { isMobile } from 'react-device-detect';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
@@ -24,7 +24,7 @@ export default function Speedcubing(): JSX.Element {
   ];
 
   const handleOpen = (data: string) => {
-    if (isMobile) {
+    if (isMobile || window.innerWidth < 768) {
       window.location.assign(`https://www.youtube.com/watch?v=${data}`);
     } else {
       setVideo(data);
@@ -33,18 +33,22 @@ export default function Speedcubing(): JSX.Element {
 
   const videoModal = () => {
     return (
-      <Modal
-        open={Boolean(video)}
-        onClose={() => setVideo('')}
-        className="custom-modal"
-        data-testid="modal"
-      >
-        <iframe
-          className="videoPlayer"
-          title="Video Player"
-          src={`https://www.youtube.com/embed/${video}?autoplay=1`}
-          frameBorder="0"
+      <Modal isOpen={Boolean(video)} className="modal-custom">
+        <ModalHeader
+          className="modal-header-custom"
+          toggle={() => setVideo('')}
         />
+        <ModalBody className="modal-body-custom">
+          <iframe
+            // Reactstrap's ModalBody will not allow keyboard focus by default
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+            tabIndex={0}
+            className="videoPlayer"
+            title="Video Player"
+            src={`https://www.youtube.com/embed/${video}?autoplay=1`}
+            frameBorder="0"
+          />
+        </ModalBody>
       </Modal>
     );
   };
