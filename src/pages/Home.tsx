@@ -63,14 +63,11 @@ export default function Home(): JSX.Element {
   return (
     <Page mode="light" absolute>
       <div className="container-fluid position-absolute">
-        <div
-          className="row align-items-center hero-content"
-          style={{ textAlign: 'center' }}
-        >
+        <div className="row align-items-center hero-content text-center">
           <div className="col-md-6 m-auto">
-            <h1 className="text-white text-uppercase">Jon Esparaz</h1>
+            <h1 className="text-white text-uppercase display-4">Jon Esparaz</h1>
             <div className="accent-bar" />
-            <p className="text-white">
+            <p className="text-white h5">
               Engineering Science | University of Toronto
             </p>
             {showButton ? (
@@ -86,7 +83,7 @@ export default function Home(): JSX.Element {
         src="https://d3posj7vfpgqcz.cloudfront.net/images/keyboard.jpg"
         srcSet="https://d3posj7vfpgqcz.cloudfront.net/images/keyboard-720.jpg 720w, https://d3posj7vfpgqcz.cloudfront.net/images/keyboard-1080.jpg 1080w, https://d3posj7vfpgqcz.cloudfront.net/images/keyboard-1921.jpg 1921w, https://d3posj7vfpgqcz.cloudfront.net/images/keyboard.jpg 2870w"
         sizes="(min-width: 768px) 100vw, 50vw"
-        alt="mechanical keyboard"
+        alt="a backlit mechanical keyboard"
       />
       <div className="container py-5" ref={aboutRef}>
         <div className="mx-2">
@@ -104,13 +101,9 @@ export default function Home(): JSX.Element {
           {skillsData.map((item) => {
             return (
               <div className="col-md-4 d-flex" key={item.title}>
-                <Card className="mx-1 mb-4" style={{ borderRadius: 0 }}>
+                <Card className="mx-1 mb-4 rounded-0">
                   <CardBody className="d-flex flex-column">
-                    <CardTitle
-                      tag="h5"
-                      className="text-uppercase"
-                      style={{ textAlign: 'center' }}
-                    >
+                    <CardTitle className="text-uppercase h5 d-flex flex-row align-items-center justify-content-center">
                       <img
                         src={`/svg/${item.icon}`}
                         alt=""
@@ -118,9 +111,11 @@ export default function Home(): JSX.Element {
                       />
                       {item.title}
                     </CardTitle>
-                    <CardText className="flex-grow-1">{item.text}</CardText>
+                    <CardText className="flex-grow-1 mx-1">
+                      {item.text}
+                    </CardText>
                     <CardImg
-                      style={{ borderRadius: 0 }}
+                      className="rounded-0"
                       src={`https://d3posj7vfpgqcz.cloudfront.net/images/${item.img}`}
                       alt={item.alt}
                     />
@@ -130,7 +125,7 @@ export default function Home(): JSX.Element {
             );
           })}
         </div>
-        <div className="row mt-5" style={{ textAlign: 'center' }}>
+        <div className="row mt-5 mb-3 text-center">
           <div>
             <h3>Have an idea? Let&apos;s connect.</h3>
             <ButtonLink to="/contact" dark>

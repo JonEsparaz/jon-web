@@ -15,38 +15,35 @@ export default function Menu({ mode, absolute }: Props): JSX.Element {
     {
       to: '/speedcubing',
       title: 'Speedcubing',
-      icon: `/svg/cubing-${mode === 'light' ? 'white' : 'black'}.svg`,
+      icon: `/svg/cubing-${mode}.svg`,
       alt: '',
     },
     {
       to: '/contact',
       title: 'Contact',
-      icon: `/svg/email-${mode === 'light' ? 'white' : 'black'}.svg`,
+      icon: `/svg/email-${mode}.svg`,
       alt: '',
     },
   ];
 
   return (
     <div
-      className="menu-container"
+      className={`px-4 px-sm-5 w-100 ${
+        absolute ? 'position-absolute' : 'position-relative'
+      }`}
       style={{
-        position: absolute ? 'absolute' : 'relative',
         zIndex: absolute ? 9999 : undefined,
       }}
     >
       <Navbar expand="md">
         <Link to="/">
-          <img
-            alt="logo"
-            src={`/logos/je-logo${mode === 'light' ? '-white' : ''}.png`}
-            style={{ height: '80px', marginRight: '2vw' }}
-          />
+          <img alt="logo" src={`/logos/je-logo-${mode}.png`} className="logo" />
         </Link>
         <NavbarToggler onClick={() => setIsOpen(!isOpen)}>
           <div
-            className={`hamburger hamburger--slider ${
+            className={`hamburger hamburger--slider ${mode}-burger ${
               isOpen ? 'is-active' : ''
-            } ${mode === 'light' ? 'wh-menu' : 'bl-menu'}`}
+            }`}
           >
             <div className="hamburger-box">
               <div className="hamburger-inner" />
@@ -59,22 +56,20 @@ export default function Menu({ mode, absolute }: Props): JSX.Element {
               return (
                 <li key={link.title}>
                   <NavLink
-                    className={
-                      mode === 'light'
-                        ? 'navlink-custom white-link'
-                        : 'navlink-custom'
-                    }
+                    className={`navlink-custom text-decoration-none text-uppercase ${
+                      mode === 'light' ? 'text-white' : ''
+                    }`}
                     activeClassName="active-link"
                     to={link.to}
                   >
-                    <img src={link.icon} alt={link.alt} className="menu-icon" />
-                    <span
-                      className={
-                        mode === 'light' ? 'underline-light' : 'underline-dark'
-                      }
-                    >
-                      {link.title}
-                    </span>
+                    <img
+                      src={link.icon}
+                      alt={link.alt}
+                      className="menu-icon"
+                      width={24}
+                      height={24}
+                    />
+                    <span className={`underline-${mode}`}>{link.title}</span>
                   </NavLink>
                 </li>
               );

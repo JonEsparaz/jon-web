@@ -72,6 +72,7 @@ export default function Contact(): JSX.Element {
                   value={emailObj.first}
                   onChange={(e) => handleChange('first', e.target.value)}
                   id="fname"
+                  className="rounded-0"
                 />
               </div>
               <div className="col-6">
@@ -81,6 +82,7 @@ export default function Contact(): JSX.Element {
                   value={emailObj.last}
                   onChange={(e) => handleChange('last', e.target.value)}
                   id="lname"
+                  className="rounded-0"
                 />
               </div>
             </FormGroup>
@@ -92,6 +94,7 @@ export default function Contact(): JSX.Element {
                 value={emailObj.email}
                 onChange={(e) => handleChange('email', e.target.value)}
                 id="email"
+                className="rounded-0"
               />
             </FormGroup>
             <FormGroup className="mb-2">
@@ -101,6 +104,7 @@ export default function Contact(): JSX.Element {
                 value={emailObj.subject}
                 onChange={(e) => handleChange('subject', e.target.value)}
                 id="subject"
+                className="rounded-0"
               />
             </FormGroup>
             <FormGroup className="mb-4">
@@ -111,6 +115,7 @@ export default function Contact(): JSX.Element {
                 value={emailObj.message}
                 onChange={(e) => handleChange('message', e.target.value)}
                 id="message"
+                className="rounded-0"
               />
             </FormGroup>
             <ReCAPTCHA
@@ -125,22 +130,22 @@ export default function Contact(): JSX.Element {
               {isSent ? 'Sent' : 'Send'}
             </Button>
             {isSent && (
-              <span style={{ marginLeft: 12 }}>
+              <span className="ml-3">
                 <img
                   data-testid="success-icon"
                   src="/svg/check_circle_outline.svg"
-                  alt="message sent"
-                  className="CheckIcon"
+                  alt="check mark: message sent"
+                  className="email-status-icon"
                 />
               </span>
             )}
             {error && (
-              <span style={{ marginLeft: 12 }}>
+              <span className="ml-3">
                 <img
                   data-testid="error-icon"
                   src="/svg/error_outline.svg"
-                  alt="message failed to send"
-                  className="CheckIcon"
+                  alt="error: message failed to send"
+                  className="email-status-icon"
                 />
               </span>
             )}

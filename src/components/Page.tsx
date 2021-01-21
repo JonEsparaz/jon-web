@@ -12,12 +12,10 @@ export default function Page({
   absolute,
 }: PageProps): JSX.Element {
   return (
-    <div
-      style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}
-    >
+    <div className="min-vh-100 d-flex flex-column">
       <Menu mode={mode} absolute={absolute} />
       {children}
-      <div style={{ flexGrow: 1 }} />
+      <div className="flex-grow-1" />
       <Footer />
     </div>
   );

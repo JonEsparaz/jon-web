@@ -12,13 +12,16 @@ $accent: #ff3333;
   margin-bottom: 8px;
 }
 
+.hero-image {
+  width: 100vw;
+  object-fit: cover;
+}
+
 @media (min-width: 768px) {
   $imageratio: 9/16;
 
   .hero-image {
-    width: 100vw;
     height: $imageratio * 100vw;
-    object-fit: cover;
     object-position: 100% 0;
   }
 
@@ -28,12 +31,7 @@ $accent: #ff3333;
 }
 
 @media (max-width: 767px) {
-  .hero-image {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-  }
-
+  .hero-image,
   .hero-content {
     height: 100vh;
   }

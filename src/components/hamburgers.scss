@@ -101,7 +101,7 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
   }
 }
 
-.bl-menu {
+.dark-burger {
   .hamburger-inner,
   .hamburger-inner::before,
   .hamburger-inner::after {
@@ -109,7 +109,7 @@ $hamburger-active-hover-filter: $hamburger-hover-filter !default;
   }
 }
 
-.wh-menu {
+.light-burger {
   .hamburger-inner,
   .hamburger-inner::before,
   .hamburger-inner::after {

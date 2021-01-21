@@ -50,7 +50,6 @@ export default function Speedcubing(): JSX.Element {
             className="video-player"
             title="Video Player"
             src={`https://www.youtube.com/embed/${video}?autoplay=1&&origin=https://jonesparaz.ca`}
-            frameBorder="0"
           />
         </ModalBody>
       </Modal>
@@ -61,7 +60,7 @@ export default function Speedcubing(): JSX.Element {
     <Page mode="dark">
       {videoModal()}
       <div className="container">
-        <h1 style={{ textAlign: 'center' }}>Speedcubing</h1>
+        <h1 className="text-center text-uppercase">Speedcubing</h1>
         <p className="mx-2">
           For the past {new Date().getFullYear() - 2013} years, I have competed
           in World Cube Association competitions. In 2018, I broke the North
@@ -70,15 +69,13 @@ export default function Speedcubing(): JSX.Element {
           Today, I organize and officiate competitions as a Junior Delegate for
           the World Cube Association.
         </p>
-        <h2 className="mt-5 mb-4" style={{ textAlign: 'center' }}>
-          Highlight Reel
-        </h2>
+        <h2 className="mt-5 mb-4 text-center text-uppercase">Highlight Reel</h2>
         <div className="row">
           {videoData.map((item) => {
             return (
-              <div className="col-md-4" key={item.id}>
-                <Card className="mx-1 mb-4" style={{ borderRadius: 0 }}>
-                  <CardBody>
+              <div className="col-md-4 d-flex" key={item.id}>
+                <Card className="mx-1 mb-4 rounded-0">
+                  <CardBody className="d-flex flex-column">
                     <button
                       type="button"
                       aria-label={`Open video: ${item.text}`}
@@ -88,10 +85,9 @@ export default function Speedcubing(): JSX.Element {
                       }}
                     >
                       <CardImg
-                        className="yt-image"
+                        className="yt-image rounded-0"
                         src={`https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`}
                         alt="YouTube thumbnail"
-                        style={{ borderRadius: 0 }}
                       />
                       <img
                         className="play-arrow"
@@ -99,7 +95,7 @@ export default function Speedcubing(): JSX.Element {
                         alt=""
                       />
                     </button>
-                    <CardText>{item.text}</CardText>
+                    <CardText className="flex-grow-1">{item.text}</CardText>
                   </CardBody>
                 </Card>
               </div>

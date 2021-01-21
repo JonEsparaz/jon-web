@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import * as Sentry from '@sentry/react';
 import { AmplifySignIn, AmplifyAuthenticator } from '@aws-amplify/ui-react';
+import Auth from '@aws-amplify/auth';
 import { Modal } from 'reactstrap';
-import { API, Auth } from 'aws-amplify';
+import { API } from 'aws-amplify';
 import { GraphQLResult, GRAPHQL_AUTH_MODE } from '@aws-amplify/api';
 import { listCourses } from '../graphql/queries';
 import { createCourse, updateCourse, deleteCourse } from '../graphql/mutations';
@@ -12,11 +13,14 @@ import {
   ListCoursesQuery,
   UpdateCourseInput,
 } from '../API';
+import awsmobile from '../aws-exports';
 import './Lectures.scss';
 
 type Courses = NonNullable<
   NonNullable<ListCoursesQuery['listCourses']>['items']
 >;
+
+Auth.configure(awsmobile);
 
 export default function Lectures(): JSX.Element {
   const [courses, setCourses] = useState<Courses>([]);

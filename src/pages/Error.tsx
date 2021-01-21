@@ -6,7 +6,7 @@ export default function Error(): JSX.Element {
   return (
     <Page mode="dark">
       <div className="container">
-        <div className="row" style={{ textAlign: 'center' }}>
+        <div className="row text-center">
           <div>
             <h2>
               Page not found{' '}

@@ -1,14 +1,13 @@
 @import './hamburgers.scss';
 
+.logo {
+  height: 80px;
+  margin-right: 2vw;
+}
+
 .menu-icon {
   margin-right: 5px;
   margin-bottom: 2px;
-  width: 24px;
-  height: 24px;
-}
-
-.navlink-custom {
-  text-decoration: none !important;
 }
 
 .active-link {
@@ -29,31 +28,14 @@
   }
 }
 
-.white-link {
-  color: white !important;
-}
-
 @media (min-width: 768px) {
-  .menu-container {
-    margin-left: 7.5vw;
-    width: 80vw;
-  }
-
   .navlink-custom {
-    color: black;
-    text-transform: uppercase;
     font-size: 14px;
     margin-right: 1rem;
   }
 }
 
 @media (max-width: 767px) {
-  .menu-container {
-    width: 100vw;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
   .navbar-toggler {
     outline: none;
     background-color: #ffffff00 !important;
@@ -63,8 +45,6 @@
   }
 
   .navlink-custom {
-    color: black;
-    text-transform: uppercase;
     font-size: 16px;
     padding-top: 4px;
     padding-bottom: 4px;

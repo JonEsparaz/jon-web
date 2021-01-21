@@ -10,7 +10,7 @@
 }
 
 @media (min-width: 768px) {
-  .CheckIcon {
+  .email-status-icon {
     animation: SentIcon 0.9s;
     width: 2.5vw;
     height: 2.5vw;
@@ -18,7 +18,7 @@
 }
 
 @media (max-width: 767px) {
-  .CheckIcon {
+  .email-status-icon {
     animation: SentIcon 0.9s;
     width: 10vw;
     height: 10vw;
