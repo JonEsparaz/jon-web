@@ -103,7 +103,7 @@ export default function Home(): JSX.Element {
           {skillsData.map((item) => {
             return (
               <div className="col-lg-4 d-flex" key={item.title}>
-                <Card className="mx-lg-1 mx-md-5 rounded-0">
+                <Card className="mx-lg-1 mx-md-5 mb-4 rounded-0">
                   <CardBody className="d-flex flex-column">
                     <CardTitle className="text-uppercase h5 d-flex flex-row align-items-center justify-content-center">
                       <img

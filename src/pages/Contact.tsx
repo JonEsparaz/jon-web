@@ -11,6 +11,8 @@ import { contact } from '../graphql/queries';
 import './Contact.scss';
 
 export default function Contact(): JSX.Element {
+  const isLocalhost = window.location.hostname === 'localhost';
+
   const [isSent, setIsSent] = useState(false);
   const [error, setError] = useState(false);
   const [emailObj, setEmailObj] = useState<ContactQueryVariables>({
@@ -21,7 +23,6 @@ export default function Contact(): JSX.Element {
     message: '',
   });
 
-  const isLocalhost = window.location.hostname === 'localhost';
   const recaptchaRef = React.createRef<ReCAPTCHA>();
 
   const send = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -120,11 +121,7 @@ export default function Contact(): JSX.Element {
                 />
               </FormGroup>
               <ReCAPTCHA
-                sitekey={
-                  isLocalhost
-                    ? '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
-                    : '6Lcq77QZAAAAAPuPm5u1lqeo-p_EyXxxLymBS-ZK'
-                }
+                sitekey="6Lcq77QZAAAAAPuPm5u1lqeo-p_EyXxxLymBS-ZK"
                 ref={recaptchaRef}
               />
               <Button dark type="submit" disabled={isSent} testId="send-btn">
