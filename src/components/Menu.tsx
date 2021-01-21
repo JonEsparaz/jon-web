@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Collapse, NavbarToggler, Nav, Navbar } from 'reactstrap';
+import { Collapse, NavbarToggler, Nav, Navbar, NavItem } from 'reactstrap';
 import { NavLink, Link } from 'react-router-dom';
 import './Menu.scss';
 
@@ -54,7 +54,7 @@ export default function Menu({ mode, absolute }: Props): JSX.Element {
           <Nav navbar className="mr-auto">
             {links.map((link) => {
               return (
-                <li key={link.title}>
+                <NavItem key={link.title}>
                   <NavLink
                     className={`navlink-custom text-decoration-none text-uppercase ${mode}-link`}
                     activeClassName="active-link"
@@ -69,7 +69,7 @@ export default function Menu({ mode, absolute }: Props): JSX.Element {
                     />
                     <span className={`underline-${mode}`}>{link.title}</span>
                   </NavLink>
-                </li>
+                </NavItem>
               );
             })}
           </Nav>
