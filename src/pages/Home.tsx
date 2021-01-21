@@ -129,7 +129,7 @@ export default function Home(): JSX.Element {
         </div>
         <div className="row mt-5 mb-3">
           <div className="text-center w-100">
-            <h3>Have an idea? Let&apos;s connect.</h3>
+            <div className="h3">Have an idea? Let&apos;s connect.</div>
             <ButtonLink to="/contact" dark>
               Contact Me
             </ButtonLink>

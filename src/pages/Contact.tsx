@@ -63,93 +63,95 @@ export default function Contact(): JSX.Element {
     <Page mode="dark">
       <div className="container">
         <div className="mx-1 mb-4">
-          <Form className="col-sm-6 m-auto" onSubmit={(e) => send(e)}>
-            <FormGroup className="row mb-2">
-              <div className="col-6">
-                <Label for="fname">First name</Label>
+          <main>
+            <Form className="col-sm-6 m-auto" onSubmit={(e) => send(e)}>
+              <FormGroup className="row mb-2">
+                <div className="col-6">
+                  <Label for="fname">First name</Label>
+                  <Input
+                    required
+                    value={emailObj.first}
+                    onChange={(e) => handleChange('first', e.target.value)}
+                    id="fname"
+                    className="rounded-0"
+                  />
+                </div>
+                <div className="col-6">
+                  <Label for="lname">Last name</Label>
+                  <Input
+                    required
+                    value={emailObj.last}
+                    onChange={(e) => handleChange('last', e.target.value)}
+                    id="lname"
+                    className="rounded-0"
+                  />
+                </div>
+              </FormGroup>
+              <FormGroup className="mb-2">
+                <Label for="email">Email</Label>
                 <Input
                   required
-                  value={emailObj.first}
-                  onChange={(e) => handleChange('first', e.target.value)}
-                  id="fname"
+                  type="email"
+                  value={emailObj.email}
+                  onChange={(e) => handleChange('email', e.target.value)}
+                  id="email"
                   className="rounded-0"
                 />
-              </div>
-              <div className="col-6">
-                <Label for="lname">Last name</Label>
+              </FormGroup>
+              <FormGroup className="mb-2">
+                <Label for="subject">Subject</Label>
                 <Input
                   required
-                  value={emailObj.last}
-                  onChange={(e) => handleChange('last', e.target.value)}
-                  id="lname"
+                  value={emailObj.subject}
+                  onChange={(e) => handleChange('subject', e.target.value)}
+                  id="subject"
                   className="rounded-0"
                 />
-              </div>
-            </FormGroup>
-            <FormGroup className="mb-2">
-              <Label for="email">Email</Label>
-              <Input
-                required
-                type="email"
-                value={emailObj.email}
-                onChange={(e) => handleChange('email', e.target.value)}
-                id="email"
-                className="rounded-0"
-              />
-            </FormGroup>
-            <FormGroup className="mb-2">
-              <Label for="subject">Subject</Label>
-              <Input
-                required
-                value={emailObj.subject}
-                onChange={(e) => handleChange('subject', e.target.value)}
-                id="subject"
-                className="rounded-0"
-              />
-            </FormGroup>
-            <FormGroup className="mb-4">
-              <Label for="message">Message</Label>
-              <Input
-                required
-                type="textarea"
-                value={emailObj.message}
-                onChange={(e) => handleChange('message', e.target.value)}
-                id="message"
-                className="rounded-0"
-              />
-            </FormGroup>
-            <ReCAPTCHA
-              sitekey={
-                isLocalhost
-                  ? '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
-                  : '6Lcq77QZAAAAAPuPm5u1lqeo-p_EyXxxLymBS-ZK'
-              }
-              ref={recaptchaRef}
-            />
-            <Button dark type="submit" disabled={isSent} testId="send-btn">
-              {isSent ? 'Sent' : 'Send'}
-            </Button>
-            {isSent && (
-              <span className="ml-3">
-                <img
-                  data-testid="success-icon"
-                  src="/svg/check_circle_outline.svg"
-                  alt="check mark: message sent"
-                  className="email-status-icon"
+              </FormGroup>
+              <FormGroup className="mb-4">
+                <Label for="message">Message</Label>
+                <Input
+                  required
+                  type="textarea"
+                  value={emailObj.message}
+                  onChange={(e) => handleChange('message', e.target.value)}
+                  id="message"
+                  className="rounded-0"
                 />
-              </span>
-            )}
-            {error && (
-              <span className="ml-3">
-                <img
-                  data-testid="error-icon"
-                  src="/svg/error_outline.svg"
-                  alt="error: message failed to send"
-                  className="email-status-icon"
-                />
-              </span>
-            )}
-          </Form>
+              </FormGroup>
+              <ReCAPTCHA
+                sitekey={
+                  isLocalhost
+                    ? '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+                    : '6Lcq77QZAAAAAPuPm5u1lqeo-p_EyXxxLymBS-ZK'
+                }
+                ref={recaptchaRef}
+              />
+              <Button dark type="submit" disabled={isSent} testId="send-btn">
+                {isSent ? 'Sent' : 'Send'}
+              </Button>
+              {isSent && (
+                <span className="ml-3">
+                  <img
+                    data-testid="success-icon"
+                    src="/svg/check_circle_outline.svg"
+                    alt="check mark: message sent"
+                    className="email-status-icon"
+                  />
+                </span>
+              )}
+              {error && (
+                <span className="ml-3">
+                  <img
+                    data-testid="error-icon"
+                    src="/svg/error_outline.svg"
+                    alt="error: message failed to send"
+                    className="email-status-icon"
+                  />
+                </span>
+              )}
+            </Form>
+          </main>
         </div>
       </div>
     </Page>
