@@ -1,5 +1,13 @@
 @import './hamburgers.scss';
 
+.light-link {
+  color: white !important;
+}
+
+.dark-link {
+  color: black !important;
+}
+
 .logo {
   height: 80px;
   margin-right: 2vw;

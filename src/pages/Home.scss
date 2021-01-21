@@ -28,11 +28,19 @@ $accent: #ff3333;
   .hero-content {
     height: $imageratio * 100vw;
   }
+
+  .name-title {
+    font-size: 3.2rem;
+  }
 }
 
 @media (max-width: 767px) {
   .hero-image,
   .hero-content {
     height: 100vh;
+  }
+
+  .name-title {
+    font-size: 2.5rem;
   }
 }

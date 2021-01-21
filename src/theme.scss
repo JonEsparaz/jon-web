@@ -2,8 +2,9 @@ body {
   font-family: 'Work Sans', sans-serif;
 }
 
-a {
-  color: black !important;
+.inline-link {
+  color: #212529;
+  text-decoration: underline;
 }
 
 @media (min-width: 768px) {

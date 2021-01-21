@@ -6,8 +6,8 @@ export default function Error(): JSX.Element {
   return (
     <Page mode="dark">
       <div className="container">
-        <div className="row text-center">
-          <div>
+        <div className="row">
+          <div className="text-center w-100">
             <h2>
               Page not found{' '}
               <span role="img" aria-label="confused emoji">

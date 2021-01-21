@@ -73,8 +73,8 @@ export default function Speedcubing(): JSX.Element {
         <div className="row">
           {videoData.map((item) => {
             return (
-              <div className="col-md-4 d-flex" key={item.id}>
-                <Card className="mx-1 mb-4 rounded-0">
+              <div className="col-lg-4 d-flex" key={item.id}>
+                <Card className="mx-lg-1 mx-md-5 mb-4 rounded-0">
                   <CardBody className="d-flex flex-column">
                     <button
                       type="button"

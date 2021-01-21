@@ -62,7 +62,7 @@ export default function Contact(): JSX.Element {
   return (
     <Page mode="dark">
       <div className="container">
-        <div className="mx-2">
+        <div className="mx-1 mb-4">
           <Form className="col-sm-6 m-auto" onSubmit={(e) => send(e)}>
             <FormGroup className="row mb-2">
               <div className="col-6">

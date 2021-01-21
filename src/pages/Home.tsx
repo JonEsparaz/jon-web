@@ -65,7 +65,9 @@ export default function Home(): JSX.Element {
       <div className="container-fluid position-absolute">
         <div className="row align-items-center hero-content text-center">
           <div className="col-md-6 m-auto">
-            <h1 className="text-white text-uppercase display-4">Jon Esparaz</h1>
+            <h1 className="text-white text-uppercase name-title">
+              Jon Esparaz
+            </h1>
             <div className="accent-bar" />
             <p className="text-white h5">
               Engineering Science | University of Toronto
@@ -86,11 +88,11 @@ export default function Home(): JSX.Element {
         alt="a backlit mechanical keyboard"
       />
       <div className="container py-5" ref={aboutRef}>
-        <div className="mx-2">
+        <div className="mx-2 h5">
           <b>About me: </b>
           I&apos;m a 3rd year Machine Intelligence major in the University of
           Toronto&apos;s Engineering Science program. I enjoy writing software,{' '}
-          <Link className="Link" to="/speedcubing">
+          <Link className="inline-link" to="/speedcubing">
             solving Rubik&apos;s Cubes
           </Link>{' '}
           and a good game of basketball.
@@ -100,8 +102,8 @@ export default function Home(): JSX.Element {
         <div className="row">
           {skillsData.map((item) => {
             return (
-              <div className="col-md-4 d-flex" key={item.title}>
-                <Card className="mx-1 mb-4 rounded-0">
+              <div className="col-lg-4 d-flex" key={item.title}>
+                <Card className="mx-lg-1 mx-md-5 rounded-0">
                   <CardBody className="d-flex flex-column">
                     <CardTitle className="text-uppercase h5 d-flex flex-row align-items-center justify-content-center">
                       <img
@@ -125,8 +127,8 @@ export default function Home(): JSX.Element {
             );
           })}
         </div>
-        <div className="row mt-5 mb-3 text-center">
-          <div>
+        <div className="row mt-5 mb-3">
+          <div className="text-center w-100">
             <h3>Have an idea? Let&apos;s connect.</h3>
             <ButtonLink to="/contact" dark>
               Contact Me

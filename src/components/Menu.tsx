@@ -28,7 +28,7 @@ export default function Menu({ mode, absolute }: Props): JSX.Element {
 
   return (
     <div
-      className={`px-4 px-sm-5 w-100 ${
+      className={`px-2 px-sm-5 w-100 ${
         absolute ? 'position-absolute' : 'position-relative'
       }`}
       style={{
@@ -56,9 +56,7 @@ export default function Menu({ mode, absolute }: Props): JSX.Element {
               return (
                 <li key={link.title}>
                   <NavLink
-                    className={`navlink-custom text-decoration-none text-uppercase ${
-                      mode === 'light' ? 'text-white' : ''
-                    }`}
+                    className={`navlink-custom text-decoration-none text-uppercase ${mode}-link`}
                     activeClassName="active-link"
                     to={link.to}
                   >
