@@ -1,186 +1,40 @@
-@import '../theme.scss';
+$accent: #ff3333;
 
-.NameHeader {
-  text-align: left !important;
+.skill-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
 }
 
-.Link {
-  color: black;
-  text-decoration: underline;
-}
-
-.Skill {
-  text-align: left;
-  box-shadow: $shadow;
+.accent-bar {
+  background: $accent;
+  height: 5px;
+  margin-bottom: 8px;
 }
 
 @media (min-width: 768px) {
-  $width: 100vw;
   $imageratio: 9/16;
-  $imageratio2: 1/2.39;
 
-  .AccentBar {
-    background: $accent;
-    height: 5px;
-    width: 50vw;
-    margin-bottom: 8px;
-  }
-
-  .AboutMe {
-    position: relative;
-    width: 67.5vw;
-    text-align: left;
-    margin-top: 2.5vw;
-    padding-top: 5vw;
-  }
-
-  .HomePage {
-    text-align: center;
-    margin-bottom: 5vw;
-  }
-
-  .HeroImage {
-    width: $width;
-    height: $imageratio * $width;
+  .hero-image {
+    width: 100vw;
+    height: $imageratio * 100vw;
     object-fit: cover;
     object-position: 100% 0;
   }
 
-  .ContentContainer {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: $imageratio * $width;
-    z-index: 999;
-    width: 100%;
-    background-color: #00000070;
-  }
-
-  .Skill {
-    padding: 1vw;
-    width: 21.5vw;
-    margin: 0 0.5vw 1vw;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .SkillImage {
-    height: $imageratio2 * 19vw;
-    background-size: cover;
-  }
-
-  .SkillsArea {
-    position: relative;
-    display: grid;
-    grid-template-columns: 22.5vw 22.5vw 22.5vw;
-    width: 67.5vw;
-    margin-top: 5vw;
-  }
-
-  .SkillTitle {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 1vw;
-  }
-
-  .SkillIcon {
-    width: 2.5vw;
-    height: 2.5vw;
-    margin-right: 0.5vw;
-  }
-
-  .SkillText {
-    font-family: $font;
-    font-size: 1.1vw;
-    padding: 0 1vw 1vw;
-    flex-grow: 1;
+  .hero-content {
+    height: $imageratio * 100vw;
   }
 }
 
 @media (max-width: 767px) {
-  $width: 100vw;
-
-  .AboutMe {
-    position: relative;
-    margin: 7.5vw 5vw 10vw;
-    padding-top: 7.5vw;
-    text-align: left;
-  }
-
-  .AccentBar {
-    background: $accent;
-    height: 5px;
-    width: 80vw;
-    margin-bottom: 8px;
-  }
-
-  .HomePage {
+  .hero-image {
     width: 100vw;
-    text-align: center;
-    margin-bottom: 10vw;
-  }
-
-  .HeroImage {
-    width: $width;
     height: 100vh;
     object-fit: cover;
   }
 
-  .ContentContainer {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: $width;
+  .hero-content {
     height: 100vh;
-    background-color: #00000070;
-    padding-left: 5vw;
-    padding-right: 5vw;
-  }
-
-  $skill-padding: 5vw;
-
-  .Skill {
-    width: 90vw;
-    margin-bottom: $skill-padding;
-    padding: $skill-padding;
-  }
-
-  .SkillImage {
-    height: 25vw;
-    background-size: cover;
-  }
-
-  .SkillsArea {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .SkillTitle {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: $skill-padding;
-  }
-
-  .SkillText {
-    font-family: $font;
-    font-size: 4vw;
-    padding-left: 1vw;
-    padding-right: 1vw;
-    padding-bottom: $skill-padding;
-  }
-
-  .SkillIcon {
-    width: 10vw;
-    height: 10vw;
-    margin-right: 2vw;
   }
 }

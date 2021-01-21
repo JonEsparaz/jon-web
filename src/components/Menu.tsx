@@ -3,7 +3,7 @@ import { Collapse, NavbarToggler, Nav, Navbar } from 'reactstrap';
 import { NavLink, Link } from 'react-router-dom';
 import './Menu.scss';
 
-interface Props {
+export interface Props {
   mode: 'light' | 'dark';
   absolute?: boolean;
 }
@@ -28,7 +28,7 @@ export default function Menu({ mode, absolute }: Props): JSX.Element {
 
   return (
     <div
-      className="MenuContainer"
+      className="menu-container"
       style={{
         position: absolute ? 'absolute' : 'relative',
         zIndex: absolute ? 9999 : undefined,
@@ -69,7 +69,9 @@ export default function Menu({ mode, absolute }: Props): JSX.Element {
                   >
                     <img src={link.icon} alt={link.alt} className="menu-icon" />
                     <span
-                      className={mode === 'light' ? 'Underline2' : 'Underline'}
+                      className={
+                        mode === 'light' ? 'underline-light' : 'underline-dark'
+                      }
                     >
                       {link.title}
                     </span>

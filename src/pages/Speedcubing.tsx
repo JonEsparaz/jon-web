@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
-import { Modal, ModalBody, ModalHeader } from 'reactstrap';
+import {
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  Modal,
+  ModalBody,
+  ModalHeader,
+} from 'reactstrap';
 import { isMobile } from 'react-device-detect';
-import Menu from '../components/Menu';
-import Footer from '../components/Footer';
+import Page from '../components/Page';
 import './Speedcubing.scss';
 
 export default function Speedcubing(): JSX.Element {
@@ -34,16 +41,13 @@ export default function Speedcubing(): JSX.Element {
   const videoModal = () => {
     return (
       <Modal isOpen={Boolean(video)} className="modal-custom">
-        <ModalHeader
-          className="modal-header-custom"
-          toggle={() => setVideo('')}
-        />
+        <ModalHeader toggle={() => setVideo('')} />
         <ModalBody className="modal-body-custom">
           <iframe
             // Reactstrap's ModalBody will not allow keyboard focus by default
             // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
             tabIndex={0}
-            className="videoPlayer"
+            className="video-player"
             title="Video Player"
             src={`https://www.youtube.com/embed/${video}?autoplay=1&&origin=https://jonesparaz.ca`}
             frameBorder="0"
@@ -54,52 +58,55 @@ export default function Speedcubing(): JSX.Element {
   };
 
   return (
-    <div className="page-wrapper">
-      <Menu mode="dark" />
-      <div className="center-wrapper page-body">
-        <div className="CubingContainer">
-          {videoModal()}
-          <h2 className="Header2 Big">Speedcubing</h2>
-          <div className="Text1 SpeedcubingText">
-            For the past {new Date().getFullYear() - 2013} years, I have
-            competed in World Cube Association competitions. In 2018, I broke
-            the North American Record for solving the Rubik&apos;s Cube
-            one-handed with a time of 7.57 seconds. At the time, this ranked me
-            second in the world. Today, I organize and officiate competitions as
-            a Junior Delegate for the World Cube Association.
-          </div>
-          <h2 className="Header2">Highlight Reel</h2>
-          <div className="YTgrid">
-            {videoData.map((item) => {
-              return (
-                <div className="SpeedcubingItem" key={item.id}>
-                  <button
-                    type="button"
-                    aria-label={`Open video: ${item.text}`}
-                    className="imageContainer"
-                    onClick={() => {
-                      handleOpen(item.id);
-                    }}
-                  >
-                    <img
-                      className="YTimage"
-                      alt="YouTube thumbnail"
-                      src={`https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`}
-                    />
-                    <img
-                      className="playArrow"
-                      src="/svg/play_arrow-white.svg"
-                      alt=""
-                    />
-                  </button>
-                  <div className="YTtitle">{item.text}</div>
-                </div>
-              );
-            })}
-          </div>
+    <Page mode="dark">
+      {videoModal()}
+      <div className="container">
+        <h1 style={{ textAlign: 'center' }}>Speedcubing</h1>
+        <p className="mx-2">
+          For the past {new Date().getFullYear() - 2013} years, I have competed
+          in World Cube Association competitions. In 2018, I broke the North
+          American Record for solving the Rubik&apos;s Cube one-handed with a
+          time of 7.57 seconds. At the time, this ranked me second in the world.
+          Today, I organize and officiate competitions as a Junior Delegate for
+          the World Cube Association.
+        </p>
+        <h2 className="mt-5 mb-4" style={{ textAlign: 'center' }}>
+          Highlight Reel
+        </h2>
+        <div className="row">
+          {videoData.map((item) => {
+            return (
+              <div className="col-md-4" key={item.id}>
+                <Card className="mx-1 mb-4" style={{ borderRadius: 0 }}>
+                  <CardBody>
+                    <button
+                      type="button"
+                      aria-label={`Open video: ${item.text}`}
+                      className="image-container"
+                      onClick={() => {
+                        handleOpen(item.id);
+                      }}
+                    >
+                      <CardImg
+                        className="yt-image"
+                        src={`https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`}
+                        alt="YouTube thumbnail"
+                        style={{ borderRadius: 0 }}
+                      />
+                      <img
+                        className="play-arrow"
+                        src="/svg/play_arrow-white.svg"
+                        alt=""
+                      />
+                    </button>
+                    <CardText>{item.text}</CardText>
+                  </CardBody>
+                </Card>
+              </div>
+            );
+          })}
         </div>
       </div>
-      <Footer />
-    </div>
+    </Page>
   );
 }

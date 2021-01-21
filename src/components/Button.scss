@@ -1,0 +1,59 @@
+.dark-btn {
+  background: black !important;
+  color: white !important;
+}
+
+.light-btn {
+  background: white !important;
+  color: black !important;
+}
+
+@media (min-width: 768px) {
+  .action-btn {
+    display: inline-block;
+    padding: 1em 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-width: 0;
+    margin-top: 2vw;
+    text-decoration: none !important;
+    cursor: pointer;
+    &:disabled {
+      background: grey;
+      cursor: default;
+    }
+  }
+
+  .action-btn:hover,
+  .action-btn:focus {
+    .underline-dark:before,
+    .underline-light:before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  }
+
+  .action-btn:disabled {
+    .underline-dark:before,
+    .underline-light:before {
+      display: none !important;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .action-btn {
+    display: inline-block;
+    padding: 1em 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-width: 0;
+    margin-top: 4vw;
+    text-decoration: none !important;
+    cursor: pointer;
+    &:disabled {
+      background: grey;
+      cursor: default;
+    }
+  }
+}

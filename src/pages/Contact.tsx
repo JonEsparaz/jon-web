@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import * as Sentry from '@sentry/react';
+import { Form, FormGroup, Label, Input } from 'reactstrap';
 import { API } from 'aws-amplify';
 import { GRAPHQL_AUTH_MODE } from '@aws-amplify/api';
 import ReCAPTCHA from 'react-google-recaptcha';
-import Menu from '../components/Menu';
-import Footer from '../components/Footer';
+import Page from '../components/Page';
+import Button from '../components/Button';
 import { ContactQueryVariables } from '../API';
 import { contact } from '../graphql/queries';
 import './Contact.scss';
@@ -59,61 +60,59 @@ export default function Contact(): JSX.Element {
   };
 
   return (
-    <div className="page-wrapper">
-      <Menu mode="dark" />
-      <div className="ContactContainer center-wrapper page-body">
-        <main>
-          <form className="ContactForm" onSubmit={(e) => send(e)}>
-            <div className="NameInputContainer">
-              <input
-                aria-label="First Name"
-                style={{ marginRight: 10 }}
-                className="NameInput"
-                type="text"
-                placeholder="First name"
+    <Page mode="dark">
+      <div className="container">
+        <div className="mx-2">
+          <Form className="col-sm-6 m-auto" onSubmit={(e) => send(e)}>
+            <FormGroup className="row mb-2">
+              <div className="col-6">
+                <Label for="fname">First name</Label>
+                <Input
+                  required
+                  value={emailObj.first}
+                  onChange={(e) => handleChange('first', e.target.value)}
+                  id="fname"
+                />
+              </div>
+              <div className="col-6">
+                <Label for="lname">Last name</Label>
+                <Input
+                  required
+                  value={emailObj.last}
+                  onChange={(e) => handleChange('last', e.target.value)}
+                  id="lname"
+                />
+              </div>
+            </FormGroup>
+            <FormGroup className="mb-2">
+              <Label for="email">Email</Label>
+              <Input
                 required
-                value={emailObj.first}
-                onChange={(e) => handleChange('first', e.target.value)}
+                type="email"
+                value={emailObj.email}
+                onChange={(e) => handleChange('email', e.target.value)}
+                id="email"
               />
-              <input
-                aria-label="Last Name"
-                className="NameInput"
-                type="text"
-                placeholder="Last name"
+            </FormGroup>
+            <FormGroup className="mb-2">
+              <Label for="subject">Subject</Label>
+              <Input
                 required
-                value={emailObj.last}
-                onChange={(e) => handleChange('last', e.target.value)}
+                value={emailObj.subject}
+                onChange={(e) => handleChange('subject', e.target.value)}
+                id="subject"
               />
-            </div>
-            <input
-              aria-label="Email Address"
-              className="FormInput"
-              type="email"
-              placeholder="Email"
-              required
-              value={emailObj.email}
-              onChange={(e) => handleChange('email', e.target.value)}
-            />
-            <br />
-            <input
-              aria-label="Subject Line"
-              className="FormInput"
-              type="text"
-              placeholder="Subject"
-              required
-              value={emailObj.subject}
-              onChange={(e) => handleChange('subject', e.target.value)}
-            />
-            <br />
-            <textarea
-              aria-label="Message"
-              className="MessageInput"
-              placeholder="Message..."
-              required
-              value={emailObj.message}
-              onChange={(e) => handleChange('message', e.target.value)}
-            />
-            <br />
+            </FormGroup>
+            <FormGroup className="mb-4">
+              <Label for="message">Message</Label>
+              <Input
+                required
+                type="textarea"
+                value={emailObj.message}
+                onChange={(e) => handleChange('message', e.target.value)}
+                id="message"
+              />
+            </FormGroup>
             <ReCAPTCHA
               sitekey={
                 isLocalhost
@@ -122,16 +121,9 @@ export default function Contact(): JSX.Element {
               }
               ref={recaptchaRef}
             />
-            <button
-              className="ActionButton2"
-              type="submit"
-              disabled={isSent}
-              data-testid="send-btn"
-            >
-              <span className={isSent ? '' : 'Underline2'}>
-                {isSent ? 'Sent' : 'Send'}
-              </span>
-            </button>
+            <Button dark type="submit" disabled={isSent} data-testid="send-btn">
+              {isSent ? 'Sent' : 'Send'}
+            </Button>
             {isSent && (
               <span style={{ marginLeft: 12 }}>
                 <img
@@ -152,10 +144,9 @@ export default function Contact(): JSX.Element {
                 />
               </span>
             )}
-          </form>
-        </main>
+          </Form>
+        </div>
       </div>
-      <Footer />
-    </div>
+    </Page>
   );
 }

@@ -5,6 +5,7 @@ import { Auth } from '@aws-amplify/auth';
 import * as Sentry from '@sentry/react';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './theme.scss';
 import awsmobile from './aws-exports';
 
 Amplify.configure(awsmobile);

@@ -3,7 +3,7 @@ import './Footer.scss';
 
 export default function Footer(): JSX.Element {
   return (
-    <div className="FooterContainer">
+    <div className="container mt-5 mb-4" style={{ textAlign: 'center' }}>
       <a
         aria-label="Twitter"
         href="https://twitter.com/JonEsparaz"
@@ -40,9 +40,9 @@ export default function Footer(): JSX.Element {
       >
         <img src="/svg/youtube.svg" alt="" className="footer-icon" />
       </a>
-      <div style={{ marginTop: '20px', color: 'black' }}>
+      <p style={{ marginTop: '20px', color: 'black' }}>
         &copy; {new Date().getFullYear()} Jonathan Esparaz
-      </div>
+      </p>
     </div>
   );
 }
