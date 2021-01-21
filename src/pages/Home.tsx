@@ -74,7 +74,7 @@ export default function Home(): JSX.Element {
               Engineering Science | University of Toronto
             </p>
             {showButton ? (
-              <Button onClick={scroll} type="button" data-testid="about-me-btn">
+              <Button onClick={scroll} type="button" testId="about-me-btn">
                 About Me
               </Button>
             ) : null}

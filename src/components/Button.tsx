@@ -6,6 +6,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: string;
   onClick?(): void;
   dark?: boolean;
+  testId?: string;
 }
 
 export default function Button({
@@ -14,11 +15,13 @@ export default function Button({
   dark,
   type,
   disabled,
+  testId,
 }: ButtonProps): JSX.Element {
   return (
     <button
       // eslint-disable-next-line react/button-has-type
       type={type}
+      data-testid={testId}
       disabled={disabled}
       className={`action-btn ${dark ? 'dark-btn' : 'light-btn'}`}
       onClick={onClick}

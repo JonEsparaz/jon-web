@@ -121,7 +121,7 @@ export default function Contact(): JSX.Element {
               }
               ref={recaptchaRef}
             />
-            <Button dark type="submit" disabled={isSent} data-testid="send-btn">
+            <Button dark type="submit" disabled={isSent} testId="send-btn">
               {isSent ? 'Sent' : 'Send'}
             </Button>
             {isSent && (
