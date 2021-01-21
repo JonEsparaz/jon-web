@@ -50,6 +50,7 @@ export default function Speedcubing(): JSX.Element {
             className="video-player"
             title="Video Player"
             src={`https://www.youtube.com/embed/${video}?autoplay=1&&origin=https://jonesparaz.ca`}
+            frameBorder={0}
           />
         </ModalBody>
       </Modal>
