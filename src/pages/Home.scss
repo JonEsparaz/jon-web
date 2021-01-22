@@ -32,6 +32,10 @@ $accent: #ff3333;
   .name-title {
     font-size: 3.2rem;
   }
+
+  .lets-connect > br {
+    display: none;
+  }
 }
 
 @media (max-width: 767px) {
