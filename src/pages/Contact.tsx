@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import * as Sentry from '@sentry/react';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
-import { API } from 'aws-amplify';
-import { GRAPHQL_AUTH_MODE } from '@aws-amplify/api';
+import { API, GRAPHQL_AUTH_MODE } from '@aws-amplify/api';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Page from '../components/Page';
 import Button from '../components/Button';

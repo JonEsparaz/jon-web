@@ -1,5 +1,5 @@
 import React from 'react';
-import { API } from 'aws-amplify';
+import { API } from '@aws-amplify/api';
 import { fireEvent, render, act } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Contact from './Contact';

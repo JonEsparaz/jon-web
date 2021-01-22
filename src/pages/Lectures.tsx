@@ -3,8 +3,7 @@ import * as Sentry from '@sentry/react';
 import { AmplifySignIn, AmplifyAuthenticator } from '@aws-amplify/ui-react';
 import Auth from '@aws-amplify/auth';
 import { Modal } from 'reactstrap';
-import { API } from 'aws-amplify';
-import { GraphQLResult, GRAPHQL_AUTH_MODE } from '@aws-amplify/api';
+import { API, GraphQLResult, GRAPHQL_AUTH_MODE } from '@aws-amplify/api';
 import { listCourses } from '../graphql/queries';
 import { createCourse, updateCourse, deleteCourse } from '../graphql/mutations';
 import {

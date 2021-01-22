@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Amplify from 'aws-amplify';
+import Amplify from '@aws-amplify/api';
 import * as Sentry from '@sentry/react';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
