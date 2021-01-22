@@ -1,0 +1,60 @@
+.dark-btn {
+  background: black !important;
+  color: white !important;
+}
+
+.light-btn {
+  background: white !important;
+  color: black !important;
+}
+
+.action-btn {
+  display: inline-block;
+  padding: 1em 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-width: 0;
+  margin-top: 2vw;
+  text-decoration: none !important;
+  cursor: pointer;
+  &:disabled {
+    cursor: default;
+  }
+}
+
+@media (min-width: 768px) {
+  .action-btn {
+    margin-top: 2vw;
+  }
+
+  .action-btn:focus {
+    .underline-dark:before,
+    .underline-light:before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  }
+
+  @media (hover: hover) {
+    .action-btn:hover {
+      .underline-dark:before,
+      .underline-light:before {
+        visibility: visible;
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  .action-btn:disabled {
+    .underline-dark:before,
+    .underline-light:before {
+      display: none !important;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .action-btn {
+    margin-top: 4vw;
+  }
+}

@@ -1,23 +1,8 @@
-@import '../theme.scss';
-
-.FooterContainer {
-  width: 100%;
-  text-align: center;
-  padding: 40px;
-  bottom: 0;
-  font-family: $font;
-}
-
-.footer-icon {
-  width: 32px;
-  height: 32px;
-}
-
 @media (min-width: 768px) {
   .footer-link {
-    margin: 0 1.3vw;
+    padding: 0.3vw;
+    margin: 0 1vw;
     transition: opacity 0.3s;
-    opacity: 1;
     &:hover {
       opacity: 0.6;
     }
@@ -26,6 +11,7 @@
 
 @media (max-width: 767px) {
   .footer-link {
-    margin: 0 3vw;
+    margin: 0 2.5vw;
+    padding: 0.5vw;
   }
 }

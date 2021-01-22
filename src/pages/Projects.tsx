@@ -1,19 +1,22 @@
 import React from 'react';
-import Menu from '../components/Menu';
-import Footer from '../components/Footer';
-import './Project.scss';
+import Page from '../components/Page';
 
-function Projects(): JSX.Element {
+export default function Projects(): JSX.Element {
   return (
-    <div className="page-wrapper">
-      <Menu mode="dark" />
-      <div className="ProjectsContainer page-body">
-        <h2 className="Header2 Big">projects</h2>
-        <div className="Text1">(coming soon)</div>
+    <Page mode="dark">
+      <div className="container">
+        <div className="row">
+          <div className="text-center w-100">
+            <h2>
+              Projects{' '}
+              <span role="img" aria-label="hammer and wrench emoji">
+                🛠️
+              </span>
+            </h2>
+            <div>(coming soon)</div>
+          </div>
+        </div>
       </div>
-      <Footer />
-    </div>
+    </Page>
   );
 }
-
-export default Projects;

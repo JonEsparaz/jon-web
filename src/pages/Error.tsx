@@ -1,25 +1,25 @@
 import React from 'react';
-import './Error.scss';
-import { Link } from 'react-router-dom';
-import Menu from '../components/Menu';
-import Footer from '../components/Footer';
+import { ButtonLink } from '../components/Button';
+import Page from '../components/Page';
 
 export default function Error(): JSX.Element {
   return (
-    <div className="page-wrapper">
-      <Menu mode="dark" />
-      <div className="Error page-body">
-        <h2 className="Header2 Big">
-          Page not found{' '}
-          <span role="img" aria-label="confused emoji">
-            😕
-          </span>
-        </h2>
-        <Link to="/" className="ActionButton2">
-          <span className="Underline2">Back to home</span>
-        </Link>
+    <Page mode="dark">
+      <div className="container">
+        <div className="row">
+          <div className="text-center w-100">
+            <h2>
+              Page not found{' '}
+              <span role="img" aria-label="confused emoji">
+                😕
+              </span>
+            </h2>
+            <ButtonLink to="/" dark>
+              Back to home
+            </ButtonLink>
+          </div>
+        </div>
       </div>
-      <Footer />
-    </div>
+    </Page>
   );
 }

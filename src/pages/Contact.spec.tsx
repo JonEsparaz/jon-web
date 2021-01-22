@@ -26,21 +26,21 @@ describe('contact form', () => {
       </MemoryRouter>,
     );
 
-    const firstName = getByLabelText('First Name') as HTMLInputElement;
+    const firstName = getByLabelText('First name') as HTMLInputElement;
     fireEvent.change(firstName, { target: { value: 'Luke' } });
     expect(firstName.value).toBe('Luke');
 
-    const lastName = getByLabelText('Last Name') as HTMLInputElement;
+    const lastName = getByLabelText('Last name') as HTMLInputElement;
     fireEvent.change(lastName, { target: { value: 'Skywalker' } });
     expect(lastName.value).toBe('Skywalker');
 
-    const emailAddr = getByLabelText('Email Address') as HTMLInputElement;
+    const emailAddr = getByLabelText('Email') as HTMLInputElement;
     fireEvent.change(emailAddr, {
       target: { value: 'luke.skywalker@jedi.com' },
     });
     expect(emailAddr.value).toBe('luke.skywalker@jedi.com');
 
-    const subject = getByLabelText('Subject Line') as HTMLInputElement;
+    const subject = getByLabelText('Subject') as HTMLInputElement;
     fireEvent.change(subject, { target: { value: 'This is a test' } });
     expect(subject.value).toBe('This is a test');
 
@@ -65,21 +65,21 @@ describe('contact form', () => {
       </MemoryRouter>,
     );
 
-    const firstName = getByLabelText('First Name') as HTMLInputElement;
+    const firstName = getByLabelText('First name') as HTMLInputElement;
     fireEvent.change(firstName, { target: { value: 'Luke' } });
     expect(firstName.value).toBe('Luke');
 
-    const lastName = getByLabelText('Last Name') as HTMLInputElement;
+    const lastName = getByLabelText('Last name') as HTMLInputElement;
     fireEvent.change(lastName, { target: { value: 'Skywalker' } });
     expect(lastName.value).toBe('Skywalker');
 
-    const emailAddr = getByLabelText('Email Address') as HTMLInputElement;
+    const emailAddr = getByLabelText('Email') as HTMLInputElement;
     fireEvent.change(emailAddr, {
       target: { value: 'luke.skywalker@jedi.com' },
     });
     expect(emailAddr.value).toBe('luke.skywalker@jedi.com');
 
-    const subject = getByLabelText('Subject Line') as HTMLInputElement;
+    const subject = getByLabelText('Subject') as HTMLInputElement;
     fireEvent.change(subject, { target: { value: 'This is a test' } });
     expect(subject.value).toBe('This is a test');
 

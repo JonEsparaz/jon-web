@@ -1,59 +1,50 @@
-@import '../theme.scss';
 @import './hamburgers.scss';
+
+.light-link {
+  color: white !important;
+}
+
+.dark-link {
+  color: black !important;
+}
+
+.logo {
+  height: 80px;
+  margin-right: 2vw;
+}
 
 .menu-icon {
   margin-right: 5px;
   margin-bottom: 2px;
-  width: 24px;
-  height: 24px;
-}
-
-.navlink-custom {
-  text-decoration: none !important;
 }
 
 .active-link {
-  .Underline:before,
-  .Underline2:before {
+  .underline-dark:before,
+  .underline-light:before {
     visibility: visible;
     transform: scaleX(1);
   }
 }
+@media (hover: hover) {
+  .navlink-custom:hover {
+    color: inherit;
 
-.navlink-custom:hover {
-  color: inherit;
-
-  .Underline:before,
-  .Underline2:before {
-    visibility: visible;
-    transform: scaleX(1);
+    .underline-dark:before,
+    .underline-light:before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
   }
-}
-
-.white-link {
-  color: white !important;
 }
 
 @media (min-width: 768px) {
-  .MenuContainer {
-    margin-left: 7.5vw;
-    width: 80vw;
-  }
-
   .navlink-custom {
-    color: black;
-    font-family: $font;
-    text-transform: uppercase;
     font-size: 14px;
     margin-right: 1rem;
   }
 }
 
 @media (max-width: 767px) {
-  .MenuContainer {
-    width: 100vw;
-  }
-
   .navbar-toggler {
     outline: none;
     background-color: #ffffff00 !important;
@@ -63,15 +54,13 @@
   }
 
   .navlink-custom {
-    color: black;
-    font-family: $font;
-    text-transform: uppercase;
     font-size: 16px;
     padding-top: 4px;
     padding-bottom: 4px;
   }
 
   .active-link {
-    font-weight: bolder;
+    text-decoration: underline !important;
+    text-underline-offset: 2px;
   }
 }

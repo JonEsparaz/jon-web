@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Amplify from 'aws-amplify';
-import { Auth } from '@aws-amplify/auth';
 import * as Sentry from '@sentry/react';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './theme.scss';
 import awsmobile from './aws-exports';
 
 Amplify.configure(awsmobile);
-Auth.configure(awsmobile);
 
 Sentry.init({
   dsn:
