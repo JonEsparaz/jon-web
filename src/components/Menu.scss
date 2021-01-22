@@ -25,14 +25,15 @@
     transform: scaleX(1);
   }
 }
+@media (hover: hover) {
+  .navlink-custom:hover {
+    color: inherit;
 
-.navlink-custom:hover {
-  color: inherit;
-
-  .underline-dark:before,
-  .underline-light:before {
-    visibility: visible;
-    transform: scaleX(1);
+    .underline-dark:before,
+    .underline-light:before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
   }
 }
 

@@ -27,12 +27,21 @@
     margin-top: 2vw;
   }
 
-  .action-btn:hover,
   .action-btn:focus {
     .underline-dark:before,
     .underline-light:before {
       visibility: visible;
       transform: scaleX(1);
+    }
+  }
+
+  @media (hover: hover) {
+    .action-btn:hover {
+      .underline-dark:before,
+      .underline-light:before {
+        visibility: visible;
+        transform: scaleX(1);
+      }
     }
   }
 
