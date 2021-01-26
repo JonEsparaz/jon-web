@@ -4,8 +4,6 @@
   "private": true,
   "dependencies": {
     "@aws-amplify/api": "^3.2.17",
-    "@aws-amplify/auth": "^3.4.17",
-    "@aws-amplify/ui-react": "^0.2.34",
     "@sentry/react": "^5.30.0",
     "bootstrap": "^4.6.0",
     "node-sass": "^4.14.1",
@@ -41,7 +39,6 @@
     "collectCoverageFrom": [
       "src/**/*.tsx",
       "!src/components/ScrollToTop.tsx",
-      "!src/pages/Lectures.tsx",
       "!src/App.tsx",
       "!src/index.tsx"
     ]
