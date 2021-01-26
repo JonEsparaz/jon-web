@@ -1,14 +1,7 @@
-# jon-web
+# Personal Web Projects
 
-[![codecov](https://codecov.io/gh/JonEsparaz/jon-web/branch/main/graph/badge.svg?token=WzHFEEKtY4)](https://codecov.io/gh/JonEsparaz/jon-web)
-![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/JonEsparaz/jon-web/react?color=%2361dafb)
-![GitHub package.json dependency version (dev dep on branch)](https://img.shields.io/github/package-json/dependency-version/JonEsparaz/jon-web/dev/typescript?color=%233178c6)
+Monorepo containing my personal web projects. 
 
-## Local Development
+All projects are built using React and share an AWS Amplify backend.
 
-In the project directory, run:
-
-- `npm install`
-- `npm start`
-
-View the project in your browser at `localhost:3003`
+Primary project is my personal website, located in the `web` directory.

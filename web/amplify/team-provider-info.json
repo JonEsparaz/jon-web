@@ -1,0 +1,21 @@
+{
+  "main": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-jonweb-main-11352-authRole",
+      "UnauthRoleArn": "arn:aws:iam::848045425465:role/amplify-jonweb-main-11352-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::848045425465:role/amplify-jonweb-main-11352-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-jonweb-main-11352-deployment",
+      "UnauthRoleName": "amplify-jonweb-main-11352-unauthRole",
+      "StackName": "amplify-jonweb-main-11352",
+      "StackId": "arn:aws:cloudformation:us-east-2:848045425465:stack/amplify-jonweb-main-11352/eeadee80-56ce-11eb-862d-02e8f9d9b212",
+      "AmplifyAppId": "d39xfv3z3bln6l"
+    },
+    "categories": {
+      "auth": {
+        "jonweb298cd244": {},
+        "userPoolGroups": {}
+      }
+    }
+  }
+}

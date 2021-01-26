@@ -1,0 +1,97 @@
+h1 {
+  margin-bottom: 25px;
+  text-align: center;
+  padding: 0 12px;
+}
+
+input {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.add-course-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.green {
+  background: lawngreen;
+}
+
+.red {
+  background: crimson;
+  color: white;
+}
+
+.modal-btn {
+  margin: auto;
+  margin-top: 12px;
+}
+
+button {
+  width: 250px;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.course-code {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.course-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 2px solid black;
+  margin-bottom: 10px;
+}
+
+.lecture-btn {
+  margin-bottom: 10px;
+}
+
+.tracker-wrapper {
+  margin: 30px 0 60px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-btns {
+  margin-top: 20px;
+  display: flex;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  button {
+    width: 150px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .courses-wrapper-desktop {
+    width: 85vw;
+    display: grid;
+    grid-template-columns: 25vw 25vw 25vw;
+    grid-column-gap: 5vw;
+    grid-row-gap: 5vw;
+  }
+
+  .menu-btns {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 767px) {
+  .menu-btns {
+    flex-direction: column;
+  }
+}
