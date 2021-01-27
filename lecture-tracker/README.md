@@ -1,6 +1,6 @@
 # Jon's Lecture Tracker
 
-Simple web application to help me stay on top of online lectures. This project is purely the result of procrastination.
+Simple web application to help me stay on top of online lectures.
 
 ## Available Scripts
 
