@@ -20,8 +20,7 @@ export default function Home(): JSX.Element {
     },
     {
       title: 'Cloud',
-      text:
-        'I have developed several applications using the AWS Amplify and Google Firebase frameworks. AWS products I&apos;ve used in production include: DynamoDB, AppSync, Lambda, CloudFront and S3 Storage.',
+      text: `I have developed several applications using the AWS Amplify and Google Firebase frameworks. AWS products I've used in production include: DynamoDB, AppSync, Lambda, CloudFront and S3 Storage.`,
       img: 'cloud.jpg',
       alt: 'Light shining through dark clouds',
       icon: 'cloud.svg',
