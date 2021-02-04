@@ -90,7 +90,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-jonweb-main-11352-deployment",
-          "S3Key": "amplify-builds/lectureReminder7-72732f5177323672766f-build.zip"
+          "S3Key": "amplify-builds/lectureReminder7-777657627758696d3672-build.zip"
         }
       }
     },

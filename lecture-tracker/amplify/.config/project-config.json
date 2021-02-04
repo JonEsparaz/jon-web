@@ -2,7 +2,7 @@
   "providers": [
     "awscloudformation"
   ],
-  "projectName": "jonweb",
+  "projectName": "lecture-tracker",
   "version": "3.0",
   "frontend": "javascript",
   "javascript": {
