@@ -15,6 +15,20 @@
       "auth": {
         "jonweb298cd244": {},
         "userPoolGroups": {}
+      },
+      "function": {
+        "contactform3": {
+          "deploymentBucketName": "amplify-jonweb-main-11352-deployment",
+          "s3Key": "amplify-builds/contactform3-36424f4b793756365a73-build.zip"
+        },
+        "lectureReset7": {
+          "deploymentBucketName": "amplify-jonweb-main-11352-deployment",
+          "s3Key": "amplify-builds/lectureReset7-6e466967616c6868644c-build.zip"
+        },
+        "lectureReminder7": {
+          "deploymentBucketName": "amplify-jonweb-main-11352-deployment",
+          "s3Key": "amplify-builds/lectureReminder7-4a543364355338324672-build.zip"
+        }
       }
     }
   }

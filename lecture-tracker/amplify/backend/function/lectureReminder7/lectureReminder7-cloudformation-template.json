@@ -21,6 +21,12 @@
     "apijongraphqlapiGraphQLAPIKeyOutput": {
       "Type": "String",
       "Default": "apijongraphqlapiGraphQLAPIKeyOutput"
+    },
+    "deploymentBucketName": {
+      "Type": "String"
+    },
+    "s3Key": {
+      "Type": "String"
     }
   },
   "Conditions": {
@@ -89,8 +95,12 @@
         "Layers": [],
         "Timeout": "25",
         "Code": {
-          "S3Bucket": "amplify-jonweb-main-11352-deployment",
-          "S3Key": "amplify-builds/lectureReminder7-777657627758696d3672-build.zip"
+          "S3Bucket": {
+            "Ref": "deploymentBucketName"
+          },
+          "S3Key": {
+            "Ref": "s3Key"
+          }
         }
       }
     },
