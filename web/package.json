@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "private": true,
   "dependencies": {
-    "@aws-amplify/api": "^3.2.17",
+    "@aws-amplify/api": "^3.2.23",
     "@sentry/react": "^5.30.0",
     "bootstrap": "^4.6.0",
     "react": "^17.0.1",
@@ -13,7 +13,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.1",
     "reactstrap": "^8.9.0",
-    "sass": "^1.32.5",
+    "sass": "^1.32.8",
     "smoothscroll-polyfill": "^0.4.4"
   },
   "scripts": {
