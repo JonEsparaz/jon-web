@@ -81,8 +81,8 @@ export default function Home(): JSX.Element {
       </div>
       <img
         className="hero-image"
-        src="https://d3posj7vfpgqcz.cloudfront.net/images/keyboard.jpg"
-        srcSet="https://d3posj7vfpgqcz.cloudfront.net/images/keyboard-720.jpg 720w, https://d3posj7vfpgqcz.cloudfront.net/images/keyboard-1080.jpg 1080w, https://d3posj7vfpgqcz.cloudfront.net/images/keyboard-1921.jpg 1921w, https://d3posj7vfpgqcz.cloudfront.net/images/keyboard.jpg 2870w"
+        src="/images/keyboard.jpg"
+        srcSet="/images/keyboard-720.jpg 720w, /images/keyboard-1080.jpg 1080w, /images/keyboard-1921.jpg 1921w, /images/keyboard.jpg 2870w"
         sizes="(min-width: 768px) 100vw, 50vw"
         alt="a backlit mechanical keyboard"
       />
@@ -117,7 +117,7 @@ export default function Home(): JSX.Element {
                     </CardText>
                     <CardImg
                       className="rounded-0"
-                      src={`https://d3posj7vfpgqcz.cloudfront.net/images/${item.img}`}
+                      src={`/images/${item.img}`}
                       alt={item.alt}
                     />
                   </CardBody>
