@@ -1,30 +1,15 @@
 set -e
 IFS='|'
 
-REACTCONFIG="{\
-\"SourceDir\":\"src\",\
-\"DistributionDir\":\"build\",\
-\"BuildCommand\":\"${NPM_YARN} run-script build\",\
-\"StartCommand\":\"${NPM_YARN} run-script start\"\
-}"
 AWSCONFIGCLOUDFORMATION="{\
 \"configLevel\":\"project\",\
-\"useProfile\":false,\,\
+\"useProfile\":true,\,\
 \"profileName\":\"default\",\
-\"accessKeyId\":\"${HEADLESS_ACCESS_KEY_ID}\",\
-\"secretAccessKey\":\"${HEADLESS_ACCESS_KEY_SECRET}\",\
-\"region\":\"us-east-2\"\
+\"appId\":\"${AWS_APP_ID}\",\
 }"
 AMPLIFY="{\
-\"projectName\":\"${AMPLIFY_PROJECT_NAME}\",\
 \"envName\":\"main\",\
 \"appId\":\"${AWS_APP_ID}\",\
-\"defaultEditor\":\"code\"\
-}"
-FRONTEND="{\
-\"frontend\":\"javascript\",\
-\"framework\":\"react\",\
-\"config\":$REACTCONFIG\
 }"
 PROVIDERS="{\
 \"awscloudformation\":${AWSCONFIGCLOUDFORMATION}\
@@ -33,4 +18,7 @@ PROVIDERS="{\
 echo AWSCONFIGCLOUDFORMATION
 echo AMPLIFY
 
-amplify pull --amplify $AMPLIFY --frontend $FRONTEND --providers $PROVIDERS --yes
+amplify pull \
+--amplify $AMPLIFY \
+--providers $PROVIDERS \
+--yes
