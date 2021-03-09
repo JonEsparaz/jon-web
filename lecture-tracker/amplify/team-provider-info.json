@@ -19,15 +19,15 @@
       "function": {
         "contactform3": {
           "deploymentBucketName": "amplify-jonweb-main-11352-deployment",
-          "s3Key": "amplify-builds/contactform3-36424f4b793756365a73-build.zip"
+          "s3Key": "amplify-builds/contactform3-737076304f5a4e6f7936-build.zip"
         },
         "lectureReset7": {
           "deploymentBucketName": "amplify-jonweb-main-11352-deployment",
-          "s3Key": "amplify-builds/lectureReset7-6e466967616c6868644c-build.zip"
+          "s3Key": "amplify-builds/lectureReset7-39646e767961304c7472-build.zip"
         },
         "lectureReminder7": {
           "deploymentBucketName": "amplify-jonweb-main-11352-deployment",
-          "s3Key": "amplify-builds/lectureReminder7-4a543364355338324672-build.zip"
+          "s3Key": "amplify-builds/lectureReminder7-4c4b4865716f7944482f-build.zip"
         }
       }
     }

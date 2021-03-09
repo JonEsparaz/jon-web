@@ -18,6 +18,20 @@ export type ModelCourseConditionInput = {
   not?: ModelCourseConditionInput | null,
 };
 
+export type Course = {
+  __typename: "Course",
+  id?: string,
+  lectures?:  Array<Lecture >,
+  createdAt?: string,
+  updatedAt?: string,
+};
+
+export type Lecture = {
+  __typename: "Lecture",
+  viewed?: boolean,
+  number?: string,
+};
+
 export type UpdateCourseInput = {
   id: string,
   lectures?: Array< LectureInput > | null,
@@ -74,13 +88,19 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
+export type ModelCourseConnection = {
+  __typename: "ModelCourseConnection",
+  items?:  Array<Course | null > | null,
+  nextToken?: string | null,
+};
+
 export type CreateCourseMutationVariables = {
-  input: CreateCourseInput,
+  input?: CreateCourseInput,
   condition?: ModelCourseConditionInput | null,
 };
 
 export type CreateCourseMutation = {
-  createCourse:  {
+  createCourse?:  {
     __typename: "Course",
     id: string,
     lectures:  Array< {
@@ -94,12 +114,12 @@ export type CreateCourseMutation = {
 };
 
 export type UpdateCourseMutationVariables = {
-  input: UpdateCourseInput,
+  input?: UpdateCourseInput,
   condition?: ModelCourseConditionInput | null,
 };
 
 export type UpdateCourseMutation = {
-  updateCourse:  {
+  updateCourse?:  {
     __typename: "Course",
     id: string,
     lectures:  Array< {
@@ -113,12 +133,12 @@ export type UpdateCourseMutation = {
 };
 
 export type DeleteCourseMutationVariables = {
-  input: DeleteCourseInput,
+  input?: DeleteCourseInput,
   condition?: ModelCourseConditionInput | null,
 };
 
 export type DeleteCourseMutation = {
-  deleteCourse:  {
+  deleteCourse?:  {
     __typename: "Course",
     id: string,
     lectures:  Array< {
@@ -132,23 +152,23 @@ export type DeleteCourseMutation = {
 };
 
 export type ContactQueryVariables = {
-  first: string,
-  last: string,
-  email: string,
-  subject: string,
-  message: string,
+  first?: string,
+  last?: string,
+  email?: string,
+  subject?: string,
+  message?: string,
 };
 
 export type ContactQuery = {
-  contact: string | null,
+  contact?: string | null,
 };
 
 export type GetCourseQueryVariables = {
-  id: string,
+  id?: string,
 };
 
 export type GetCourseQuery = {
-  getCourse:  {
+  getCourse?:  {
     __typename: "Course",
     id: string,
     lectures:  Array< {
@@ -168,9 +188,9 @@ export type ListCoursesQueryVariables = {
 };
 
 export type ListCoursesQuery = {
-  listCourses:  {
+  listCourses?:  {
     __typename: "ModelCourseConnection",
-    items:  Array< {
+    items?:  Array< {
       __typename: "Course",
       id: string,
       lectures:  Array< {
@@ -181,12 +201,12 @@ export type ListCoursesQuery = {
       createdAt: string,
       updatedAt: string,
     } | null > | null,
-    nextToken: string | null,
+    nextToken?: string | null,
   } | null,
 };
 
 export type OnCreateCourseSubscription = {
-  onCreateCourse:  {
+  onCreateCourse?:  {
     __typename: "Course",
     id: string,
     lectures:  Array< {
@@ -200,7 +220,7 @@ export type OnCreateCourseSubscription = {
 };
 
 export type OnUpdateCourseSubscription = {
-  onUpdateCourse:  {
+  onUpdateCourse?:  {
     __typename: "Course",
     id: string,
     lectures:  Array< {
@@ -214,7 +234,7 @@ export type OnUpdateCourseSubscription = {
 };
 
 export type OnDeleteCourseSubscription = {
-  onDeleteCourse:  {
+  onDeleteCourse?:  {
     __typename: "Course",
     id: string,
     lectures:  Array< {

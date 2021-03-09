@@ -9,5 +9,5 @@ type Lecture {
 }
 
 type Query {
-  contact(first: String!, last: String!, email: String!, subject: String!, message: String!): String @function(name: "contactform3-${env}") @auth(rules: [{ allow: public }])
+  contact(first: String!, last: String!, email: String!, subject: String!, message: String!): String @function(name: "contactform3-${env}")
 }

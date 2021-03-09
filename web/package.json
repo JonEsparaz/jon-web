@@ -3,8 +3,8 @@
   "version": "1.0.1",
   "private": true,
   "dependencies": {
-    "@aws-amplify/api": "^3.2.23",
     "@sentry/react": "^5.30.0",
+    "aws-amplify": "^3.3.23",
     "bootstrap": "^4.6.0",
     "react": "^17.0.1",
     "react-device-detect": "^1.15.0",

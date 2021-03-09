@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as Sentry from '@sentry/react';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
-import { API, GRAPHQL_AUTH_MODE } from '@aws-amplify/api';
+import { API } from 'aws-amplify';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Page from '../components/Page';
 import Button from '../components/Button';
@@ -34,7 +34,6 @@ export default function Contact(): JSX.Element {
         await API.graphql({
           query: contact,
           variables: emailObj,
-          authMode: GRAPHQL_AUTH_MODE.API_KEY,
         });
 
         setEmailObj({
