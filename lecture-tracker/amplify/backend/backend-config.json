@@ -65,8 +65,7 @@
           "resourceName": "jongraphqlapi",
           "attributes": [
             "GraphQLAPIIdOutput",
-            "GraphQLAPIEndpointOutput",
-            "GraphQLAPIKeyOutput"
+            "GraphQLAPIEndpointOutput"
           ]
         }
       ]
@@ -81,8 +80,7 @@
           "resourceName": "jongraphqlapi",
           "attributes": [
             "GraphQLAPIIdOutput",
-            "GraphQLAPIEndpointOutput",
-            "GraphQLAPIKeyOutput"
+            "GraphQLAPIEndpointOutput"
           ]
         }
       ]

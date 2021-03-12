@@ -23,11 +23,11 @@
         },
         "lectureReminder7": {
           "deploymentBucketName": "amplify-jonweb-main-11352-deployment",
-          "s3Key": "amplify-builds/lectureReminder7-4c4b4865716f7944482f-build.zip"
+          "s3Key": "amplify-builds/lectureReminder7-512f71393756776d6332-build.zip"
         },
         "lectureReset7": {
           "deploymentBucketName": "amplify-jonweb-main-11352-deployment",
-          "s3Key": "amplify-builds/lectureReset7-39646e767961304c7472-build.zip"
+          "s3Key": "amplify-builds/lectureReset7-2b305a357a444e495447-build.zip"
         }
       }
     }
