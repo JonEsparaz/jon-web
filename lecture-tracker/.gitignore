@@ -24,6 +24,8 @@ yarn-error.log*
 
 .eslintcache
 
+amplify/
+
 #amplify
 amplify/\#current-cloud-backend
 amplify/.config/local-*
