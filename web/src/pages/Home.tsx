@@ -94,7 +94,16 @@ export default function Home(): JSX.Element {
           <Link className="inline-link" to="/speedcubing">
             solving Rubik&apos;s Cubes
           </Link>{' '}
-          and a good game of basketball.
+          and a good game of basketball. I am currently working at{' '}
+          <a
+            className="inline-link"
+            href="https://www.venasolutions.com/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Vena Solutions
+          </a>{' '}
+          as a Software Developer Co-op.
         </div>
       </div>
       <div className="container">
