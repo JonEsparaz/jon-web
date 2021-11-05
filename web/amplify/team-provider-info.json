@@ -19,7 +19,7 @@
       "function": {
         "contactform3": {
           "deploymentBucketName": "amplify-jonweb-main-11352-deployment",
-          "s3Key": "amplify-builds/contactform3-3377426c52384f4a5a54-build.zip"
+          "s3Key": "amplify-builds/contactform3-714b3343544152326a51-build.zip"
         },
         "lectureReminder7": {
           "deploymentBucketName": "amplify-jonweb-main-11352-deployment",
