@@ -1,5 +1,0 @@
-amplify/**/*.yml
-amplify/**/*.json
-*.graphql
-src/graphql
-API.ts

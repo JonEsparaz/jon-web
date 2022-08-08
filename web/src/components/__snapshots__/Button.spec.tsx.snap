@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Button, ButtonLink components spanshot, click, Button dark 1`] = `"<button class=\\"action-btn dark-btn\\"><span class=\\"underline-light\\">button</span></button>"`;
-
-exports[`Button, ButtonLink components spanshot, click, Button light 1`] = `"<button class=\\"action-btn light-btn\\"><span class=\\"underline-dark\\">button</span></button>"`;
-
-exports[`Button, ButtonLink components spanshot, navigate, ButtonLink dark 1`] = `"<a class=\\"action-btn link-btn dark-btn\\" href=\\"/test\\"><span class=\\"underline-light\\">link</span></a>"`;
-
-exports[`Button, ButtonLink components spanshot, navigate, ButtonLink light 1`] = `"<a class=\\"action-btn link-btn light-btn\\" href=\\"/testing\\"><span class=\\"underline-dark\\">link</span></a>"`;
