@@ -65,10 +65,12 @@
 h1 {
   text-transform: uppercase;
   font-size: 3rem;
+  font-weight: 600;
   margin: 1.5rem 0;
 }
 
 p {
   font-size: 1.5rem;
+  font-weight: 400;
   margin: 0;
 }
