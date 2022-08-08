@@ -32,9 +32,9 @@ export const App = () => {
     <>
       <div className="content-container">
         <div className="content">
-          <h1>Jon Esparaz</h1>
-          <hr className="accent-bar" />
-          <div className="tagline-container">
+          <h1 data-testid="header">Jon Esparaz</h1>
+          <hr className="accent-bar" data-testid="accent-bar" />
+          <div className="tagline-container" data-testid="tagline">
             <p>Engineering Science</p>
             <p>x</p>
             <p>University of Toronto</p>
@@ -48,6 +48,7 @@ export const App = () => {
                 rel="noopener noreferrer"
                 target="_blank"
                 className="link-icon"
+                data-testid="link"
               >
                 <Icon width={32} height={32} />
               </a>
@@ -56,6 +57,7 @@ export const App = () => {
         </div>
       </div>
       <img
+        data-testid="image"
         className="hero-image"
         src="/images/keyboard.jpg"
         srcSet="/images/keyboard-720.jpg 720w, /images/keyboard-1080.jpg 1080w, /images/keyboard-1921.jpg 1921w, /images/keyboard.jpg 2870w"
