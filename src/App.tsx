@@ -35,7 +35,7 @@ export const App = () => {
           <h1 data-testid="header">Jon Esparaz</h1>
           <hr className="accent-bar" data-testid="accent-bar" />
           <div className="tagline-container" data-testid="tagline">
-            <p>Software Developer @ Vena</p>
+            <p>Software Engineer @ Autodesk</p>
             <p>x</p>
             <p>Engineering Science @ U of T</p>
           </div>
